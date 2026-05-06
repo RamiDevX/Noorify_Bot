@@ -161,16 +161,12 @@ def ai_spiritual_analysis(total: int) -> str:
 
 def text_welcome() -> str:
     """نص الترحيب الرسمي المتكامل"""
-    bold_title = html.bold('مَـرحـبـاً بـكَ فـي نِـظـام نُـورِفَـاي الـمَـلـكِـي')
-    bold_sub = html.bold('نِـظـام الـذِكـر والـبَـركـة الـمُـتـكـامـل')
     return (
         f"✨ ❮ {bold_title} ❯ ✨\n\n"
         f"💎 {bold_sub} 💎\n"
-        "━━━━━━━━━━━━━━━━━━━━\n"
         "💠 السَّلامُ عَلَيْكُم وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ\n"
-        "🌙 أهلاً بك في النسخة المطورة والعبقرية من نورفاي.\n\n"
+        "🌙 أهلاً بك في من نورفاي.\n\n"
         f"🕊️ {html.italic('﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾')}\n\n"
-        "━━━━━━━━━━━━━━━━━━━━\n"
         f"📞 المطور: @vx_rq"
     )
 
@@ -178,13 +174,11 @@ def text_help() -> str:
     """نص قائمة المساعدة والدعم الفني"""
     return (
         f"🆘 {html.bold('قـائـمـة الـمـسـاعـدة والـبـلاغـات')}\n"
-        "━━━━━━━━━━━━━━━━━━━━\n\n"
         f"💠 {html.bold('الدعم الفني:')}\n"
         "في حال واجهت أي مشكلة تقنية أو توقف في البوت، يرجى مراسلة المبرمج فوراً.\n\n"
         f"👨‍💻 {html.bold('رابط المطور:')} @vx_rq\n"
         f"📡 {html.bold('قناة التحديثات:')} {TECH_CHANNEL}\n\n"
         f"🛡️ {html.bold('ملاحظة:')} البوت يعمل على مدار الساعة لخدمتكم.\n"
-        "━━━━━━━━━━━━━━━━━━━━"
     )
 
 def kb_main(bot_username: str) -> InlineKeyboardMarkup:
@@ -244,15 +238,13 @@ async def master_command_router(message: Message):
     elif cmd in ["stats", "tasbih"]:
         rank_n, rank_i = get_spiritual_rank(u['tasbih'])
         txt = (
-            f"📊 {html.bold('لوحة الإحصائيات الملكية الفائقة')} {rank_i}\n"
-            f"━━━━━━━━━━━━━━━━━━━━\n"
+            f"📊 {html.bold('لوحة الإحصائيات')} {rank_i}\n"
             f"👤 الاسم: {u['name']}\n"
             f"🏅  الرتبه: {rank_n}\n"
             f"📿 إجمالي الأذكار: {html.bold(str(u['tasbih']))}\n"
             f"📅 تاريخ الانتساب: {u['join_date']}\n\n"
-            f"🧠 {html.bold('تحليل الذكاء الاصطناعي لحالتك:')}\n"
+            f"🧠 {html.bold('تحليل لحالتك:')}\n"
             f"✨ {ai_spiritual_analysis(u['tasbih'])}\n"
-            "━━━━━━━━━━━━━━━━━━━━"
         )
         await message.answer(txt, reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="🔙 العودة", callback_data="btn_home")]]))
     
@@ -262,10 +254,10 @@ async def master_command_router(message: Message):
                 [InlineKeyboardButton(text="30 دقيقة ⏱️", callback_data="set_0.5"), InlineKeyboardButton(text="ساعة ⏱️", callback_data="set_1")],
                 [InlineKeyboardButton(text="3 ساعات ⏱️", callback_data="set_3"), InlineKeyboardButton(text="6 ساعات ⏱️", callback_data="set_6")],
                 [InlineKeyboardButton(text="12 ساعة ⏱️", callback_data="set_12"), InlineKeyboardButton(text="يومي ⏱️", callback_data="set_24")],
-                [InlineKeyboardButton(text="إيقاف البث ❌", callback_data="set_off")],
+                [InlineKeyboardButton(text="إيقاف ❌", callback_data="set_off")],
                 [InlineKeyboardButton(text="🔙 عودة", callback_data="btn_home")]
             ])
-            await message.answer(f"⚙️ {html.bold('إعدادات البث الدوري للدردشة')}", reply_markup=kb)
+            await message.answer(f"⚙️ {html.bold('إعدادات الدوري للدردشة')}", reply_markup=kb)
         else:
             await message.answer("❌ عذراً، هذا الأمر متاح للمشرفين فقط.")
 
@@ -297,13 +289,12 @@ async def engine_tasbih(call: CallbackQuery):
     ])
     
     txt = (
-        f"🌌 {html.bold(' المسبحة الملكية')} {rank_i}\n"
-        "━━━━━━━━━━━━━━━━━━━━\n"
+        f" {html.bold('المسبحة')} {rank_i}\n"
         f"🕊️ {html.italic(TASBIH_TYPES[idx])}\n\n"
         f"📊 التقدم في الدورة:\n{html.code(progress)}\n"
         f"🏅 الرتبة: {rank_n}\n"
         f"📿 إجمالي تسبيحاتك: {u['tasbih']}\n"
-        "━━━━━━━━━━━━━━━━━━━━"
+       
     )
     try: await call.message.edit_text(txt, reply_markup=kb)
     except: pass
@@ -315,15 +306,13 @@ async def btn_stats_call(call: CallbackQuery):
     u = init_user(call.from_user.id, call.from_user.full_name)
     rank_n, rank_i = get_spiritual_rank(u['tasbih'])
     txt = (
-        f"📊 {html.bold('لوحة الإحصائيات الملكية المتطورة')} {rank_i}\n"
-        f"━━━━━━━━━━━━━━━━━━━━\n"
+        f"📊 {html.bold('لوحة الإحصائيات')} {rank_i}\n"
         f"👤 الاسم: {u['name']}\n"
         f"🏅 الرتبة: {rank_n}\n"
         f"📿 رصيد الأذكار: {html.bold(str(u['tasbih']))}\n"
         f"📅 تاريخ الانتساب: {u['join_date']}\n\n"
-        f"🧠 {html.bold('تحليل الذكاء الاصطناعي لحالتك:')}\n"
+        f"🧠 {html.bold('تحليل لحالتك:')}\n"
         f"✨ {ai_spiritual_analysis(u['tasbih'])}\n"
-        "━━━━━━━━━━━━━━━━━━━━"
     )
     await call.message.edit_text(txt, reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="🔙 العودة للرئيسية", callback_data="btn_home")]]))
 
@@ -417,10 +406,10 @@ async def main():
     # تسجيل الأوامر في قائمة التليجرام الرسمية لتظهر كـ Menu
     await bot.set_my_commands([
         BotCommand(command="start", description="💠 تشغيل البوت وفتح القائمة الرئيسية"),
-        BotCommand(command="help", description="🆘 المساعدة ورابط التواصل مع المطور"),
+        BotCommand(command="help", description="🆘 المساعدة ورابط التواصل مع المبرمج"),
         BotCommand(command="guide", description="📑 دليل استخدام البوت في الخاص والمجموعات"),
-        BotCommand(command="stats", description="📊 عرض إحصائياتك ورتبتك الإيمانية"),
-        BotCommand(command="tasbih", description="📿 فتح المسبحة الإلكترونية المطورة")
+        BotCommand(command="stats", description="📊 عرض إحصائياتك ورتبتك "),
+        BotCommand(command="tasbih", description="📿 فتح المسبحة الإلكترونية ")
     ])
     
     # تنظيف التحديثات القديمة والبدء
