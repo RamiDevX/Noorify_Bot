@@ -144,7 +144,6 @@ python bot.py
   </a>
 </p>
 
----
 
 <!-- 🌊 FOOTER -->
 
@@ -152,5 +151,3 @@ python bot.py
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:203a43,50:0f2027,100:050505&height=140&section=footer"/>
 </p>
 ```
-
----
