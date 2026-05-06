@@ -13,7 +13,7 @@
 ## 🔗 روابط المشروع
 
 <p align="center">
-  <a href="https://t.me/your_bot">
+  <a href="https://t.me/Noorify_bot">
     <img src="https://img.shields.io/badge/🚀%20تشغيل%20البوت-Telegram-0088cc?style=for-the-badge&logo=telegram"/>
   </a>
   <a href="https://github.com/your-username/noorify">
