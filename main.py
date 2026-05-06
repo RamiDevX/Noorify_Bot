@@ -158,24 +158,23 @@ def get_spiritual_rank(total: int) -> tuple:
     return ranks[-1][1], ranks[-1][2]
 
 def ai_spiritual_analysis(total: int) -> str:
-    """محرك تحليل ذكاء اصطناعي للحالة """
-    if total == 0: return "بداية رحلة النور! ابدأ بالتسبيح الآن."
-    if total < 100: return "أنت في مرحلة البناء، قليلٌ دائم خيرٌ من كثير منقطع."
-    if total < 1000: return "أداء رائع! لقد بدأ قلبك يرتوي من فيض الأذكار."
-    if total < 10000: return "مستوى مذهل! طاقتك الإيمانية بدأت تؤثر فيمن حولك."
-    return "ما شاء الله! أنت الآن في مقام الذاكرين كثيراً والذاكرات."
+    """ تحليل  للحالة """
+    if total == 0: return " اللَّهُمَّ تَقَبَّلْ مِنْكَ ."
+    if total < 100: return "بَارَكَ اللهُ فِيكَ وَنَفَعَ بِكَ."
+    if total < 1000: return "فِي مِيزَانِ حَسَنَاتِكَ."
+    if total < 10000: return "رَبِّي يَكْتُبُ لَكَ الأَجْر."
+    return "اللَّهُ يَرْضَى عَلَيْكَ وَيُيَسِّرُ أَمْرَكَ."
 
 # --- [ واجهات المستخدم - التصميم الملكي ] ---
 
 def text_welcome() -> str:
     """نص الترحيب الرسمي المتكامل"""
     return (
-        f"✨ ❮ {html.bold('نظام نُورِفَاي الملكي')} ❯ ✨\n\n"
-        f"💎 {html.bold('بوابتك نحو السكينة والطمأنينة')} 💎\n"
+        f"✨ ❮ {html.bold('نُورِفَاي')} ❯ ✨\n\n"
         "💠 السَّلامُ عَلَيْكُم وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ\n"
         "🌙 أهلاً بك في من نورفاي.\n\n"
         f"🕊️ {html.italic('﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾')}\n\n"
-        f"📞 المطور: @vx_rq"
+        f"📞 المبرمج : @vx_rq"
     )
 
 def text_help() -> str:
@@ -193,8 +192,8 @@ def kb_main(bot_username: str) -> InlineKeyboardMarkup:
     """لوحة التحكم الرئيسية المطابقة لصورك"""
     return InlineKeyboardMarkup(inline_keyboard=[
         [
-            InlineKeyboardButton(text="تفعيل بمجموعة 👥", url=f"t.me/{bot_username}?startgroup=true"),
-            InlineKeyboardButton(text="تفعيل بقناة 📢", url=f"t.me/{bot_username}?startchannel=true")
+            InlineKeyboardButton(text="تفعيل بالمجموعة 👥", url=f"t.me/{bot_username}?startgroup=true"),
+            InlineKeyboardButton(text="تفعيل بالقناة 📢", url=f"t.me/{bot_username}?startchannel=true")
         ],
         [
             InlineKeyboardButton(text="ذكر عشوائي ✨", callback_data="btn_random"),
@@ -233,13 +232,11 @@ async def master_command_router(message: Message):
 
     elif cmd == "guide":
         guide_text = (
-            f"📑 {html.bold('دليل التشغيل لنظام نورفاي')}\n"
-            "━━━━━━━━━━━━━━━━━━━━\n"
+            f"📑 {html.bold('دليل لتشغيل نورفاي')}\n"
             f"1️⃣ {html.bold('في المجموعات:')} أضف البوت مشرفاً مع صلاحية حذف الرسائل.\n"
-            f"2️⃣ {html.bold('الضبط الدوري:')} متاح للمشرفين فقط من خلال زر الضبط لتحديد موعد البث.\n"
+            f"2️⃣ {html.bold('الضبط الدوري:')} متاح للمشرفين فقط من خلال زر الضبط لتحديد موعد التذكير.\n"
             f"3️⃣ {html.bold('نظام الرتب:')} ارفع رتبتك بكثرة التسبيح.\n"
             f"4️⃣ {html.bold('الأوامر المتاحة:')} {html.code('/stats, /tasbih, /guide, /help, /settings')}\n"
-            "━━━━━━━━━━━━━━━━━━━━"
         )
         await message.answer(guide_text, reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="🔙 العودة للرئيسية", callback_data="btn_home")]]))
     
@@ -355,7 +352,7 @@ async def btn_settings_callback(call: CallbackQuery):
         [InlineKeyboardButton(text="إيقاف البث ❌", callback_data="set_off")],
         [InlineKeyboardButton(text="🔙 العودة", callback_data="btn_home")]
     ])
-    await call.message.edit_text(f"⚙️ {html.bold('إعدادات البث الدوري للدردشة')}\n\nاختر التكرار الزمني لإرسال الأذكار التلقائية:", reply_markup=kb)
+    await call.message.edit_text(f"⚙️ {html.bold('إعدادات التذكير الدوري للدردشة')}\n\nاختر التكرار الزمني لإرسال الأذكار التلقائية:", reply_markup=kb)
 
 @dp.callback_query(F.data.startswith("set_"))
 async def handle_save_settings(call: CallbackQuery):
@@ -367,7 +364,7 @@ async def handle_save_settings(call: CallbackQuery):
         await call.answer("🔇 تم إيقاف التذكيرات التلقائية بنجاح.", show_alert=True)
     else:
         active_chats[cid] = {"interval": float(val), "last": time.time()}
-        await call.answer(f"✅ تم تفعيل البث الدوري كل {val} ساعة.", show_alert=True)
+        await call.answer(f"✅ تم تفعيل التذكير الدوري كل {val} ساعة.", show_alert=True)
     await back_home(call)
 
 # --- [ الوظائف العامة والعودة ] ---
@@ -381,7 +378,7 @@ async def back_home(call: CallbackQuery):
 async def btn_random_dhikr(call: CallbackQuery):
     dk = random.choice(ADHKAR_LIST)
     await call.message.edit_text(
-        f"✨ {html.bold('نفحة إيمانية مباركة لك:')}\n\n{html.code(dk)}", 
+        f"✨ {html.bold('رَبِّي يَكْتُبُ لَكَ الأَجْرَ وَيُضَاعِفُهُ   :')}\n\n{html.code(dk)}", 
         reply_markup=InlineKeyboardMarkup(inline_keyboard=[
             [InlineKeyboardButton(text="🔄 ذكر آخر", callback_data="btn_random")],
             [InlineKeyboardButton(text="🔙 عودة للرئيسية", callback_data="btn_home")]
@@ -395,8 +392,7 @@ async def on_bot_join(event: ChatMemberUpdated):
     """الترحيب عند إضافة البوت لمجموعة أو قناة"""
     if event.new_chat_member.status in [ChatMemberStatus.MEMBER, ChatMemberStatus.ADMINISTRATOR]:
         welcome = (
-            f"🎊 {html.bold('تم تفعيل نظام نُورِفَاي الملكي في هذا المكان!')}\n\n"
-            f"🕊️ {html.bold('﴿ وَذَكِّرْ فَإِنَّ الذِّكْرَىٰ تَنفَعُ الْمُؤْمِنِينَ ﴾')}\n\n"
+            f"🎊 {html.bold('تم تفعيل  نُورِفَاي  في هذا المكان!')}\n\n"
             "سأقوم بنشر الأذكار والأدعية لتعطير هذه الدردشة.\n"
             "💡 يمكن للمشرفين التحكم في وقت الإرسال من خلال زر 'الضبط الدوري' في القائمة الرئيسية."
         )
