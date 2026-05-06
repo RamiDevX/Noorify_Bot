@@ -93,7 +93,7 @@ E --> G[Notifications]
 ## 🧩 التقنيات
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,git,github,linux" />
+  <img src="https://skillicons.dev/icons?i=python,telegram,github,aiogram,railway " />
 </p>
 
 ---
@@ -123,22 +123,6 @@ pip install -r requirements.txt
 
 ```bash id="run"
 python bot.py
-```
-
----
-
-## 📁 هيكل المشروع
-
-```id="structure"
-Noorify_Bot/
-│
-├── bot.py
-├── config.py
-├── handlers/
-├── services/
-├── database/
-├── utils/
-└── requirements.txt
 ```
 
 ---
