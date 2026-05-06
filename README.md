@@ -1,6 +1,5 @@
 
 
-# 🚀 README النهائي الاحترافي (NOORIFY)
 
 ``html id="noorify-readme-final"
 <!-- 🌊 HEADER -->
