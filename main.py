@@ -172,7 +172,7 @@ def text_welcome() -> str:
     return (
         f"✨ ❮ {html.bold('نُورِفَاي')} ❯ ✨\n\n"
         "💠 السَّلامُ عَلَيْكُم وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ\n"
-        "🌙 أهلاً بك في من نورفاي.\n\n"
+        "🌙 أهلاً بك في بوت نورفاي.\n\n"
         f"🕊️ {html.italic('﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾')}\n\n"
         f"📞 المبرمج : @vx_rq"
     )
@@ -232,7 +232,7 @@ async def master_command_router(message: Message):
 
     elif cmd == "guide":
         guide_text = (
-            f"📑 {html.bold('دليل لتشغيل نورفاي')}\n"
+            f"📑 {html.bold('دليل التشغيل')}\n"
             f"1️⃣ {html.bold('في المجموعات:')} أضف البوت مشرفاً مع صلاحية حذف الرسائل.\n"
             f"2️⃣ {html.bold('الضبط الدوري:')} متاح للمشرفين فقط من خلال زر الضبط لتحديد موعد التذكير.\n"
             f"3️⃣ {html.bold('نظام الرتب:')} ارفع رتبتك بكثرة التسبيح.\n"
@@ -303,10 +303,9 @@ async def engine_tasbih(call: CallbackQuery):
     
     rank_n, rank_i = get_spiritual_rank(u['tasbih'])
     progress = get_unique_progress(u["tasbih"] % 34)
-    ذكر_نص = TASBIH_TYPES[idx].split()[-1]
     
     kb = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text=f"إضغط للتسبيح | {ذكر_نص} ✨", callback_data=f"hit_{idx}")],
+        [InlineKeyboardButton(text=f"إضغط للتسبيح } ✨", callback_data=f"hit_{idx}")],
         [InlineKeyboardButton(text="🔄 تغيير النوع", callback_data="btn_tasbih_menu"), InlineKeyboardButton(text="🔙 عودة", callback_data="btn_home")]
     ])
     
@@ -349,7 +348,7 @@ async def btn_settings_callback(call: CallbackQuery):
         [InlineKeyboardButton(text="30 دقيقة ⏱️", callback_data="set_0.5"), InlineKeyboardButton(text="ساعة ⏱️", callback_data="set_1")],
         [InlineKeyboardButton(text="3 ساعات ⏱️", callback_data="set_3"), InlineKeyboardButton(text="6 ساعات ⏱️", callback_data="set_6")],
         [InlineKeyboardButton(text="12 ساعة ⏱️", callback_data="set_12"), InlineKeyboardButton(text="يومي ⏱️", callback_data="set_24")],
-        [InlineKeyboardButton(text="إيقاف البث ❌", callback_data="set_off")],
+        [InlineKeyboardButton(text="إيقاف  ❌", callback_data="set_off")],
         [InlineKeyboardButton(text="🔙 العودة", callback_data="btn_home")]
     ])
     await call.message.edit_text(f"⚙️ {html.bold('إعدادات التذكير الدوري للدردشة')}\n\nاختر التكرار الزمني لإرسال الأذكار التلقائية:", reply_markup=kb)
