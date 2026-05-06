@@ -1,11 +1,16 @@
-<!-- 🌊 HERO HEADER -->
+
+
+# 🚀 README النهائي الاحترافي (NOORIFY)
+
+``html id="noorify-readme-final"
+<!-- 🌊 HEADER -->
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:050505,50:0f2027,100:203a43&height=300&section=header&text=NOORIFY&fontSize=65&fontColor=ffffff&animation=fadeIn&fontAlignY=38" />
 </p>
 
 <p align="center">
-  <b>✨ صدقة جارية رقمية — نحو استخدام أهدأ للهاتف</b><br>
-  <sub>تحويل التشتت إلى ذكر • والوقت الضائع إلى أثر</sub>
+  <b>✨ صدقة جارية رقمية</b><br>
+  <sub>من التشتت إلى الذكر • ومن الضياع إلى الأثر</sub>
 </p>
 
 ---
@@ -15,53 +20,189 @@
   <img src="https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python"/>
   <img src="https://img.shields.io/badge/Aiogram-3.x-00E5FF?style=for-the-badge&logo=telegram"/>
   <img src="https://img.shields.io/badge/Status-Active-00C853?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge"/>
 </p>
-
----
-
-## ⚡ الفكرة
-
-> “ليس الهدف أن تترك هاتفك… بل أن تجعله يذكّرك بالله.”
-مشروع ذكي يهدف إلى:
-- تقليل التشتت الرقمي
-- بناء عادات ذكر مستمرة
-- تحويل الهاتف من مصدر ضياع إلى مصدر أجر
 
 ---
 
 ## 🌙 الرسالة
 
+> “إذا كان الهاتف يسرق انتباهك… اجعله يذكّرك بربك.”
+
+**Noorify** ليس مجرد بوت، بل نظام رقمي هدفه:
+- تحويل الوقت الضائع إلى ذكر
+- بناء عادة روحانية يومية
+- تقليل التشتت الرقمي
+
+---
+
+## 💡 الفكرة
+
+Noorify يعمل كبوت تيليجرام ذكي يدمج بين:
+- الذكر
+- التذكير
+- الإحصائيات
+- التجربة الهادئة
+
+---
+
+## 🧠 النظام الداخلي
+
+```mermaid
+flowchart TD
+A[User Telegram] --> B[Noorify Bot - Aiogram]
+B --> C[Async Engine]
+C --> D[Dhikr Counter]
+C --> E[Reminder System]
+D --> F[Database Stats]
+E --> G[Notifications]
+````
+
+---
+
+## 🛠️ المميزات
+
+### 📿 مسبحة ذكية
+
+* عداد تفاعلي سريع
+* حفظ تلقائي للحالة
+* جلسات متعددة
+
+### 📜 أذكار يومية
+
+* صباح / مساء / نوم
+* عرض بسيط وهادئ
+
+### ⏰ نظام التذكير
+
+* فترات مرنة
+* يعمل بالخلفية (Async)
+* بدون إزعاج
+
+### 📊 الإحصائيات
+
+* عدد الأذكار
+* النشاط اليومي
+* تتبع التطور
+
+### ⚡ الأداء
+
+* Aiogram 3.x
+* Async بالكامل
+* سريع وخفيف
+
+---
+
+## 🧩 التقنيات
+
 <p align="center">
-  <i>“كل تسبيحة قد تكون سببًا في راحة قلبك”</i>
+  <img src="https://skillicons.dev/icons?i=python,git,github,linux" />
 </p>
 
 ---
 
-## 🧠 كيف يعمل النظام
+## ⚙️ التشغيل
 
-```mermaid
-flowchart TD
-A[User on Telegram] --> B[Noorify Bot - Aiogram]
-B --> C[Async Event Handler]
-C --> D[Reminder Engine]
-C --> E[Dhikr Counter System]
-D --> F[Push Notifications]
-E --> G[User Statistics DB]
+### 1️⃣ المتطلبات
+
+```bash id="req"
+Python 3.13+
+Telegram Bot Token
 ```
-🧩 التقنيات
-<p align="center"> <img src="https://skillicons.dev/icons?i=python,git,github,linux" /> </p>
 
+---
 
+### 2️⃣ التثبيت
 
+```bash id="install"
+git clone https://github.com/rambos2003-lab/Noorify_Bot
+cd Noorify_Bot
+pip install -r requirements.txt
+```
 
-🎯 أهداف المشروع
-تقليل الإدمان الرقمي
-بناء عادات روحانية مستمرة
-تقديم تجربة هادئة داخل تيليجرام
-جعل التقنية وسيلة للخير
-🤍 صدقة جارية
-<p align="center"> <b>إذا استفدت من المشروع فلا تنسَ دعوة صالحة 🤍</b><br> <sub>الدال على الخير كفاعله</sub> </p>
-⭐ دعم المشروع
-<p align="center"> <a href="https://github.com/your-username/noorify"> <img src="https://img.shields.io/badge/⭐%20Star%20This%20Repo-ادعم%20المشروع-yellow?style=for-the-badge"/> </a> </p>
-<!-- 🌊 FOOTER --> <p align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=0:203a43,50:0f2027,100:050505&height=140&section=footer"/> </p> ```
+---
+
+### 3️⃣ التشغيل
+
+```bash id="run"
+python bot.py
+```
+
+---
+
+## 📁 هيكل المشروع
+
+```id="structure"
+Noorify_Bot/
+│
+├── bot.py
+├── config.py
+├── handlers/
+├── services/
+├── database/
+├── utils/
+└── requirements.txt
+```
+
+---
+
+## 🔗 روابط مهمة
+
+<p align="center">
+
+<a href="https://github.com/rambos2003-lab/Noorify_Bot">
+  <img src="https://img.shields.io/badge/📦%20Repository-Noorify_Bot-black?style=for-the-badge&logo=github"/>
+</a>
+
+<a href="https://github.com/rambos2003-lab">
+  <img src="https://img.shields.io/badge/👤%20Profile-rambos2003--lab-181717?style=for-the-badge&logo=github"/>
+</a>
+
+<a href="https://t.me/vx_rq">
+  <img src="https://img.shields.io/badge/💬%20Telegram-Channel-0088cc?style=for-the-badge&logo=telegram"/>
+</a>
+
+<a href="https://tr.ee/vxr">
+  <img src="https://img.shields.io/badge/🔗%20All%20Links-Linktree-orange?style=for-the-badge"/>
+</a>
+
+</p>
+
+---
+
+## 🎯 الهدف
+
+* تقليل الإدمان الرقمي
+* بناء عادة ذكر مستمرة
+* تحويل الهاتف إلى وسيلة خير
+* خلق أثر روحاني يومي
+
+---
+
+## 🤍 صدقة جارية
+
+<p align="center">
+  <b>إذا استفدت من المشروع فلا تنسَ دعوة صالحة 🤍</b><br>
+  <sub>الدال على الخير كفاعله</sub>
+</p>
+
+---
+
+## ⭐ دعم المشروع
+
+<p align="center">
+  <a href="https://github.com/rambos2003-lab/Noorify_Bot">
+    <img src="https://img.shields.io/badge/⭐%20Star%20This%20Repo-ادعم%20المشروع-yellow?style=for-the-badge"/>
+  </a>
+</p>
+
+---
+
+<!-- 🌊 FOOTER -->
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:203a43,50:0f2027,100:050505&height=140&section=footer"/>
+</p>
+```
+
+---
