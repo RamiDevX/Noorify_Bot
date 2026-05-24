@@ -102,7 +102,7 @@ python bot.py
   <img src="https://img.shields.io/badge/📦%20Repository-Noorify_Bot-black?style=for-the-badge&logo=github"/>
 </a>
 
-<a href="https://github.com/rambos2003-lab">
+<a href="https://github.com/RamiAILab">
   <img src="https://img.shields.io/badge/👤%20Profile-RamiAILab-181717?style=for-the-badge&logo=github"/>
 </a>
 
