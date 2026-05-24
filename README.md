@@ -103,7 +103,7 @@ python bot.py
 </a>
 
 <a href="https://github.com/rambos2003-lab">
-  <img src="https://img.shields.io/badge/👤%20Profile-rambos2003--lab-181717?style=for-the-badge&logo=github"/>
+  <img src="https://img.shields.io/badge/👤%20Profile-RamiAILab-181717?style=for-the-badge&logo=github"/>
 </a>
 
 <a href="https://t.me/RamiAILab">
