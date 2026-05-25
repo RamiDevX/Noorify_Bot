@@ -126,7 +126,7 @@ flowchart TD
 
 ```bash
 # استنساخ المشروع من جيت هاب
-git clone [https://github.com/rambos2003-lab/Noorify_Bot](https://github.com/RamiAILab/Noorify_Bot)
+git clone [https://github.com/RamiAILab/Noorify_Bot](https://github.com/RamiAILab/Noorify_Bot)
 cd Noorify_Bot
 
 # تثبيت الحزم والمكتبات الاعتمادية
