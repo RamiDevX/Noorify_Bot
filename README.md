@@ -1,7 +1,7 @@
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:09011a,50:1f0647,100:3f0f8a&height=300&section=header&text=NOORIFY&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=38" alt="Noorify Header Wave" />
-</p>>
+</p>
 
 <p align="center">
   <b>🌟 صَدَقَةٌ جَارِيَةٌ رَقْمِيَّةٌ 🌟</b><br>
