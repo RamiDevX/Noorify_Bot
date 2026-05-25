@@ -268,52 +268,81 @@ async def btn_stats_call(call: CallbackQuery):
     await call.message.edit_text(txt, reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="🔙 العودة", callback_data="btn_home")]]), parse_mode="HTML")
 
 @dp.callback_query(F.data == "btn_settings")
-async def btn_settings_callback(call: CallbackQuery):
-    if not await is_admin(call):
-        return await call.answer("❌ للمشرفين فقط", show_alert=True)
+# --- [ معالج Webhook المطور والآمن ] ---
+
+async def handle_webhook(request: web.Request) -> web.Response:
+    """معالج معتمد لاستقبال تحديثات تيليجرام وتغذيتها للموزع بأمان"""
+    try:
+        # استدعاء كائن البوت النشط الممرر في سياق التطبيق
+        bot: Bot = request.app['bot']
+        data = await request.json()
+        update = Update(**data)
+        
+        # تمرير كائن البوت الصحيح والتحديث للموزع
+        await dp.feed_update(bot, update)
+    except Exception as e:
+        logging.error(f"Error handling webhook update: {e}")
+        
+    return web.Response(text="OK")
+
+async def on_startup(bot: Bot):
+    """تشغيل البوت والاتصال بـ Webhook"""
+    try:
+        await bot.set_webhook(WEBHOOK_URL)
+        print(f"✅ تم تعيين Webhook بنجاح: {WEBHOOK_URL}")
+    except Exception as e:
+        print(f"❌ خطأ في تعيين Webhook: {e}")
+
+async def on_shutdown(bot: Bot):
+    """إيقاف البوت بأمان"""
+    await bot.delete_webhook()
+    print("🔌 تم إيقاف الاتصال وحذف الـ Webhook")
+
+async def main():
+    """نقطة البداية الرئيسية والمستقرة هندسياً"""
+    bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     
-    kb = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="30 دقيقة", callback_data="set_0.5"), InlineKeyboardButton(text="ساعة", callback_data="set_1")],
-        [InlineKeyboardButton(text="3 ساعات", callback_data="set_3"), InlineKeyboardButton(text="6 ساعات", callback_data="set_6")],
-        [InlineKeyboardButton(text="12 ساعة", callback_data="set_12"), InlineKeyboardButton(text="يومي", callback_data="set_24")],
-        [InlineKeyboardButton(text="إيقاف ❌", callback_data="set_off")],
-        [InlineKeyboardButton(text="🔙 العودة", callback_data="btn_home")]
+    # تشغيل المجدول الدوري في الخلفية
+    asyncio.create_task(background_broadcaster(bot))
+    
+    # تسجيل الأوامر في واجهة المستخدم
+    await bot.set_my_commands([
+        BotCommand(command="start", description="🌟 فتح القائمة الرئيسية"),
+        BotCommand(command="help", description="🆘 المساعدة"),
+        BotCommand(command="guide", description="📑 دليل الاستخدام"),
+        BotCommand(command="stats", description="📊 الإحصائيات"),
     ])
-    await call.message.edit_text(f"⚙️ {html.bold('إعدادات التذكير الدوري')}\n\nاختر الفترة الزمنية:", reply_markup=kb, parse_mode="HTML")
+    
+    # تهيئة اتصال الـ Webhook الأولي
+    await on_startup(bot)
+    
+    # إنشاء تطبيق الويب وتخزين كائن البوت في الـ context الخاص به
+    app = web.Application()
+    app['bot'] = bot
+    
+    # ربط المسار بالدالة مباشرة لضمان معالجة الـ request بشكل صريح
+    app.router.add_post(WEBHOOK_PATH, handle_webhook)
+    
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, "0.0.0.0", PORT)
+    await site.start()
+    
+    print(f"💎 NOORIFY BOT IS RUNNING ON PORT {PORT}")
+    print(f"🌐 Webhook URL: {WEBHOOK_URL}")
+    
+    try:
+        await asyncio.Event().wait()
+    except KeyboardInterrupt:
+        await on_shutdown(bot)
+        await runner.cleanup()
 
-@dp.callback_query(F.data.startswith("set_"))
-async def handle_save_settings(call: CallbackQuery):
-    if not await is_admin(call): return
-    val = call.data.split("_")[1]
-    cid = call.message.chat.id
-    if val == "off":
-        active_chats.pop(cid, None)
-        await call.answer("✅ تم الإيقاف", show_alert=True)
-    else:
-        active_chats[cid] = {"interval": float(val), "last": time.time()}
-        await call.answer(f"✅ تم التفعيل كل {val} ساعة", show_alert=True)
-    await back_home(call)
-
-@dp.callback_query(F.data == "btn_home")
-async def back_home(call: CallbackQuery):
-    bot_info = await call.bot.get_me()
-    await call.message.edit_text(text_welcome(), reply_markup=kb_main(bot_info.username), parse_mode="HTML")
-
-@dp.callback_query(F.data == "btn_random")
-async def btn_random_dhikr(call: CallbackQuery):
-    dk = random.choice(ADHKAR_LIST)
-    await call.message.edit_text(
-        f"✨ {html.bold('الذكر اليومي:')}\n\n{html.code(dk)}", 
-        reply_markup=InlineKeyboardMarkup(inline_keyboard=[
-            [InlineKeyboardButton(text="🔄 ذكر آخر", callback_data="btn_random")],
-            [InlineKeyboardButton(text="🔙 عودة", callback_data="btn_home")]
-        ]),
-        parse_mode="HTML"
-    )
-
-# --- [ نظام الترحيب ] ---
-
-@dp.my_chat_member(ChatMemberUpdatedFilter(member_status_changed=F.NEW_STATUS.IN_({ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER})))
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+    try:
+        asyncio.run(main())
+    except (KeyboardInterrupt, SystemExit):
+        pass
 async def on_bot_join(event: ChatMemberUpdated):
     """الترحيب عند إضافة البوت"""
     if event.new_chat_member.status in [ChatMemberStatus.MEMBER, ChatMemberStatus.ADMINISTRATOR]:
