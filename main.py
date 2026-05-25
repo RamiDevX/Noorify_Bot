@@ -37,7 +37,7 @@ TECH_CHANNEL = "https://t.me/RamiAILab"
 
 # إعدادات Render و Webhook
 PORT = int(os.getenv("PORT", 8080))
-WEBHOOK_HOST = os.getenv("WEBHOOK_HOST", "https://noorify-bot.onrender.com")  # غيّر اسم التطبيق
+WEBHOOK_HOST = os.getenv("WEBHOOK_HOST", "https://noorify-bot.onrender.com")
 WEBHOOK_PATH = "/webhook"
 WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 
@@ -95,21 +95,16 @@ TASBIH_TYPES = [
     "🟤 سُبْحَانَ اللَّهِ وَبِحَمْدِهِ", "⚪ سُبْحَانَ اللَّهِ الْعَظِيمِ", "🟢 يَا حَيُّ يَا قَيُّومُ",
 ]
 
-# --- [ إدارة الحالة وقاعدة البيانات في الذاكرة ] ---
 active_chats: Dict[int, Dict[str, Any]] = {}
 user_db: Dict[int, Dict[str, Any]] = {}
 
-# --- [ الدوال المنطقية ] ---
-
 def get_unique_progress(current: int, limit: int = 33) -> str:
-    """توليد شريط تقدم احترافي"""
     slots = 12
     filled = int((min(current, limit) / limit) * slots)
     bar = "◈" * filled + "◇" * (slots - filled)
     return f"【 {bar} 】 ⚡ {int((current/limit)*100)}%"
 
 async def is_admin(event: Union[Message, CallbackQuery]) -> bool:
-    """التحقق من صلاحيات الإدارة"""
     uid = event.from_user.id
     if uid == MY_USER_ID: return True
     chat = event.message.chat if isinstance(event, CallbackQuery) else event.chat
@@ -120,7 +115,6 @@ async def is_admin(event: Union[Message, CallbackQuery]) -> bool:
     except: return False
 
 def init_user(uid: int, name: str) -> Dict[str, Any]:
-    """تهيئة بيانات المستخدم"""
     if uid not in user_db:
         user_db[uid] = {
             "name": name, 
@@ -133,7 +127,6 @@ def init_user(uid: int, name: str) -> Dict[str, Any]:
     return user_db[uid]
 
 def get_spiritual_rank(total: int) -> tuple:
-    """نظام الرتب بناءً على الذكر"""
     ranks = [
         (2500, "ذاكر مخلص 🕊️", "🛡️"),
         (1000, "ذاكر مستمر 🌟", "🌟"),
@@ -146,7 +139,6 @@ def get_spiritual_rank(total: int) -> tuple:
     return ranks[-1][1], ranks[-1][2]
 
 def ai_spiritual_analysis(total: int) -> str:
-    """تحليل روحي للحالة"""
     if total == 0: return "اللَّهُمَّ تَقَبَّلْ مِنْكَ."
     if total < 100: return "بَارَكَ اللهُ فِيكَ وَنَفَعَ بِكَ."
     if total < 1000: return "فِي مِيزَانِ حَسَنَاتِكَ."
@@ -154,7 +146,6 @@ def ai_spiritual_analysis(total: int) -> str:
     return "✨ بَارِكَ اللهُ فِيكَ دَاخِلَ الجَنَّة."
 
 def text_welcome() -> str:
-    """رسالة الترحيب الرئيسية"""
     return (
         "🌟 مَرْحَبًا بِكَ فِي نُورِفَاي 🌟\n"
         "🕊️ بوت الأذكار والأدعية الإسلامية\n\n"
@@ -166,7 +157,6 @@ def text_welcome() -> str:
     )
 
 def kb_main(username: str = None) -> InlineKeyboardMarkup:
-    """لوحة التحكم الرئيسية"""
     return InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text="📿 المسبحة", callback_data="btn_tasbih_menu")],
         [InlineKeyboardButton(text="✨ ذكر عشوائي", callback_data="btn_random")],
@@ -175,7 +165,6 @@ def kb_main(username: str = None) -> InlineKeyboardMarkup:
     ])
 
 # --- [ معالجات الأوامر الأساسية ] ---
-
 @dp.message(Command("start"))
 async def cmd_start(message: Message):
     bot_info = await message.bot.get_me()
@@ -204,7 +193,6 @@ async def cmd_guide(message: Message):
     )
 
 # --- [ معالجات القوائم ] ---
-
 @dp.callback_query(F.data == "btn_tasbih_menu")
 async def btn_tasbih_menu(call: CallbackQuery):
     kb = InlineKeyboardMarkup(inline_keyboard=[
@@ -268,83 +256,52 @@ async def btn_stats_call(call: CallbackQuery):
     await call.message.edit_text(txt, reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="🔙 العودة", callback_data="btn_home")]]), parse_mode="HTML")
 
 @dp.callback_query(F.data == "btn_settings")
-# --- [ معالج Webhook المطور والآمن ] ---
-
-async def handle_webhook(request: web.Request) -> web.Response:
-    """معالج معتمد لاستقبال تحديثات تيليجرام وتغذيتها للموزع بأمان"""
-    try:
-        # استدعاء كائن البوت النشط الممرر في سياق التطبيق
-        bot: Bot = request.app['bot']
-        data = await request.json()
-        update = Update(**data)
-        
-        # تمرير كائن البوت الصحيح والتحديث للموزع
-        await dp.feed_update(bot, update)
-    except Exception as e:
-        logging.error(f"Error handling webhook update: {e}")
-        
-    return web.Response(text="OK")
-
-async def on_startup(bot: Bot):
-    """تشغيل البوت والاتصال بـ Webhook"""
-    try:
-        await bot.set_webhook(WEBHOOK_URL)
-        print(f"✅ تم تعيين Webhook بنجاح: {WEBHOOK_URL}")
-    except Exception as e:
-        print(f"❌ خطأ في تعيين Webhook: {e}")
-
-async def on_shutdown(bot: Bot):
-    """إيقاف البوت بأمان"""
-    await bot.delete_webhook()
-    print("🔌 تم إيقاف الاتصال وحذف الـ Webhook")
-
-async def main():
-    """نقطة البداية الرئيسية والمستقرة هندسياً"""
-    bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+async def btn_settings_callback(call: CallbackQuery):
+    if not await is_admin(call):
+        return await call.answer("❌ للمشرفين فقط", show_alert=True)
     
-    # تشغيل المجدول الدوري في الخلفية
-    asyncio.create_task(background_broadcaster(bot))
-    
-    # تسجيل الأوامر في واجهة المستخدم
-    await bot.set_my_commands([
-        BotCommand(command="start", description="🌟 فتح القائمة الرئيسية"),
-        BotCommand(command="help", description="🆘 المساعدة"),
-        BotCommand(command="guide", description="📑 دليل الاستخدام"),
-        BotCommand(command="stats", description="📊 الإحصائيات"),
+    kb = InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text="30 دقيقة", callback_data="set_0.5"), InlineKeyboardButton(text="ساعة", callback_data="set_1")],
+        [InlineKeyboardButton(text="3 ساعات", callback_data="set_3"), InlineKeyboardButton(text="6 ساعات", callback_data="set_6")],
+        [InlineKeyboardButton(text="12 ساعة", callback_data="set_12"), InlineKeyboardButton(text="يومي", callback_data="set_24")],
+        [InlineKeyboardButton(text="إيقاف ❌", callback_data="set_off")],
+        [InlineKeyboardButton(text="🔙 العودة", callback_data="btn_home")]
     ])
-    
-    # تهيئة اتصال الـ Webhook الأولي
-    await on_startup(bot)
-    
-    # إنشاء تطبيق الويب وتخزين كائن البوت في الـ context الخاص به
-    app = web.Application()
-    app['bot'] = bot
-    
-    # ربط المسار بالدالة مباشرة لضمان معالجة الـ request بشكل صريح
-    app.router.add_post(WEBHOOK_PATH, handle_webhook)
-    
-    runner = web.AppRunner(app)
-    await runner.setup()
-    site = web.TCPSite(runner, "0.0.0.0", PORT)
-    await site.start()
-    
-    print(f"💎 NOORIFY BOT IS RUNNING ON PORT {PORT}")
-    print(f"🌐 Webhook URL: {WEBHOOK_URL}")
-    
-    try:
-        await asyncio.Event().wait()
-    except KeyboardInterrupt:
-        await on_shutdown(bot)
-        await runner.cleanup()
+    await call.message.edit_text(f"⚙️ {html.bold('إعدادات التذكير الدوري')}\n\nاختر الفترة الزمنية:", reply_markup=kb, parse_mode="HTML")
 
-if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO, stream=sys.stdout)
-    try:
-        asyncio.run(main())
-    except (KeyboardInterrupt, SystemExit):
-        pass
+@dp.callback_query(F.data.startswith("set_"))
+async def handle_save_settings(call: CallbackQuery):
+    if not await is_admin(call): return
+    val = call.data.split("_")[1]
+    cid = call.message.chat.id
+    if val == "off":
+        active_chats.pop(cid, None)
+        await call.answer("✅ تم الإيقاف", show_alert=True)
+    else:
+        active_chats[cid] = {"interval": float(val), "last": time.time()}
+        await call.answer(f"✅ تم التفعيل كل {val} ساعة", show_alert=True)
+    await back_home(call)
+
+@dp.callback_query(F.data == "btn_home")
+async def back_home(call: CallbackQuery):
+    bot_info = await call.bot.get_me()
+    await call.message.edit_text(text_welcome(), reply_markup=kb_main(bot_info.username), parse_mode="HTML")
+
+@dp.callback_query(F.data == "btn_random")
+async def btn_random_dhikr(call: CallbackQuery):
+    dk = random.choice(ADHKAR_LIST)
+    await call.message.edit_text(
+        f"✨ {html.bold('الذكر اليومي:')}\n\n{html.code(dk)}", 
+        reply_markup=InlineKeyboardMarkup(inline_keyboard=[
+            [InlineKeyboardButton(text="🔄 ذكر آخر", callback_data="btn_random")],
+            [InlineKeyboardButton(text="🔙 عودة", callback_data="btn_home")]
+        ]),
+        parse_mode="HTML"
+    )
+
+# --- [ نظام الترحيب البثي ] ---
+@dp.my_chat_member(ChatMemberUpdatedFilter(member_status_changed=F.NEW_STATUS.IN_({ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER})))
 async def on_bot_join(event: ChatMemberUpdated):
-    """الترحيب عند إضافة البوت"""
     if event.new_chat_member.status in [ChatMemberStatus.MEMBER, ChatMemberStatus.ADMINISTRATOR]:
         welcome = (
             f"🎊 {html.bold('تم تفعيل نُورِفَاي في هذا المكان!')}\n\n"
@@ -357,7 +314,6 @@ async def on_bot_join(event: ChatMemberUpdated):
             pass
 
 async def background_broadcaster(bot: Bot):
-    """نظام البث الدوري في الخلفية"""
     while True:
         now = time.time()
         for cid, config in list(active_chats.items()):
@@ -371,36 +327,37 @@ async def background_broadcaster(bot: Bot):
                         active_chats.pop(cid, None)
         await asyncio.sleep(60)
 
-# --- [ معالج Webhook ] ---
-
+# --- [ معالجات الـ Webhook المستقرة ] ---
 async def handle_webhook(request: web.Request) -> web.Response:
-    """معالج webhook من Telegram"""
-    data = await request.json()
-    update = Update(**data)
-    await dp.feed_update(dp.bot, update)
+    try:
+        bot: Bot = request.app['bot']
+        data = await request.json()
+        update = Update(**data)
+        await dp.feed_update(bot, update)
+    except Exception as e:
+        logging.error(f"خطأ أثناء معالجة التحديث: {e}")
     return web.Response(text="OK")
 
 async def on_startup(bot: Bot):
-    """تشغيل البوت والاتصال بـ Webhook"""
     try:
+        # حذف الـ Webhook الحالي لتنظيف الذاكرة المؤقتة لتيليجرام من الرسائل العالقة قبل البناء الجديد
+        await bot.delete_webhook(drop_pending_updates=True)
+        await asyncio.sleep(1)
+        # تعيين الـ Webhook بشكل نظيف ومستقر
         await bot.set_webhook(WEBHOOK_URL)
-        print(f"✅ تم تعيين Webhook: {WEBHOOK_URL}")
+        print(f"✅ تم تعيين الـ Webhook الجديد بنجاح على: {WEBHOOK_URL}")
     except Exception as e:
-        print(f"❌ خطأ في تعيين Webhook: {e}")
+        print(f"❌ خطأ في إعدادات الـ Webhook: {e}")
 
 async def on_shutdown(bot: Bot):
-    """إيقاف البوت"""
     await bot.delete_webhook()
-    print("🔌 تم إيقاف الاتصال")
+    print("🔌 تم إغلاق الاتصال البرمي")
 
 async def main():
-    """نقطة البداية الرئيسية"""
     bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     
-    # تشغيل المجدول في الخلفية
     asyncio.create_task(background_broadcaster(bot))
     
-    # تسجيل الأوامر
     await bot.set_my_commands([
         BotCommand(command="start", description="🌟 فتح القائمة الرئيسية"),
         BotCommand(command="help", description="🆘 المساعدة"),
@@ -408,12 +365,11 @@ async def main():
         BotCommand(command="stats", description="📊 الإحصائيات"),
     ])
     
-    # تهيئة الـ Webhook
     await on_startup(bot)
     
-    # إنشاء تطبيق aiohttp
     app = web.Application()
-    app.router.add_post(WEBHOOK_PATH, lambda request: handle_webhook(request))
+    app['bot'] = bot
+    app.router.add_post(WEBHOOK_PATH, handle_webhook)
     
     runner = web.AppRunner(app)
     await runner.setup()
@@ -421,8 +377,6 @@ async def main():
     await site.start()
     
     print(f"💎 NOORIFY BOT IS RUNNING ON PORT {PORT}")
-    print(f"🌐 Webhook URL: {WEBHOOK_URL}")
-    
     try:
         await asyncio.Event().wait()
     except KeyboardInterrupt:
