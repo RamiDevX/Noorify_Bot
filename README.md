@@ -46,9 +46,70 @@ flowchart TD
 
 ```
 
----
+--- 
+## 🧩 حزمة التقنيات والبنية البرمجية (Tech Stack)
 
-## 🧩 حزمة التقنيات المستخدمة
+تم اختيار وهندسة حزمة التقنيات الخاصة ببوت **نُورِفَاي** بعناية فائقة لضمان أقصى درجات الكفاءة، الاستجابة السريعة، الحفاظ على موارد الخادم، ومعالجة الطلبات المتزامنة دون أي تأخير (Zero-Lag):
+
+### 🛠️ لغة البرمجة وبيئة التطوير الأساسية (Core Engine)
+<table width="100%">
+  <tr>
+    <td align="center" width="25%">
+      <img src="https://skillicons.dev/icons?i=python" height="40px" alt="Python" /><br>
+      <b>Python 3.13+</b><br>
+      <sub>البيئة الأساسية وميزات إدارة الذاكرة الحديثة</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="https://skillicons.dev/icons?i=git" height="40px" alt="Git" /><br>
+      <b>Git</b><br>
+      <sub>إدارة النسخ والتحكم بالمصدر</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="https://skillicons.dev/icons?i=github" height="40px" alt="GitHub" /><br>
+      <b>GitHub Actions</b><br>
+      <sub>استضافة المستودع وإدارة الشيفرة</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="https://skillicons.dev/icons?i=linux" height="40px" alt="Linux" /><br>
+      <b>Linux OS</b><br>
+      <sub>البيئة التشغيلية المستهدفة للخوادم</sub>
+    </td>
+  </tr>
+</table>
+
+### 📦 الإطارات والمكتبات الهندسية (Frameworks & Libraries)
+
+<p align="left">
+  <a href="https://docs.aiogram.dev/">
+    <img src="https://img.shields.io/badge/Framework-Aiogram__3.x-00E5FF?style=for-the-badge&logo=telegram&logoColor=black" alt="Aiogram 3.x" />
+  </a>
+  <a href="https://docs.aiohttp.org/">
+    <img src="https://img.shields.io/badge/Web__Server-Aiohttp__Async-🚀__00599C?style=for-the-badge&logo=python&logoColor=white" alt="Aiohttp" />
+  </a>
+  <a href="https://pypi.org/project/python-dotenv/">
+    <img src="https://img.shields.io/badge/Security-Python__Dotenv-🔑__💡?style=for-the-badge" alt="Dotenv" />
+  </a>
+  <a href="https://mermaid.js.org/">
+    <img src="https://img.shields.io/badge/Architecture-Mermaid.js-🎨__FF6F61?style=for-the-badge&logo=mermaid&logoColor=white" alt="Mermaid" />
+  </a>
+</p>
+
+* **`Aiogram 3.x`**: إطار عمل حديث مبني بالكامل على مفهوم البرمجة غير المتزامنة (`Asynchronous / Asyncio`) للتعامل مع واجهة برمجية تليجرام، مما يتيح معالجة آلاف الأحداث (Events) في نفس الثانية بكفاءة خطية $O(1)$.
+* **`Aiohttp (Web Server)`**: خادم ويب داخلي عالي الأداء وموفر للطاقة يُستخدم لإنشاء الـ `Webhook Endpoint` لاستقبال البيانات من تليجرام فورياً ودون الحاجة لعمليات الفحص الدوري (`Polling`) المستهلكة للمعالج.
+* **`Python-Dotenv`**: لتأمين مفاتيح الربط والتوكنات (`Environment Variables`) وعزل البيانات الحساسة تماماً عن شيفرة المصدر الأساسية باتباع منهجية *Twelve-Factor App*.
+
+### 🌐 البنية التحتية وهندسة الشبكات (Infrastructure & Architecture)
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Telegram_Bot_API-v7.x-0088cc?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram API"/>
+  <img src="https://img.shields.io/badge/Network_Pattern-Webhook_Driven-orange?style=for-the-badge&logo=probot&logoColor=white" alt="Webhook Driven"/>
+  <img src="https://img.shields.io/badge/Cloud_Hosting-Render_/_Railway-46E3B7?style=for-the-badge&logo=render&logoColor=black" alt="Render Deployment"/>
+  <img src="https://img.shields.io/badge/Concurrency-Asyncio_Event_Loop-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Asyncio Loop"/>
+</p>
+
+* **نمط الشبكة (`Webhook Pattern`)**: استقبال الأحداث عبر اتصالات آمنة مشفرة (`HTTPS POST`) لضمان سرعة نقل لا تتعدى أجزاء من الملي ثانية.
+* **إدارة المهام الخلفية (`Background Broadcaster Task`)**: نظام جدولة ذكي مبني كلياً داخل حلقة أحداث بايثون (`Event Loop`) يعمل في الخلفية لبث التذكيرات الدورية للمجموعات دون تعطيل تفاعل المستخدمين مع المسبحة أو القوائم.
+* **الحماية من الحظر (`Flood/Rate Limit Protection`)**: تضمين فترات تأخير ميكروية مدمجة (`asyncio.sleep`) لتفادي قيود خوادم تليجرام الصارمة عند النشر الجماعي.
 
 ---
 
@@ -76,7 +137,7 @@ pip install -r requirements.txt
 قم بإنشاء ملف `.env` في المجلد الرئيسي للمشروع وضع داخله الإعدادات التالية:
 
 ```env
-TOKEN=1234567890:ABCdefGhIJKlmNoPQRsTUVwxyZ
+TOKEN= ضع التكون هنا 
 PORT=8080
 WEBHOOK_HOST=[https://your-app-name.onrender.com](https://your-app-name.onrender.com)
 
