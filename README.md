@@ -1,3 +1,15 @@
+<p align="center">
+  <img src="https://images.unsplash.com/photo-2026-05-14_03-49-28.jpg" width="100%" alt="Noorify Bot Banner" />
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/rambos2003-lab/Noorify_Bot/main/assets/logo.jpg" width="130px" style="border-radius: 50%; box-shadow: 0px 0px 25px #00E5FF; border: 3px solid #00E5FF;" alt="Noorify Logo" /><br><br>
+  <b>🌟 صَدَقَةٌ جَارِيَةٌ رَقْمِيَّةٌ 🌟</b><br>
+  <sub>مِنَ التَّشَتُّتِ إِلَى الذِّكْرِ • وَمِنَ الضَّيَاعِ إِلَى الأَثَرِ</sub>
+</p>
+
+---
+<img width="1456" height="720" alt="Gemini_Generated_Image_cwe4uhcwe4uhcwe4" src="https://github.com/user-attachments/assets/a70a2b7b-db39-411a-9aad-2bc0c878c888" />
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:050505,50:0f2027,100:203a43&height=300&section=header&text=NOORIFY&fontSize=65&fontColor=ffffff&animation=fadeIn&fontAlignY=38" alt="Noorify Banner" />
