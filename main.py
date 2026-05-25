@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from collections import defaultdict
 from typing import Dict, Any
 
-from aiogram import Bot, Dispatcher,
+from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command
 from aiogram.types import (
     Message, CallbackQuery, InlineKeyboardButton, 
