@@ -1,4 +1,3 @@
-
 import asyncio
 import random
 import logging
@@ -404,17 +403,17 @@ async def is_admin(event: Union[Message, CallbackQuery]):
         return True
 
     try:
-
         member = await event.bot.get_chat_member(
             chat.id,
             uid
         )
-return member.status in [
-    ChatMemberStatus.ADMINISTRATOR,
-    ChatMemberStatus.OWNER
-]
-    except:
 
+        return member.status in [
+            ChatMemberStatus.ADMINISTRATOR,
+            ChatMemberStatus.OWNER
+        ]
+
+    except:
         return False
 
 # ==========================================
