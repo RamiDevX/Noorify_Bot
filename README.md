@@ -372,7 +372,7 @@ python main.py
 
 | الدور | الاسم | الحسابات |
 |------|------|---------|
-| **المطور الرئيسي** | رامي بيطار (Rami Bitar) | [GitHub](https://github.com/RamiAIlab) • [Telegram](https://t.me/RamiAILab) |
+| **المطور الرئيسي** | رامي بيطار (Rami Bitar) | [GitHub](https://github.com/RamiAIlab) • [Telegram](https://t.me/vx_rq) |
 
 </div>
 
