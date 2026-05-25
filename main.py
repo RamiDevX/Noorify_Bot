@@ -192,6 +192,29 @@ async def cmd_guide(message: Message):
         "5. في المجموعات، استخدم ⚙️ لتفعيل الأذكار التلقائية"
     )
 
+@dp.message(Command("broadcast"))
+async def broadcast_message(message: Message):
+    if message.from_user.id != MY_USER_ID:
+        return await message.answer("❌ عذراً، هذه الميزة للمطور فقط.")
+    broadcast_text = message.text.replace("/broadcast", "").strip()
+    if not broadcast_text and not message.reply_to_message:
+        return await message.answer("⚠️ يرجى كتابة النص المراد إرساله أو الرد على رسالة.")
+    target_text = broadcast_text or message.reply_to_message.text
+    msg = await message.answer("⏳ جاري الإرسال للجميع... 0%")
+    success = 0
+    failed = 0
+    total = len(user_db)
+    for index, user_id in enumerate(user_db.keys()):
+        try:
+            await message.bot.send_message(user_id, target_text, parse_mode="HTML")
+            success += 1
+            if index % 10 == 0:
+                await msg.edit_text(f"⏳ جاري الإرسال... {int((index/total)*100) if total > 0 else 100}%")
+            await asyncio.sleep(0.05)
+        except Exception:
+            failed += 1
+    await msg.edit_text(f"✅ تم الإرسال بنجاح!\n\n📨 ناجح: {success}\n❌ فشل: {failed}")
+
 # --- [ معالجات القوائم ] ---
 @dp.callback_query(F.data == "btn_tasbih_menu")
 async def btn_tasbih_menu(call: CallbackQuery):
@@ -210,16 +233,12 @@ async def engine_tasbih(call: CallbackQuery):
     except (IndexError, ValueError):
         await call.answer("خطأ في البيانات", show_alert=True)
         return
-
     u = init_user(call.from_user.id, call.from_user.full_name)
     u.setdefault("tasbih", 0)
-
     if call.data.startswith("hit_"):
         u["tasbih"] += 1
-
     rank_n, rank_i = get_spiritual_rank(u["tasbih"])
     progress = get_unique_progress(u["tasbih"] % 34)
-
     kb = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text="اضغط هنا ✨", callback_data=f"hit_{idx}")],
         [
@@ -227,7 +246,6 @@ async def engine_tasbih(call: CallbackQuery):
             InlineKeyboardButton(text="🔙 عودة", callback_data="btn_home")
         ]
     ])
-
     txt = (
         f"{html.bold('المسبحة')} {rank_i}\n"
         f"🕊️ {html.italic(TASBIH_TYPES[idx])}\n\n"
@@ -235,7 +253,6 @@ async def engine_tasbih(call: CallbackQuery):
         f"🏅 الرتبة: {rank_n}\n"
         f"📿 إجمالي: {u['tasbih']}\n"
     )
-
     try:
         await call.message.edit_text(txt, reply_markup=kb, parse_mode="HTML")
     except Exception:
@@ -259,7 +276,6 @@ async def btn_stats_call(call: CallbackQuery):
 async def btn_settings_callback(call: CallbackQuery):
     if not await is_admin(call):
         return await call.answer("❌ للمشرفين فقط", show_alert=True)
-    
     kb = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text="30 دقيقة", callback_data="set_0.5"), InlineKeyboardButton(text="ساعة", callback_data="set_1")],
         [InlineKeyboardButton(text="3 ساعات", callback_data="set_3"), InlineKeyboardButton(text="6 ساعات", callback_data="set_6")],
@@ -340,10 +356,8 @@ async def handle_webhook(request: web.Request) -> web.Response:
 
 async def on_startup(bot: Bot):
     try:
-        # حذف الـ Webhook الحالي لتنظيف الذاكرة المؤقتة لتيليجرام من الرسائل العالقة قبل البناء الجديد
         await bot.delete_webhook(drop_pending_updates=True)
         await asyncio.sleep(1)
-        # تعيين الـ Webhook بشكل نظيف ومستقر
         await bot.set_webhook(WEBHOOK_URL)
         print(f"✅ تم تعيين الـ Webhook الجديد بنجاح على: {WEBHOOK_URL}")
     except Exception as e:
@@ -355,27 +369,21 @@ async def on_shutdown(bot: Bot):
 
 async def main():
     bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
-    
     asyncio.create_task(background_broadcaster(bot))
-    
     await bot.set_my_commands([
         BotCommand(command="start", description="🌟 فتح القائمة الرئيسية"),
         BotCommand(command="help", description="🆘 المساعدة"),
         BotCommand(command="guide", description="📑 دليل الاستخدام"),
         BotCommand(command="stats", description="📊 الإحصائيات"),
     ])
-    
     await on_startup(bot)
-    
     app = web.Application()
     app['bot'] = bot
     app.router.add_post(WEBHOOK_PATH, handle_webhook)
-    
     runner = web.AppRunner(app)
     await runner.setup()
     site = web.TCPSite(runner, "0.0.0.0", PORT)
     await site.start()
-    
     print(f"💎 NOORIFY BOT IS RUNNING ON PORT {PORT}")
     try:
         await asyncio.Event().wait()
