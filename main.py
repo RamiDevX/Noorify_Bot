@@ -20,11 +20,13 @@ from aiogram.types import (
     Message, 
     CallbackQuery, 
     ChatMemberUpdated,
-    BotCommand
+    BotCommand,
+    Update
 )
 from aiogram.enums import ParseMode, ChatMemberStatus
 from aiogram.client.default import DefaultBotProperties
 from aiogram.exceptions import TelegramForbiddenError, TelegramBadRequest
+from aiohttp import web
 
 # --- [ الإعدادات العليا للنظام الملكي ] ---
 TOKEN = os.getenv("TOKEN")
@@ -32,6 +34,12 @@ MY_USER_ID = 1408037752
 MY_GROUP_ID = -1003650088178
 DEVELOPER_URL = "https://t.me/vx_rq"
 TECH_CHANNEL = "https://t.me/RamiAILab"
+
+# إعدادات Render و Webhook
+PORT = int(os.getenv("PORT", 8080))
+WEBHOOK_HOST = os.getenv("WEBHOOK_HOST", "https://noorify-bot.onrender.com")  # غيّر اسم التطبيق
+WEBHOOK_PATH = "/webhook"
+WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 
 dp = Dispatcher()
 
@@ -56,7 +64,7 @@ ADHKAR_LIST = [
     "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ ، سُبْحَانَ اللَّهِ الْعَظِيمِ",
     "أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ الَّذِي لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ وَأَتُوبُ إِلَيْهِ",
     "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ",
-    "اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى نَبِيِّنَا مُحَمَّدٍ وَعَلَى آلِهِ وَصَحْبِهِ أَجْمَعِينَ",
+    "اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى نَبِيِّنَا مُحَمَّدٍ وَعَلَى آلِهِ وَصَحْبِهِ أَجْمَعِينَ",
     "يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ",
     "اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي",
     "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
@@ -67,7 +75,7 @@ ADHKAR_LIST = [
     "يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِكَ",
     "رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ",
     "فَسُبْحَانَ اللَّهِ حِينَ تُمْسُونَ وَحِينَ تُصْبِحُونَ",
-    "وَمَن يَتَوَكَّل عَلَى اللَّهِ فَهُوَ حَسبُهُ ۚ إِنَّ اللَّهَ بَالِغُ أَمْرِهِ",
+    "وَمَن يَتَوَكَّل عَلَى اللَّهِ فَهُوَ حَسبُهُ ۚ إِنَّ اللَّهَ بَالِغُ أَمْرِهُ",
     "رَبَّنَا اصْرِفْ عَنَّا عَذَابَ جَهَنَّمَ ۖ إِنَّ عَذَابَهَا كَانَ غَرَامًا",
     "سُبْحَانَ رَبِّكَ رَبِّ الْعِزَّةِ عَمَّا يَصِفُونَ ✨ وَسَلَامٌ عَلَى الْمُرْسَلِينَ",
     "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ 🌍",
@@ -79,39 +87,19 @@ ADHKAR_LIST = [
     "اللهم اجعل في قلبي نوراً، وفي بصري نوراً، وفي سمعي نوراً",
     "اللهم أنت ربي لا إله إلا أنت خلقتني وأنا عبدك وأنا على عهدك ووعدك ما استطعت",
     "اللهم إني أعوذ بك من علم لا ينفع، ومن قلب لا يخشع، ومن نفس لا تشبع",
-    "أستغفر الله العظيم لي وللمؤمنين والمؤمنات والمسلمين والمسلمات الأحياء منهم والأموات",
-    "اللَّهُمَّ رَبَّ السَّمَوَاتِ السَّبْعِ وَرَبَّ الْعَرْشِ الْعَظِيمِ ، رَبَّنَا وَرَبَّ كُلِّ شَيْءٍ",
-    "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَى وَالتُّقَى وَالْعَفَافَ وَالْغِنَى",
-    "اللَّهُمَّ اغْفِرْ لِي وَارْحَمْنِي وَاهْدِنِي وَعَافِنِي وَارْزُقْنِي",
-    "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ عَدَدَ خَلْقِهِ وَرِضَا نَفْسِهِ وَزِنَةَ عَرْشِهِ وَمِدَادَ كَلِمَاتِهِ",
-    "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ زَوَالِ نِعْمَتِكَ وَتَحَوُّلِ عَافِيَتِكَ وَفُجَاءَةِ نِقْمَتِكَ",
-    "اللَّهُمَّ مَتِّعْنِي بِسَمْعِي وَبَصَرِي وَاجْعَلْهُمَا الْوَارِثَ مِنِّي",
-    "لَا إِلَهَ إِلَّا اللَّهُ الْعَظِيمُ الْحَلِيمُ ، لَا إِلَهَ إِلَّا اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ",
-    "رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ",
-    "رَبِّ لَا تَذَرْنِي فَرْدًا وَأَنتَ خَيْرُ الْوَارِثِينَ",
-    "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنَ الْخَيْرِ كُلِّهِ عَاجِلِهِ وَآجِلِهِ مَا عَلِمْتُ مِنْهُ وَمَا لَمْ أَعْلَمْ"
 ]
 
 TASBIH_TYPES = [
     "🟢 سُبْحَانَ اللَّهِ", "⚪ الْحَمْدُ لِلَّهِ", "🟡 لَا إِلَهَ إِلَّا اللَّهُ", "🟠 اللَّهُ أَكْبَرُ",
     "🔴 أَسْتَغْفِرُ اللَّهَ", "🔵 صَلِّ عَلَى مُحَمَّدٍ", "🟣 لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
     "🟤 سُبْحَانَ اللَّهِ وَبِحَمْدِهِ", "⚪ سُبْحَانَ اللَّهِ الْعَظِيمِ", "🟢 يَا حَيُّ يَا قَيُّومُ",
-    "🟡 رَبِّ اغْفِرْ لِي", "🟠 حَسْبِيَ اللَّهُ", "🔴 لَا إِلَهَ إِلَّا أَنْتَ", "🔵 تَوَكَّلْتُ عَلَى اللَّهِ",
-    "⚫ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ", "🟪 اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي",
-    "🟨 حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ", "🟩 لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ",
-    "🟦 يَا رَزَّاقُ يَا ذَا الْقُوَّةِ الْمَتِينُ", "🟥 اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ",
-    "🟫 يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَى دِينِكَ", "⚪ سُبْحَانَ اللَّهِ وَبِحَمْدِهِ عَدَدَ خَلْقِهِ",
-    "🟢 أستغفر الله العظيم وأتوب إليه", "🟡 لا إله إلا الله الملك الحق المبين",
-    "🟠 اللهم إني أسألك الجنة", "🔴 اللهم إني أعوذ بك من النار",
-    "🔵 يا فتاح يا عليم", "🟣 يا رحمن يا رحيم",
-    "🟤 اللهم صل وسلم على نبينا محمد", "⚪ رب اجعلني مقيم الصلاة ومن ذريتي"
 ]
 
 # --- [ إدارة الحالة وقاعدة البيانات في الذاكرة ] ---
 active_chats: Dict[int, Dict[str, Any]] = {}
 user_db: Dict[int, Dict[str, Any]] = {}
 
-# --- [ الدوال المنطقية المتقدمة - محرك الذكاء الاصطناعي ] ---
+# --- [ الدوال المنطقية ] ---
 
 def get_unique_progress(current: int, limit: int = 33) -> str:
     """توليد شريط تقدم احترافي"""
@@ -132,7 +120,7 @@ async def is_admin(event: Union[Message, CallbackQuery]) -> bool:
     except: return False
 
 def init_user(uid: int, name: str) -> Dict[str, Any]:
-    """تهيئة بيانات المستخدم الملكية"""
+    """تهيئة بيانات المستخدم"""
     if uid not in user_db:
         user_db[uid] = {
             "name": name, 
@@ -145,7 +133,7 @@ def init_user(uid: int, name: str) -> Dict[str, Any]:
     return user_db[uid]
 
 def get_spiritual_rank(total: int) -> tuple:
-    """نظام المتطور بناءً على الذكر"""
+    """نظام الرتب بناءً على الذكر"""
     ranks = [
         (2500, "ذاكر مخلص 🕊️", "🛡️"),
         (1000, "ذاكر مستمر 🌟", "🌟"),
@@ -158,151 +146,75 @@ def get_spiritual_rank(total: int) -> tuple:
     return ranks[-1][1], ranks[-1][2]
 
 def ai_spiritual_analysis(total: int) -> str:
-    """ تحليل  للحالة """
-    if total == 0: return " اللَّهُمَّ تَقَبَّلْ مِنْكَ ."
+    """تحليل روحي للحالة"""
+    if total == 0: return "اللَّهُمَّ تَقَبَّلْ مِنْكَ."
     if total < 100: return "بَارَكَ اللهُ فِيكَ وَنَفَعَ بِكَ."
     if total < 1000: return "فِي مِيزَانِ حَسَنَاتِكَ."
-    if total < 10000: return "رَبِّي يَكْتُبُ لَكَ الأَجْر."
-    return "اللَّهُ يَرْضَى عَلَيْكَ وَيُيَسِّرُ أَمْرَكَ."
+    if total < 2500: return "🌟 أَنتَ عَلَى طَرِيقِ الصَّلَاحِ."
+    return "✨ بَارِكَ اللهُ فِيكَ دَاخِلَ الجَنَّة."
 
-# --- [ واجهات المستخدم - التصميم الملكي ] ---
 def text_welcome() -> str:
-    """نص الترحيب الرسمي المتكامل"""
-
+    """رسالة الترحيب الرئيسية"""
     return (
-        f" ❮ {html.bold('نُورِفَاي | NOORIFY')} ❯ \n\n"
-
-        "طبت وطاب ممشاك وتبوأت من الجنة منزلاً 🤍\n"
-        "نسأل الله أن يجعل هذا العمل خالصاً لوجهه الكريم، "
-        "وأن يملأ قلبك طمأنينةً بذكره.\n\n"
-
-        f"🕊️ {html.italic('﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾')}\n"
-        "📍 سورة الرعد - آية 28\n\n"
-
-        "🌱 شارك الخير:\n"
-        "الدال على الخير كفاعله، اجعل البوت صدقة جارية لك ولأهلك.\n\n"
-
-        "📲 للتواصل مع المطور: @vx_rq\n"
-        " جعلنا الله وإياكم من الذاكرين🤍."
-    )
-def text_help() -> str:
-    """نص قائمة المساعدة والدعم الفني"""
-    return (
-        f"🆘 {html.bold('قـائـمـة الـمـسـاعـدة والـبـلاغـات')}\n"
-        f"💠 {html.bold('الدعم الفني:')}\n"
-        "في حال واجهت أي مشكلة تقنية أو توقف في البوت، يرجى مراسلة المبرمج فوراً.\n\n"
-        f"👨‍💻 {html.bold('رابط المطور:')} @vx_rq\n"
-        f"📡 {html.bold('قناة التحديثات:')} {TECH_CHANNEL}\n\n"
-        f"🛡️ {html.bold('ملاحظة:')} البوت يعمل على مدار الساعة لخدمتكم.\n"
+        "🌟 مَرْحَبًا بِكَ فِي نُورِفَاي 🌟\n"
+        "🕊️ بوت الأذكار والأدعية الإسلامية\n\n"
+        "اختر ما تريد:\n"
+        "📿 استخدم المسبحة الإلكترونية\n"
+        "✨ احصل على ذكر عشوائي\n"
+        "📊 شاهد إحصائياتك\n"
+        f"👨‍💻 {html.link('تطوير البوت', DEVELOPER_URL)}"
     )
 
-def kb_main(bot_username: str) -> InlineKeyboardMarkup:
-    """لوحة التحكم الرئيسية المطابقة لصورك"""
+def kb_main(username: str = None) -> InlineKeyboardMarkup:
+    """لوحة التحكم الرئيسية"""
     return InlineKeyboardMarkup(inline_keyboard=[
-        [
-            InlineKeyboardButton(text="تفعيل بالمجموعة 👥", url=f"t.me/{bot_username}?startgroup=true"),
-            InlineKeyboardButton(text="تفعيل بالقناة 📢", url=f"t.me/{bot_username}?startchannel=true")
-        ],
-        [
-            InlineKeyboardButton(text="ذكر عشوائي ✨", callback_data="btn_random"),
-            InlineKeyboardButton(text="الضبط الدوري ⚙️", callback_data="btn_settings")
-        ],
-        [
-            InlineKeyboardButton(text="إحصائياتي 📊", callback_data="btn_stats"),
-            InlineKeyboardButton(text="المسبحة 📿", callback_data="btn_tasbih_menu")
-        ],
-        [
-            InlineKeyboardButton(text="مشاركة البوت 🚀", url=f"https://t.me/share/url?url=t.me/{bot_username}"),
-            InlineKeyboardButton(text="المبرمج 👨‍💻", url=DEVELOPER_URL)
-        ],
-        [InlineKeyboardButton(text="تابع قناتي للتقنية والذكاء الاصطناعي 🚀💻", url=TECH_CHANNEL)]
+        [InlineKeyboardButton(text="📿 المسبحة", callback_data="btn_tasbih_menu")],
+        [InlineKeyboardButton(text="✨ ذكر عشوائي", callback_data="btn_random")],
+        [InlineKeyboardButton(text="📊 الإحصائيات", callback_data="btn_stats")],
+        [InlineKeyboardButton(text="⚙️ الضبط الدوري", callback_data="btn_settings")],
     ])
 
-# --- [ معالجات الأوامر - إصلاح شامل وذكي للمجموعات ] ---
+# --- [ معالجات الأوامر الأساسية ] ---
 
-# استخدام ignore_mention=True يضمن استجابة البوت للأوامر حتى لو احتوت على اسمه (مثل /help@Noorify_bot)
-@dp.message(Command("start", "help", "guide", "stats", "tasbih", "settings", ignore_case=True, ignore_mention=True))
-async def master_command_router(message: Message):
-    """المعالج الشامل الذي يضمن عمل كافة الأوامر في المجموعات والخاص"""
-    uid = message.from_user.id
-    u = init_user(uid, message.from_user.full_name)
+@dp.message(Command("start"))
+async def cmd_start(message: Message):
     bot_info = await message.bot.get_me()
-    
-    # استخراج الأمر بدقة وتجاهل المعرف
-    raw_text = message.text.split()[0].lower()
-    cmd = raw_text.split("@")[0].replace("/", "")
+    init_user(message.from_user.id, message.from_user.full_name)
+    await message.answer(text=text_welcome(), reply_markup=kb_main(bot_info.username), parse_mode="HTML")
 
-    if cmd == "start":
-        await message.answer(text_welcome(), reply_markup=kb_main(bot_info.username))
-    
-    elif cmd == "help":
-        await message.answer(text_help(), reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="🔙 العودة للرئيسية", callback_data="btn_home")]]))
+@dp.message(Command("help"))
+async def cmd_help(message: Message):
+    await message.answer(
+        f"🆘 المساعدة\n\n"
+        f"👨‍💻 المبرمج: {html.link('vx_rq', DEVELOPER_URL)}\n"
+        f"📢 القناة: {html.link('RamiAILab', TECH_CHANNEL)}\n\n"
+        f"استخدم /start للعودة للقائمة الرئيسية",
+        parse_mode="HTML"
+    )
 
-    elif cmd == "guide":
-        guide_text = (
-            f"📑 {html.bold('دليل التشغيل')}\n"
-            f"1️⃣ {html.bold('في المجموعات:')} أضف البوت مشرفاً مع صلاحية حذف الرسائل.\n"
-            f"2️⃣ {html.bold('الضبط الدوري:')} متاح للمشرفين فقط من خلال زر الضبط لتحديد موعد التذكير.\n"
-            f"3️⃣ {html.bold('نظام الرتب:')} ارفع رتبتك بكثرة التسبيح.\n"
-            f"4️⃣ {html.bold('الأوامر المتاحة:')} {html.code('/stats, /tasbih, /guide, /help, /settings')}\n"
-        )
-        await message.answer(guide_text, reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="🔙 العودة للرئيسية", callback_data="btn_home")]]))
-    
-    elif cmd in ["stats", "tasbih"]:
-        rank_n, rank_i = get_spiritual_rank(u['tasbih'])
-        txt = (
-            f"📊 {html.bold('لوحة الإحصائيات')} {rank_i}\n"
-            f"👤 الاسم: {u['name']}\n"
-            f"🏅  الرتبه: {rank_n}\n"
-            f"📿 إجمالي الأذكار: {html.bold(str(u['tasbih']))}\n"
-            f"📅 تاريخ الانتساب: {u['join_date']}\n\n"
-            f"🧠 {html.bold('تحليل لحالتك:')}\n"
-            f"✨ {ai_spiritual_analysis(u['tasbih'])}\n"
-        )
-        await message.answer(txt, reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="🔙 العودة", callback_data="btn_home")]]))
-    
-    elif cmd == "settings":
-        if await is_admin(message):
-            kb = InlineKeyboardMarkup(inline_keyboard=[
-                [InlineKeyboardButton(text="30 دقيقة ⏱️", callback_data="set_0.5"), InlineKeyboardButton(text="ساعة ⏱️", callback_data="set_1")],
-                [InlineKeyboardButton(text="3 ساعات ⏱️", callback_data="set_3"), InlineKeyboardButton(text="6 ساعات ⏱️", callback_data="set_6")],
-                [InlineKeyboardButton(text="12 ساعة ⏱️", callback_data="set_12"), InlineKeyboardButton(text="يومي ⏱️", callback_data="set_24")],
-                [InlineKeyboardButton(text="إيقاف ❌", callback_data="set_off")],
-                [InlineKeyboardButton(text="🔙 عودة", callback_data="btn_home")]
-            ])
-            await message.answer(f"⚙️ {html.bold('إعدادات الدوري للدردشة')}", reply_markup=kb)
-        else:
-            await message.answer("❌ عذراً، هذا الأمر متاح للمشرفين فقط.")
+@dp.message(Command("guide"))
+async def cmd_guide(message: Message):
+    await message.answer(
+        "📑 دليل الاستخدام:\n\n"
+        "1. /start - فتح القائمة الرئيسية\n"
+        "2. اضغط على 📿 المسبحة لبدء الذكر\n"
+        "3. استخدم ✨ لذكر عشوائي\n"
+        "4. اعرض إحصائياتك في 📊\n"
+        "5. في المجموعات، استخدم ⚙️ لتفعيل الأذكار التلقائية"
+    )
 
-# --- [ محرك المسبحة التفاعلي ] ---
+# --- [ معالجات القوائم ] ---
 
-@dp.callback_query(F.data.startswith("btn_tasbih_menu"))
+@dp.callback_query(F.data == "btn_tasbih_menu")
 async def btn_tasbih_menu(call: CallbackQuery):
-    # تحديد الصفحة الحالية
-    page = 1
-    if call.data == "btn_tasbih_menu_2":
-        page = 2
-        
-    btns = []
-    # تحديد بداية ونهاية المؤشر بناءً على الصفحة
-    start_idx = 0 if page == 1 else 14
-    end_idx = 14 if page == 1 else len(TASBIH_TYPES)
-    
-    for i in range(start_idx, end_idx, 2):
-        row = [InlineKeyboardButton(text=TASBIH_TYPES[i], callback_data=f"go_{i}")]
-        if i+1 < end_idx: 
-            row.append(InlineKeyboardButton(text=TASBIH_TYPES[i+1], callback_data=f"go_{i+1}"))
-        btns.append(row)
-    
-    # إضافة أزرار التنقل بين الصفحات
-    if page == 1:
-        btns.append([InlineKeyboardButton(text="الأذكار التالية ➡️", callback_data="btn_tasbih_menu_2")])
-    else:
-        btns.append([InlineKeyboardButton(text="⬅️ الأذكار السابقة", callback_data="btn_tasbih_menu")])
-        
-    btns.append([InlineKeyboardButton(text="🔙 عودة للرئيسية", callback_data="btn_home")])
-    await call.message.edit_text(f"📿 {html.bold('اختر نوع الذكر المفضل لفتح المسبحة التفاعلية:')}", reply_markup=InlineKeyboardMarkup(inline_keyboard=btns))
-    
+    kb = InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text=t, callback_data=f"go_{i}") for i, t in enumerate(TASBIH_TYPES[:2])],
+        [InlineKeyboardButton(text=t, callback_data=f"go_{i+2}") for i, t in enumerate(TASBIH_TYPES[2:4])],
+        [InlineKeyboardButton(text=t, callback_data=f"go_{i+4}") for i, t in enumerate(TASBIH_TYPES[4:6])],
+        [InlineKeyboardButton(text="🔙 عودة", callback_data="btn_home")]
+    ])
+    await call.message.edit_text("اختر نوع التسبيح:", reply_markup=kb)
+
 @dp.callback_query(F.data.startswith(("go_", "hit_")))
 async def engine_tasbih(call: CallbackQuery):
     try:
@@ -316,15 +228,14 @@ async def engine_tasbih(call: CallbackQuery):
 
     if call.data.startswith("hit_"):
         u["tasbih"] += 1
-        # لازم هنا حفظ البيانات إذا عندك DB
 
     rank_n, rank_i = get_spiritual_rank(u["tasbih"])
     progress = get_unique_progress(u["tasbih"] % 34)
 
     kb = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="إضغط ", callback_data=f"hit_{idx}")],
+        [InlineKeyboardButton(text="اضغط هنا ✨", callback_data=f"hit_{idx}")],
         [
-            InlineKeyboardButton(text="🔄 تغيير النوع", callback_data="btn_tasbih_menu"),
+            InlineKeyboardButton(text="🔄 تغيير", callback_data="btn_tasbih_menu"),
             InlineKeyboardButton(text="🔙 عودة", callback_data="btn_home")
         ]
     ])
@@ -332,9 +243,9 @@ async def engine_tasbih(call: CallbackQuery):
     txt = (
         f"{html.bold('المسبحة')} {rank_i}\n"
         f"🕊️ {html.italic(TASBIH_TYPES[idx])}\n\n"
-        f"📊 التقدم في الدورة:\n{html.code(progress)}\n"
+        f"📊 التقدم: {html.code(progress)}\n"
         f"🏅 الرتبة: {rank_n}\n"
-        f"📿 إجمالي تسبيحاتك: {u['tasbih']}\n"
+        f"📿 إجمالي: {u['tasbih']}\n"
     )
 
     try:
@@ -342,38 +253,33 @@ async def engine_tasbih(call: CallbackQuery):
     except Exception:
         pass
 
-# --- [ لوحة الإحصائيات الفائقة ] ---
-
 @dp.callback_query(F.data == "btn_stats")
 async def btn_stats_call(call: CallbackQuery):
     u = init_user(call.from_user.id, call.from_user.full_name)
     rank_n, rank_i = get_spiritual_rank(u['tasbih'])
     txt = (
-        f"📊 {html.bold('لوحة الإحصائيات')} {rank_i}\n"
+        f"📊 {html.bold('الإحصائيات')} {rank_i}\n"
         f"👤 الاسم: {u['name']}\n"
         f"🏅 الرتبة: {rank_n}\n"
         f"📿 رصيد الأذكار: {html.bold(str(u['tasbih']))}\n"
-        f"📅 تاريخ الانتساب: {u['join_date']}\n\n"
-        f"🧠 {html.bold('تحليل لحالتك:')}\n"
+        f"📅 التاريخ: {u['join_date']}\n\n"
         f"✨ {ai_spiritual_analysis(u['tasbih'])}\n"
     )
-    await call.message.edit_text(txt, reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="🔙 العودة للرئيسية", callback_data="btn_home")]]))
-
-# --- [ إعدادات الضبط الدوري والحماية ] ---
+    await call.message.edit_text(txt, reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="🔙 العودة", callback_data="btn_home")]]), parse_mode="HTML")
 
 @dp.callback_query(F.data == "btn_settings")
 async def btn_settings_callback(call: CallbackQuery):
     if not await is_admin(call):
-        return await call.answer("❌ عذراً! هذا الزر مخصص لمشرفي المجموعة فقط لضبط الأذكار التلقائية.", show_alert=True)
+        return await call.answer("❌ للمشرفين فقط", show_alert=True)
     
     kb = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="30 دقيقة ⏱️", callback_data="set_0.5"), InlineKeyboardButton(text="ساعة ⏱️", callback_data="set_1")],
-        [InlineKeyboardButton(text="3 ساعات ⏱️", callback_data="set_3"), InlineKeyboardButton(text="6 ساعات ⏱️", callback_data="set_6")],
-        [InlineKeyboardButton(text="12 ساعة ⏱️", callback_data="set_12"), InlineKeyboardButton(text="يومي ⏱️", callback_data="set_24")],
-        [InlineKeyboardButton(text="إيقاف  ❌", callback_data="set_off")],
+        [InlineKeyboardButton(text="30 دقيقة", callback_data="set_0.5"), InlineKeyboardButton(text="ساعة", callback_data="set_1")],
+        [InlineKeyboardButton(text="3 ساعات", callback_data="set_3"), InlineKeyboardButton(text="6 ساعات", callback_data="set_6")],
+        [InlineKeyboardButton(text="12 ساعة", callback_data="set_12"), InlineKeyboardButton(text="يومي", callback_data="set_24")],
+        [InlineKeyboardButton(text="إيقاف ❌", callback_data="set_off")],
         [InlineKeyboardButton(text="🔙 العودة", callback_data="btn_home")]
     ])
-    await call.message.edit_text(f"⚙️ {html.bold('إعدادات التذكير الدوري للدردشة')}\n\nاختر التكرار الزمني لإرسال الأذكار التلقائية:", reply_markup=kb)
+    await call.message.edit_text(f"⚙️ {html.bold('إعدادات التذكير الدوري')}\n\nاختر الفترة الزمنية:", reply_markup=kb, parse_mode="HTML")
 
 @dp.callback_query(F.data.startswith("set_"))
 async def handle_save_settings(call: CallbackQuery):
@@ -382,82 +288,117 @@ async def handle_save_settings(call: CallbackQuery):
     cid = call.message.chat.id
     if val == "off":
         active_chats.pop(cid, None)
-        await call.answer("🔇 تم إيقاف التذكيرات التلقائية بنجاح.", show_alert=True)
+        await call.answer("✅ تم الإيقاف", show_alert=True)
     else:
         active_chats[cid] = {"interval": float(val), "last": time.time()}
-        await call.answer(f"✅ تم تفعيل التذكير الدوري كل {val} ساعة.", show_alert=True)
+        await call.answer(f"✅ تم التفعيل كل {val} ساعة", show_alert=True)
     await back_home(call)
-
-# --- [ الوظائف العامة والعودة ] ---
 
 @dp.callback_query(F.data == "btn_home")
 async def back_home(call: CallbackQuery):
     bot_info = await call.bot.get_me()
-    await call.message.edit_text(text_welcome(), reply_markup=kb_main(bot_info.username))
+    await call.message.edit_text(text_welcome(), reply_markup=kb_main(bot_info.username), parse_mode="HTML")
 
 @dp.callback_query(F.data == "btn_random")
 async def btn_random_dhikr(call: CallbackQuery):
     dk = random.choice(ADHKAR_LIST)
     await call.message.edit_text(
-        f"✨ {html.bold('رَبِّي يَكْتُبُ لَكَ الأَجْرَ وَيُضَاعِفُهُ   :')}\n\n{html.code(dk)}", 
+        f"✨ {html.bold('الذكر اليومي:')}\n\n{html.code(dk)}", 
         reply_markup=InlineKeyboardMarkup(inline_keyboard=[
             [InlineKeyboardButton(text="🔄 ذكر آخر", callback_data="btn_random")],
-            [InlineKeyboardButton(text="🔙 عودة للرئيسية", callback_data="btn_home")]
-        ])
+            [InlineKeyboardButton(text="🔙 عودة", callback_data="btn_home")]
+        ]),
+        parse_mode="HTML"
     )
 
-# --- [ نظام الترحيب والمجدول الذكي ] ---
+# --- [ نظام الترحيب ] ---
 
 @dp.my_chat_member(ChatMemberUpdatedFilter(member_status_changed=F.NEW_STATUS.IN_({ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER})))
 async def on_bot_join(event: ChatMemberUpdated):
-    """الترحيب عند إضافة البوت لمجموعة أو قناة"""
+    """الترحيب عند إضافة البوت"""
     if event.new_chat_member.status in [ChatMemberStatus.MEMBER, ChatMemberStatus.ADMINISTRATOR]:
         welcome = (
-            f"🎊 {html.bold('تم تفعيل  نُورِفَاي  في هذا المكان!')}\n\n"
-            "سأقوم بنشر الأذكار والأدعية لتعطير هذه الدردشة.\n"
-            "💡 يمكن للمشرفين التحكم في وقت الإرسال من خلال زر 'الضبط الدوري' في القائمة الرئيسية."
+            f"🎊 {html.bold('تم تفعيل نُورِفَاي في هذا المكان!')}\n\n"
+            "سأقوم بنشر الأذكار والأدعية.\n"
+            "💡 المشرفون يمكنهم تغيير أوقات التذكيرات من الضبط الدوري."
         )
         try:
-            await event.bot.send_message(event.chat.id, welcome)
+            await event.bot.send_message(event.chat.id, welcome, parse_mode="HTML")
         except Exception:
             pass
 
 async def background_broadcaster(bot: Bot):
-    """نظام البث الدوري الذكي في الخلفية للمجموعات والقنوات"""
+    """نظام البث الدوري في الخلفية"""
     while True:
         now = time.time()
         for cid, config in list(active_chats.items()):
             if now - config["last"] >= (config["interval"] * 3600):
                 try:
                     dhikr = random.choice(ADHKAR_LIST)
-                    await bot.send_message(cid, f"💠 {html.bold('نفحات نُورِفَاي الملكية:')}\n\n{html.code(dhikr)}")
+                    await bot.send_message(cid, f"💠 {html.bold('نفحات نُورِفَاي:')}\n\n{html.code(dhikr)}", parse_mode="HTML")
                     active_chats[cid]["last"] = now
                 except Exception as e:
-                    # في حال تم حظر البوت أو إزالته
                     if "forbidden" in str(e).lower() or "not found" in str(e).lower():
                         active_chats.pop(cid, None)
         await asyncio.sleep(60)
 
+# --- [ معالج Webhook ] ---
+
+async def handle_webhook(request: web.Request) -> web.Response:
+    """معالج webhook من Telegram"""
+    data = await request.json()
+    update = Update(**data)
+    await dp.feed_update(dp.bot, update)
+    return web.Response(text="OK")
+
+async def on_startup(bot: Bot):
+    """تشغيل البوت والاتصال بـ Webhook"""
+    try:
+        await bot.set_webhook(WEBHOOK_URL)
+        print(f"✅ تم تعيين Webhook: {WEBHOOK_URL}")
+    except Exception as e:
+        print(f"❌ خطأ في تعيين Webhook: {e}")
+
+async def on_shutdown(bot: Bot):
+    """إيقاف البوت"""
+    await bot.delete_webhook()
+    print("🔌 تم إيقاف الاتصال")
+
 async def main():
-    """نقطة انطلاق النظام الملكي"""
+    """نقطة البداية الرئيسية"""
     bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     
     # تشغيل المجدول في الخلفية
     asyncio.create_task(background_broadcaster(bot))
     
-    # تسجيل الأوامر في قائمة التليجرام الرسمية لتظهر كـ Menu
+    # تسجيل الأوامر
     await bot.set_my_commands([
-        BotCommand(command="start", description="💠 تشغيل البوت وفتح القائمة الرئيسية"),
-        BotCommand(command="help", description="🆘 المساعدة ورابط التواصل مع المبرمج"),
-        BotCommand(command="guide", description="📑 دليل استخدام البوت في الخاص والمجموعات"),
-        BotCommand(command="stats", description="📊 عرض إحصائياتك ورتبتك "),
-        BotCommand(command="tasbih", description="📿 فتح المسبحة الإلكترونية ")
+        BotCommand(command="start", description="🌟 فتح القائمة الرئيسية"),
+        BotCommand(command="help", description="🆘 المساعدة"),
+        BotCommand(command="guide", description="📑 دليل الاستخدام"),
+        BotCommand(command="stats", description="📊 الإحصائيات"),
     ])
     
-    # تنظيف التحديثات القديمة والبدء
-    await bot.delete_webhook(drop_pending_updates=True)
-    print("💎 NOORIFY ROYAL MEGA-SYSTEM IS NOW ONLINE")
-    await dp.start_polling(bot)
+    # تهيئة الـ Webhook
+    await on_startup(bot)
+    
+    # إنشاء تطبيق aiohttp
+    app = web.Application()
+    app.router.add_post(WEBHOOK_PATH, lambda request: handle_webhook(request))
+    
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, "0.0.0.0", PORT)
+    await site.start()
+    
+    print(f"💎 NOORIFY BOT IS RUNNING ON PORT {PORT}")
+    print(f"🌐 Webhook URL: {WEBHOOK_URL}")
+    
+    try:
+        await asyncio.Event().wait()
+    except KeyboardInterrupt:
+        await on_shutdown(bot)
+        await runner.cleanup()
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
