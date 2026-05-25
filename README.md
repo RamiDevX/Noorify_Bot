@@ -1,3 +1,4 @@
+<img width="640" height="640" alt="photo_2026-05-14_03-49-28" src="https://github.com/user-attachments/assets/201755ef-b8c3-4e6b-ab98-dbecbbc23f1f" />
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:050505,50:0f2027,100:203a43&height=300&section=header&text=NOORIFY&fontSize=65&fontColor=ffffff&animation=fadeIn&fontAlignY=38" alt="Noorify Banner" />
 </p>
