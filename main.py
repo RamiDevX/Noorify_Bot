@@ -17,7 +17,7 @@ from aiogram.client.default import DefaultBotProperties
 # ==============================================================================
 # CONFIGURATION
 # ==============================================================================
-TOKEN = "YOUR_BOT_TOKEN_HERE"  # ضع التوكن الخاص بك هنا
+TOKEN = "TOKEN"  # ضع التوكن الخاص بك هنا
 ADMIN_ID = 1408037752
 BOT_NAME = "NOORIFY AI 🌙"
 
