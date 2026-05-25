@@ -1,153 +1,172 @@
+📌 الفهرس الرئيسي (Table of Contents)
 
+💡 الفكرة والرؤية
 
+⭐ المميزات والخدمات الروحانية
 
-<!-- 🌊 HEADER -->
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:050505,50:0f2027,100:203a43&height=300&section=header&text=NOORIFY&fontSize=65&fontColor=ffffff&animation=fadeIn&fontAlignY=38" />
-</p>
+🧠 معمارية النظام والتدفق العملي
 
-<p align="center">
-  <b> صدقة جارية رقمية</b><br>
-  <sub>من التشتت إلى الذكر • ومن الضياع إلى الأثر</sub>
-</p>
+🧩 التقنيات والمكتبات
 
----
+🗂️ الهيكل التنظيمي للملفات
 
-<!-- BADGES -->
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python"/>
-  <img src="https://img.shields.io/badge/Aiogram-3.x-00E5FF?style=for-the-badge&logo=telegram"/>
-  <img src="https://img.shields.io/badge/Status-Active-00C853?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge"/>
-</p>
+⚙️ دليل التثبيت والتشغيل المحلي
 
---- 
+🚀 إعداد خادم الويب والنشر السحابي
 
-## 💡 الفكرة
+🔗 قنوات التواصل والروابط الرسمية
 
-يعمل كبوت تيليجرام ذكي يدمج بين:
-- الذكر
-- التذكير
-- الإحصائيات
-- التجربة الهادئة
+🤍 الدعم والصدقة الجارية
 
+💡 الفكرة والرؤية
 
+"في عصر التشتت الرقمي المتسارع، يهدف نُورِفَاي (Noorify) إلى إعادة توجيه تركيز المستخدم واهتمامه اليومي نحو الذكر والطاعة، محولاً شاشات هواتفنا الذكية ومجموعات التفاعل الاجتماعي إلى منصات تنبض بذكر الله عز وجل عبر نظام برمجي متكامل ومستقر."
 
-## 🧠 النظام الداخلي
+يعمل البوت كمنصة إسلامية ذكية تدمج ما بين الذكر الشخصي التفاعلي و التذكير الدوري التلقائي داخل المجموعات دون التسبب في إزعاج المستخدمين أو التأثير على كفاءة الخوادم، من خلال الاستجابة اللحظية بفضل تقنية الـ Webhook.
 
-```mermaid
+⭐ المميزات والخدمات الروحانية
+
+🧠 معمارية النظام والتدفق العملي
+
+يعتمد Noorify Bot على خادم ويب غير متزامن مدمج ومبني بطريقة تمنع حدوث اختناق في الطلبات أو تسريب للموارد (Memory Leaks):
+
 flowchart TD
-A[User Telegram] --> B[Noorify Bot - Aiogram]
-B --> C[Async Engine]
-C --> D[Dhikr Counter]
-C --> E[Reminder System]
-D --> F[Database Stats]
-E --> G[Notifications]
-````
+    A[🛡️ مستخدم تلغرام / مجموعة] -->|ارسال حدث| B(🌐 Telegram API Cloud)
+    B -->|HTTPS POST Webhook| C[🖥️ خادم استضافة البوت - aiohttp]
+    C -->|تحليل الحدث| D[🤖 Aiogram 3.x Dispatcher]
+    
+    subgraph محرك التوزيع والمعالجة
+        D -->|أوامر مباشرة /start| E[🏠 القائمة التفاعلية]
+        D -->|نقر مسبحة /hit_idx| F[📿 محرك التسبيح ومعدل التقدم]
+        D -->|إدارة دورية /set_interval| G[⚙️ نظام تذكير المجموعات]
+    end
+    
+    subgraph المهام الخلفية الموازية
+        H[⏰ Asyncio Task Loop] -->|فحص كل 60 ثانية| I{هل حان وقت المجموعة؟}
+        I -->|نعم| J[💠 بث ذكر عشوائي للمجموعة]
+        I -->|لا| K[💤 وضع الانتظار المؤقت]
+    end
+    
+    E --> L[(🗃️ قاعدة البيانات المؤقتة بالذاكرة)]
+    F --> L
+    G --> L
 
----
-## 🧩 التقنيات
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=python,github" />
-</p>
 
-<p align="center">
+⚡ كفاءة المعالجة (Performance Highlights):
 
-<!-- Telegram -->
-<img src="https://img.shields.io/badge/Telegram_Bot-Aiogram-0088cc?style=for-the-badge&logo=telegram&logoColor=white"/>
+التعقيد الزمني للبث الدائم: يعمل المجدول الخلفي بتعقيد زمني $O(N)$ حيث يتم جلب وتحديث المجموعات المفعلة بشكل متوازي وآمن من الأخطاء المتزامنة.
 
-<!-- Railway -->
-<img src="https://img.shields.io/badge/Deployed%20on-Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white"/>
+استمرارية التشغيل: معالجة متقدمة للاستثناءات تحمي البوت من الانهيار التام في حال قام مستخدم بحظره أو إزالته من المجموعات النشطة.
 
-<!-- Async Concept -->
-<img src="https://img.shields.io/badge/Async-Python%20Event%20Loop-3776AB?style=for-the-badge"/>
+🧩 التقنيات والمكتبات
 
-</p>
+لغة البرمجة الأساسية: Python 3.13 (الاستفادة القصوى من أحدث تحديثات الأداء باللغة).
 
-## ⚙️ التشغيل
+إطار العمل للبوت: Aiogram 3.x (الإطار الرائد والحديث لبناء بوتات تلغرام عملاقة ببرمجة غير متزامنة).
 
-### 1️⃣ المتطلبات
+خادم الويب: aiohttp (خادم ويب متناهي الخفة لاستقبال اتصالات الـ Webhooks وإبقائها حية $24/7$).
 
-```bash id="req"
-Python 3.13+
-Telegram Bot Token
-```
+إدارة البيئة: python-dotenv لقراءة المتغيرات الحساسة بأمان.
 
----
+🗂️ الهيكل التنظيمي للملفات
 
-### 2️⃣ التثبيت
+📁 Noorify_Bot/
+│
+├── 📄 main.py            # السكربت البرمجي الرئيسي الذي يضم خادم الويب، البوت، والمنطق
+├── 📄 requirements.txt   # حزم المكتبات اللازمة لتشغيل النظام بكفاءة
+├── 📄 .env               # ملف تخزين البيانات الحساسة والتوكنز (لا يُرفع للعامة)
+├── 📄 LICENSE            # رخصة الاستخدام المفتوح للمشروع (MIT LICENSE)
+└── 📘 README.md          # الدليل الفني البصري الاحترافي للمستودع
 
-```bash id="install"
-git clone https://github.com/rambos2003-lab/Noorify_Bot
+
+
+⚙️ دليل التثبيت والتشغيل المحلي
+
+1️⃣ إعداد مستودع العمل والبيئة
+
+قم بفتح الطرفية (Terminal) في جهازك ونفذ الأوامر التالية:
+
+# 1. استنساخ المشروع من المستودع
+git clone [https://github.com/rambos2003-lab/Noorify_Bot.git](https://github.com/rambos2003-lab/Noorify_Bot.git)
 cd Noorify_Bot
+
+# 2. إنشاء بيئة وهمية معزولة لضمان عدم تداخل الحزم
+python -m venv venv
+
+# 3. تفعيل البيئة الوهمية
+# على أنظمة Linux / macOS:
+source venv/bin/activate
+# على نظام Windows:
+venv\Scripts\activate
+
+
+
+2️⃣ تثبيت الحزم المطلوبة
+
+pip install --upgrade pip
 pip install -r requirements.txt
-```
-
----
-
-### 3️⃣ التشغيل
-
-```bash id="run"
-python bot.py
-```
-
----
-
-## 🔗 روابط مهمة
-
-<p align="center">
-
-<a href="https://github.com/rambos2003-lab/Noorify_Bot">
-  <img src="https://img.shields.io/badge/📦%20Repository-Noorify_Bot-black?style=for-the-badge&logo=github"/>
-</a>
-
-<a href="https://github.com/RamiAILab">
-  <img src="https://img.shields.io/badge/👤%20Profile-RamiAILab-181717?style=for-the-badge&logo=github"/>
-</a>
-
-<a href="https://t.me/RamiAILab">
-  <img src="https://img.shields.io/badge/💬%20Telegram-Channel-0088cc?style=for-the-badge&logo=telegram"/>
-</a>
-
-<a href="https://tr.ee/vxr">
-  <img src="https://img.shields.io/badge/🔗%20All%20Links-Linktree-orange?style=for-the-badge"/>
-</a>
-
-</p>
-
----
-
-## 🎯 الهدف
-
-* تقليل الإدمان الرقمي
-* بناء عادة ذكر مستمرة
-* تحويل الهاتف إلى وسيلة خير
-* خلق أثر ذكر يومي
-
----
-
-## 🤍 صدقة جارية
-
-<p align="center">
-  <b>إذا استفدت من المشروع فلا تنسَ دعوة صالحة 🤍</b><br>
-  <sub>الدال على الخير كفاعله</sub>
-</p>
-
----
-
-## ⭐ دعم المشروع
-
-<p align="center">
-  <a href="https://github.com/rambos2003-lab/Noorify_Bot">
-    <img src="https://img.shields.io/badge/⭐%20Star%20This%20Repo-ادعم%20المشروع-yellow?style=for-the-badge"/>
-  </a>
-</p>
 
 
-<!-- 🌊 FOOTER -->
 
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:203a43,50:0f2027,100:050505&height=140&section=footer"/>
-</p>
+3️⃣ ضبط متغيرات البيئة الحساسة
 
+قم بإنشاء ملف باسم .env في المجلد الرئيسي للمشروع، وأضف البيانات التالية مع استبدال القيم الحقيقية لتوكن البوت الخاص بك:
+
+TOKEN="توكن_البوت_الخاص_بك_هنا"
+PORT=8080
+WEBHOOK_HOST="رابط_الاستضافة_الخاص_بك"
+
+
+
+4️⃣ إطلاق البوت محلياً للتجربة
+
+python main.py
+
+
+
+🚀 إعداد خادم الويب والنشر السحابي
+
+يأتي البوت مجهزاً ومعداً تماماً للعمل بنظام الـ Webhooks ليتناسب مع كبرى منصات الاستضافة السحابية العالمية مثل (Render, Railway).
+
+خطوات النشر على منصة Render:
+
+قم بإنشاء حساب جديد على منصة Render.
+
+اربط حسابك بـ GitHub واختر مستودع Noorify_Bot.
+
+قم بتهيئة إعدادات النشر كالتالي:
+
+Environment: Python
+
+Build Command: pip install -r requirements.txt
+
+Start Command: python main.py
+
+في قسم Environment Variables بالمنصة، أضف القيم التالية:
+
+TOKEN : التوكن الخاص ببوتك من BotFather.
+
+PORT : 8080
+
+WEBHOOK_HOST : الرابط العام الذي ستمنحه لك منصة Render بعد النشر (مثال: https://your-bot-name.onrender.com).
+
+اضغط على Deploy وانتظر إتمام الإطلاق بنجاح! 🎉
+
+🔗 قنوات التواصل والروابط الرسمية
+
+لقد قمنا بتوفير قنوات اتصال مباشرة للحصول على الدعم الفني البرمجي أو لمتابعة أحدث إصدارات معامل RamiAI:
+
+🤍 الدعم والصدقة الجارية
+
+«إِذَا مَاتَ ابنُ آدم انْقَطَعَ عَمَلُهُ إِلَّا مِنْ ثَلَاثٍ: صَدَقَةٍ جَارِيَةٍ، أَوْ عِلْمٍ يُنْتَفَعُ بِهِ، أَوْ وَلَدٍ صَالِحٍ يَدْعُو لَهُ»
+
+هذا العمل مبرمج لوجه الله تعالى كصدقة جارية. إذا ساعدك هذا الكود أو قمت بنشره واستخدامه:
+
+لا تبخل علينا بدعوة صالحة بظهر الغيب لي ولوالديّ ولجميع المسلمين. 🤍
+
+شارك البوت مع أصدقائك وفي المجموعات ليكون لك كفلٌ من الأجر (فالدال على الخير كفاعله).
+
+⭐ دعم مستودع المشروع
+
+إذا حاز المشروع على إعجابك، قم بدعمه بوضع نجمة (Star) على المستودع لتساهم في وصوله للمزيد من المطورين حول العالم! ⭐
