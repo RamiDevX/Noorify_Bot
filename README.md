@@ -219,5 +219,5 @@ python main.py
 يسعدنا جداً دعمك للمشروع من خلال الضغط على زر النجمة **Star** في أعلى صفحة المستودع للمساهمة في نشره ووصوله لأكبر عدد ممكن من المطورين والمستخدمين.
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:09011a,50:1f0647,100:3f0f8a&height=300&section=header&text=NOORIFY&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=38" alt="Noorify Header Wave" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:09011a,50:1f0647,100:3f0f8a&height=300&section=header&text=&animation=fadeIn&fontAlignY=38" alt="Noorify Header Wave" />
 </p>
