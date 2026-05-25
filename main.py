@@ -409,13 +409,10 @@ async def is_admin(event: Union[Message, CallbackQuery]):
             chat.id,
             uid
         )
-
-        return member.status in [
-            ChatMemberStatus.ADMINISTRATOR,
-            ChatMemberStatus.OWNER,
-            ChatMemberStatus.CREATOR
-        ]
-
+return member.status in [
+    ChatMemberStatus.ADMINISTRATOR,
+    ChatMemberStatus.OWNER
+]
     except:
 
         return False
@@ -918,23 +915,19 @@ async def broadcast(message: Message):
 # BOT JOIN
 # ==========================================
 
-@dp.my_chat_member(
-    ChatMemberUpdatedFilter(
-        member_status_changed=F.NEW_STATUS.IN_({
-            ChatMemberStatus.ADMINISTRATOR,
-            ChatMemberStatus.MEMBER
-        })
-    )
-)
-
+@dp.my_chat_member()
 async def on_bot_join(event: ChatMemberUpdated):
+
+    if event.new_chat_member.status not in [
+        ChatMemberStatus.MEMBER,
+        ChatMemberStatus.ADMINISTRATOR
+    ]:
+        return
 
     try:
 
         await event.bot.send_message(
-
             event.chat.id,
-
             f"""
 🎉 تم تفعيل {BOT_NAME}
 
@@ -942,14 +935,11 @@ async def on_bot_join(event: ChatMemberUpdated):
 
 ⚙️ يمكن للمشرفين تعديل الإعدادات
 """,
-
             parse_mode="HTML"
         )
 
-    except:
-
+    except Exception:
         pass
-
 # ==========================================
 # AUTO BROADCASTER
 # ==========================================
