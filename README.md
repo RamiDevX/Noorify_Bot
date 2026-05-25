@@ -152,7 +152,50 @@ python main.py
 
 ---
 
-## 🔗 الروابط الرسمية للمشروع
+## 🔗 المنصات والروابط الرسمية (Official Links)
+
+تفضل بزيارة منصاتنا الرسمية للتواصل، متابعة التحديثات، أو استخدام البوت مباشرة عبر الروابط المهيكلة أدناه:
+
+<table width="100%">
+  <tr>
+    <td align="center" width="25%" style="background-color: #0f2027;">
+      <img src="https://img.shields.io/badge/⚡_Noorify_Bot-التشغيل_الفوري-0088cc?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Bot" /><br><br>
+      <a href="https://t.me/Noorify_bot">
+        <img src="https://skillicons.dev/icons?i=telegram" height="40px" alt="Noorify Bot" />
+      </a><br>
+      <b><a href="https://t.me/Noorify_bot">ابدأ استخدام البوت</a></b><br>
+      <sub>رابط الوصول المباشر آلياً</sub>
+    </td>
+    <td align="center" width="25%" style="background-color: #0f2027;">
+      <img src="https://img.shields.io/badge/📢_RamiAILab-القناة_الرسمية-00E5FF?style=for-the-badge&logo=telegram&logoColor=black" alt="Tech Channel" /><br><br>
+      <a href="https://t.me/RamiAILab">
+        <img src="https://img.shields.io/badge/Telegram-Channel-blue?style=for-the-badge&logo=telegram&logoColor=white" height="40px" alt="Channel" />
+      </a><br>
+      <b><a href="https://t.me/RamiAILab">قناتنا التقنية</a></b><br>
+      <sub>متابعة آخر الحلول والابتكارات</sub>
+    </td>
+    <td align="center" width="25%" style="background-color: #0f2027;">
+      <img src="https://img.shields.io/badge/📦_GitHub_Repo-المستودع_البرمجي-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository" /><br><br>
+      <a href="https://github.com/rambos2003-lab/Noorify_Bot">
+        <img src="https://skillicons.dev/icons?i=github" height="40px" alt="GitHub" />
+      </a><br>
+      <b><a href="https://github.com/rambos2003-lab/Noorify_Bot">كود المشروع</a></b><br>
+      <sub>مراجعة الشيفرة والمساهمة</sub>
+    </td>
+    <td align="center" width="25%" style="background-color: #0f2027;">
+      <img src="https://img.shields.io/badge/🔗_Linktree-جميع_الروابط-orange?style=for-the-badge" alt="Linktree" /><br><br>
+      <a href="https://linktr.ee/ramibitar.dev">
+        <img src="https://img.shields.io/badge/Linktree-Profile-43E660?style=for-the-badge&logo=linktree&logoColor=white" height="40px" alt="Linktree" />
+      </a><br>
+      <b><a href="https://linktr.ee/ramibitar.dev">بوابة المطور</a></b><br>
+      <sub>حساباتي وشبكاتي الاجتماعية</sub>
+    </td>
+  </tr>
+</table>
+
+### 👤 المطور والمسؤول التقني
+* **المهندس:** رامي بيطار (Rami Bitar)
+* **المستودع الشخصي للمطور على GitHub:** [RamiAIlab](https://github.com/RamiAIlab)
 
 ---
 
