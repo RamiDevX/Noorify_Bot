@@ -34,8 +34,6 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 # CONFIG
 # ============================================
 
-TOKEN = "8632383100:AAHsR6l0sOQdI4FepaaRGOeW1WH1kJHWOcY"
-
 BOT_USERNAME = "Noorify_Bot"
 DEVELOPER = "@vx_rq"
 
