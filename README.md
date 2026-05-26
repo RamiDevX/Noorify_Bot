@@ -240,5 +240,5 @@ TOKEN = "YOUR_BOT_TOKEN_HERE"
 </p>
 
 <p align="center">
-  <sub>NoorifyBot © 2025 · مفتوح المصدر · صُنع بنية وإخلاص</sub>
+  <sub>NoorifyBot © 2026 · مفتوح المصدر · صُنع بنية وإخلاص</sub>
 </p>
