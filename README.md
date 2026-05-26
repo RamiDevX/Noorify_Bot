@@ -147,7 +147,7 @@ TOKEN = "YOUR_BOT_TOKEN_HERE"
       </a><br/><br/>
       <img src="https://skillicons.dev/icons?i=telegram" height="45"/>
       <br/><b>القناة</b><br/>
-      <sub>📡 تحديثات المشروع</sub>
+      <sub>📡قناتي التقنيه</sub>
     </td>
     <td align="center" width="25%">
       <a href="https://github.com/RamiAIlab/Noorify_Bot">
