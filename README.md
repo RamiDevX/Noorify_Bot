@@ -1,11 +1,15 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:0088cc,100:00E5FF&height=220&section=header&text=NOORIFY%20BOT&fontSize=72&fontColor=ffffff&fontAlignY=38&desc=نشر%20تذكيرات%20يومية%20عبر%20الأتمتة&descSize=18&descAlignY=60&descColor=c0d8ff&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,40:0a3d62,100:0088cc&height=230&section=header&text=NOORIFY%20BOT&fontSize=78&fontColor=ffffff&fontAlignY=38&fontAlign=50&desc=نشر%20تذكيرات%20الإيمان%20اليومية%20عبر%20الأتمتة&descSize=19&descAlignY=60&descColor=a8cfe8&animation=fadeIn" width="100%"/>
 </p>
 
 <p align="center">
-  <a href="https://t.me/Noorify_bot"><img src="https://img.shields.io/badge/Telegram%20Bot-تشغيل%20مباشر-0088cc?style=for-the-badge&logo=telegram&logoColor=white"/></a>
+  <a href="https://t.me/Noorify_bot">
+    <img src="https://img.shields.io/badge/بوت%20تيليغرام-نشط-0088cc?style=for-the-badge&logo=telegram&logoColor=white"/>
+  </a>
   &nbsp;
-  <a href="https://github.com/RamiAIlab/Noorify_Bot"><img src="https://img.shields.io/badge/المستودع-GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
+  <a href="https://github.com/RamiAIlab/Noorify_Bot">
+    <img src="https://img.shields.io/github/stars/RamiAIlab/Noorify_Bot?style=for-the-badge&logo=github&color=181717&logoColor=white&label=نجوم"/>
+  </a>
   &nbsp;
   <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
   &nbsp;
@@ -20,13 +24,17 @@
 
 ## 📖 نبذة عن المشروع
 
-<p align="right" dir="rtl">
+<div dir="rtl">
 
-**NoorifyBot** هو بوت تيليغرام مفتوح المصدر يُرسل تذكيرات إسلامية يومية، أدعية مختارة، وآيات قرآنية كريمة بشكل تلقائي ومجدوَل — في المحادثات الخاصة، المجموعات، والقنوات.
+**NoorifyBot** بوت تيليغرام مفتوح المصدر، صُمِّم لغرض واحد — أن يُدخل لحظات من التأمل الروحي وسط الروتين الرقمي اليومي.
 
-يجمع المشروع بين بساطة الكود وعمق الهدف: **تذكير المستخدم بذكر الله وسط صخب الحياة الرقمية.**
+يُرسل تذكيرات إسلامية مختارة، أدعية أصيلة، وآيات قرآنية كريمة بشكل مجدوَل وتلقائي — إلى المحادثات الخاصة، المجموعات، والقنوات دون أي تعقيد.
 
-</p>
+> في عالم مثقل بالإشعارات الفارغة، NoorifyBot هو الإشعار الذي يستحق أن تفتحه.
+
+مبني بـ Python غير متزامن، مُجدوِل خفيف الوزن، وبصمة برمجية صغيرة — سهل الاستضافة الذاتية، قابل للتوسع، وهادف في كل رسالة يُرسلها.
+
+</div>
 
 <br/>
 
@@ -38,28 +46,28 @@
   <tr>
     <td width="50%" valign="top">
 
-### 🔔 تذكيرات عشوائية
-إرسال آيات وأدعية مختارة بشكل عشوائي لضمان التنوع  اليومي.
+**🔔 &nbsp; تذكيرات إسلامية عشوائية**
+مجموعة مُختارة من الأدعية والآيات القرآنية والأحاديث — تُقدَّم بشكل عشوائي لضمان تنوع روحي حقيقي في كل رسالة.
 
-### ⏱️ إشعارات مجدولة
-نظام جدولة دقيق مبني على APScheduler — تحديد التوقيت والتكرار بمرونة كاملة.
+**⏱️ &nbsp; إشعارات مجدولة**
+مدعوم بـ APScheduler — اضبط وقت الإرسال وتكراره بدقة متناهية. اضبطه مرة واحدة وانسَهُ.
 
-### 🛑 نظام ضد التكرار
-خوارزمية تمنع إعادة نفس المحتوى حتى اكتمال الدورة الكاملة.
+**🔁 &nbsp; نظام ضد التكرار**
+خوارزمية ذكية تمنع تكرار المحتوى حتى يكتمل استعراض المجموعة كاملة.
 
-    </td>
-    <td width="50%" valign="top">
+  </td>
+  <td width="50%" valign="top">
 
-### 💬 دعم متعدد المحادثات
-يعمل في الخاص، المجموعات، والقنوات — دون تعارض في الجلسات.
+**💬 &nbsp; دعم متعدد المحادثات**
+يعمل بسلاسة في الدردشات الخاصة، المجموعات، والقنوات — جلسة مستقلة لكل محادثة.
 
-### 🎛️ واجهة تفاعلية
-أزرار Inline بسيطة وأنيقة للتحكم في البوت بسهولة.
+**🎛️ &nbsp; واجهة أزرار تفاعلية**
+لوحة مفاتيح Inline نظيفة وبديهية — لا أوامر يصعب حفظها.
 
-### ▶️ تحكم كامل بالتشغيل
-أوامر `/start` و `/stop` للتحكم في الأتمتة في أي وقت.
+**▶️ &nbsp; تحكم كامل بالتشغيل**
+المستخدم يتحكم بالكامل عبر `/start` و `/stop` — اشترك أو ألغِ الاشتراك في أي وقت.
 
-    </td>
+  </td>
   </tr>
 </table>
 
@@ -70,7 +78,7 @@
 ## 🧠 التقنيات المستخدمة
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,sqlite,git,github,linux&theme=dark" height="48"/>
+  <img src="https://skillicons.dev/icons?i=python,sqlite,git,github,linux&theme=dark" height="50"/>
 </p>
 
 <p align="center">
@@ -90,18 +98,20 @@
 ## ⚙️ التثبيت والتشغيل
 
 ```bash
-# 1. استنساخ المستودع
+# ── الخطوة 1 · استنساخ المستودع ───────────────────────────────
 git clone https://github.com/RamiAIlab/Noorify_Bot.git
 
-# 2. الدخول إلى مجلد المشروع
+# ── الخطوة 2 · الدخول إلى مجلد المشروع ───────────────────────
 cd Noorify_Bot
 
-# 3. تثبيت المتطلبات
+# ── الخطوة 3 · تثبيت المتطلبات ────────────────────────────────
 pip install -r requirements.txt
 
-# 4. تشغيل البوت
+# ── الخطوة 4 · تشغيل البوت ────────────────────────────────────
 python bot.py
 ```
+
+> **المتطلبات:** Python 3.11+ &nbsp;·&nbsp; تم الاختبار على Linux و Windows
 
 <br/>
 
@@ -112,23 +122,44 @@ python bot.py
 أنشئ ملف `.env` في جذر المشروع وأضف ما يلي:
 
 ```env
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-#  إعدادات البوت الأساسية
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
+# ─────────────────────────────────────────────
+#  الإعدادات الأساسية
+# ─────────────────────────────────────────────
 TOKEN = "YOUR_BOT_TOKEN_HERE"
 
-# إعدادات مستقبلية (اختيارية)
+# ─────────────────────────────────────────────
+#  اختياري · قابلية التوسع مستقبلاً
+# ─────────────────────────────────────────────
 # DATABASE_URL = "sqlite:///noorify.db"
-# ADMIN_ID      = 123456789
-# TIMEZONE      = "Asia/Riyadh"
+# ADMIN_ID     = 123456789
+# TIMEZONE     = "Asia/Riyadh"
+# INTERVAL_MIN = 60
 ```
 
-> 💡 احصل على التوكن من [@BotFather](https://t.me/BotFather) على تيليغرام.
+> احصل على التوكن من [@BotFather](https://t.me/BotFather) على تيليغرام.
 
 <br/>
 
 ---
+
+## 💬 رسالة الترحيب
+
+```
+🌙  أهلاً بك في Noorify Bot
+
+أنا هنا لأُحضر لك لحظة هادئة من الإيمان
+كل يوم — تلقائياً، دون انقطاع.
+
+اضغط ▶️ ابدأ للاشتراك في التذكيرات اليومية.
+
+﴿ وَذَكِّرْ فَإِنَّ الذِّكْرَىٰ تَنفَعُ الْمُؤْمِنِينَ ﴾
+                                  — سورة الذاريات، آية 55
+```
+
+<br/>
+
+---
+
 ## 🔗 الروابط الرسمية
 
 <table align="center" width="100%">
@@ -147,7 +178,7 @@ TOKEN = "YOUR_BOT_TOKEN_HERE"
       </a><br/><br/>
       <img src="https://skillicons.dev/icons?i=telegram" height="45"/>
       <br/><b>القناة</b><br/>
-      <sub>📡قناتي التقنيه</sub>
+      <sub>📡 تحديثات المشروع</sub>
     </td>
     <td align="center" width="25%">
       <a href="https://github.com/RamiAIlab/Noorify_Bot">
@@ -159,7 +190,7 @@ TOKEN = "YOUR_BOT_TOKEN_HERE"
     </td>
     <td align="center" width="25%">
       <a href="https://linktr.ee/ramibitar.dev">
-        <img src="https://img.shields.io/badge/🔗%20روابط-شخصية-orange?style=for-the-badge"/>
+        <img src="https://img.shields.io/badge/🔗%20Linktree-روابط%20شخصية-orange?style=for-the-badge"/>
       </a><br/><br/>
       <img src="https://skillicons.dev/icons?i=internetexplorer" height="45"/>
       <br/><b>روابطي</b><br/>
@@ -184,11 +215,11 @@ TOKEN = "YOUR_BOT_TOKEN_HERE"
   </thead>
   <tbody>
     <tr>
-      <td align="center">🧑‍💻 المطور الرئيسي</td>
+      <td align="center">🧑‍💻 &nbsp; المطور الرئيسي</td>
       <td align="center"><b>رامي بيطار</b></td>
       <td align="center">
         <a href="https://github.com/RamiAIlab">
-          <img src="https://img.shields.io/badge/GitHub-RamiAIlab-181717?style=flat-square&logo=github"/>
+          <img src="https://img.shields.io/badge/GitHub-RamiAIlab-181717?style=flat-square&logo=github&logoColor=white"/>
         </a>
         &nbsp;
         <a href="https://t.me/vx_rq">
@@ -207,10 +238,14 @@ TOKEN = "YOUR_BOT_TOKEN_HERE"
 
 <p align="center" dir="rtl">
   <i>
-    في عالم مليء بالإشعارات الفارغة، يسعى NoorifyBot إلى أن يكون<br/>
-    <b>الإشعار الوحيد الذي يستحق أن تقرأه</b> —<br/>
-    كلمة تُذكّرك بالله وسط يومك.
+    وسط تدفق لا ينتهي من الإشعارات الرقمية الفارغة،<br/>
+    يوجد NoorifyBot ليُقدِّم <b>الإشعار الوحيد الذي يستحق أن تفتحه</b> —<br/>
+    كلمة تُعيد وصلك بما يهم حقاً.
   </i>
+</p>
+
+<p align="center">
+  أتمتة في خدمة المعنى. تكنولوجيا كوعاء للذكر والتذكير.
 </p>
 
 <br/>
@@ -218,9 +253,9 @@ TOKEN = "YOUR_BOT_TOKEN_HERE"
 ---
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00E5FF,50:0088cc,100:0D1117&height=140&section=footer&fontSize=16&fontColor=ffffff&text=Built%20with%20purpose.%20Powered%20by%20simplicity.&fontAlignY=60&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0088cc,50:0a3d62,100:0D1117&height=150&section=footer&text=صُنع%20بنية.%20يعمل%20ببساطة.&fontSize=20&fontColor=a8cfe8&fontAlignY=55&animation=fadeIn" width="100%"/>
 </p>
 
 <p align="center">
-  <sub>صُنع بنية. يعمل ببساطة. — NoorifyBot © 2025</sub>
+  <sub>NoorifyBot © 2025 · مفتوح المصدر · صُنع بنية وإخلاص</sub>
 </p>
