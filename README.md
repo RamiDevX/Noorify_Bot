@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:0088cc,100:00E5FF&height=220&section=header&text=NOORIFY%20BOT&fontSize=72&fontColor=ffffff&fontAlignY=38&desc=نشر%20تذكيرات%20الإيمان%20اليومية%20عبر%20الأتمتة&descSize=18&descAlignY=60&descColor=c0d8ff&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:0088cc,100:00E5FF&height=220&section=header&text=NOORIFY%20BOT&fontSize=72&fontColor=ffffff&fontAlignY=38&desc=نشر%20تذكيرات%20يومية%20عبر%20الأتمتة&descSize=18&descAlignY=60&descColor=c0d8ff&animation=fadeIn" width="100%"/>
 </p>
 
 <p align="center">
