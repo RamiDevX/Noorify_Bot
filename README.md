@@ -1,158 +1,264 @@
 
 <div align="center">
 
-![NOORIFY BOT Header](https://capsule-render.vercel.app/api?type=waving&color=0:09011a,50:1f0647,100:3f0f8a&height=260&section=header&text=NOORIFY%20BOT&fontSize=70&fontColor=ffffff)
+![NOORIFY BOT](https://capsule-render.vercel.app/api?type=waving&color=0:0b001a,50:1a0b3d,100:2b0f66&height=260&section=header&text=NOORIFY%20BOT&fontSize=70&fontColor=ffffff&animation=fadeIn)
+
+### *Spreading daily reminders of faith through automation*
+
+<br/>
 
 </div>
 
 ---
 
-## ✨ وصف المشروع
+<div align="center">
 
-> ﴿ وَذَكِّرْ فَإِنَّ الذِّكْرَى تَنفَعُ الْمُؤْمِنِينَ ﴾
-**NoorifyBot**
-هو بوت تيليجرام يهدف إلى نشر الأذكار والأدعية والآيات القرآنية القصيرة بشكل دوري داخل المحادثات الخاصة والمجموعات والقنوات، لتعزيز الذكر اليومي .
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Aiogram](https://img.shields.io/badge/Aiogram-Telegram%20Bot-26A5E4?style=for-the-badge&logo=telegram)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-black?style=for-the-badge)
 
----
-
-## 💡 فكرة المشروع
-
-يعمل البوت على إرسال محتوى إيماني تلقائي (أذكار + أدعية + آيات) وفق جدول زمني محدد باستخدام نظام جدولة ذكي، مع دعم التشغيل في:
-
-- المحادثات الخاصة
-- المجموعات
-- القنوات
+</div>
 
 ---
 
-## 🚀 الميزات (Features)
+## 📖 ABOUT THE PROJECT
 
-- 🕌 إرسال أذكار وأدعية يومية تلقائياً  
-- 📖 عرض آيات قرآنية قصيرة بشكل دوري  
-- ⏰ نظام جدولة مرن ومتقدم  
-- 👥 دعم المجموعات والقنوات  
-- ⚡ أداء سريع باستخدام البرمجة غير المتزامنة  
-- 🗄️ حفظ البيانات باستخدام قاعدة بيانات SQLite  
-- 🔁 قابلية توسّع وتطوير عالية  
-- 🔔 رسائل تذكير ذكية قابلة للتخصيص  
+**NoorifyBot** is a production-oriented Telegram automation bot designed to deliver Islamic reminders, supplications (duas), and short Quranic verses across private chats, groups, and channels.
+
+It is built with a focus on **automation reliability**, **clean scheduling architecture**, and **minimal user friction**, ensuring consistent spiritual engagement without manual intervention.
+
+The system operates as a lightweight messaging engine that transforms scheduled content into meaningful digital reminders.
 
 ---
 
-## 🛠️ التقنيات المستخدمة
+## ✨ FEATURES
 
 <table>
 <tr>
-<td align="center"><b>🐍 Python</b></td>
-<td align="center"><b>🤖 Aiogram</b></td>
-<td align="center"><b>⏱ APScheduler</b></td>
-<td align="center"><b>🗄 SQLite</b></td>
+<td>
+
+### 🕌 Spiritual Content Engine
+- Random Islamic reminders
+- Quranic verses delivery
+- Authentic supplications
+
+</td>
+<td>
+
+### ⏱ Scheduling System
+- APScheduler integration
+- Cron-like execution
+- Persistent job control
+
+</td>
 </tr>
+
 <tr>
-<td align="center"><b>⚡ Asyncio</b></td>
-<td align="center"><b>🔧 Git</b></td>
-<td align="center"><b>🐙 GitHub</b></td>
-<td align="center"><b>🐧 Linux</b></td>
+<td>
+
+### 🌐 Multi-Chat Support
+- Private chats
+- Group automation
+- Channel broadcasting
+
+</td>
+<td>
+
+### 🔁 Smart Delivery Layer
+- Anti-repetition logic
+- Content rotation system
+- Balanced distribution
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+### 🎛 Bot Control Interface
+- Start / Stop automation
+- Inline button controls
+- User-level interaction layer
+
+</td>
+<td>
+
+### ⚡ Performance Core
+- Async event loop (Asyncio)
+- Lightweight execution model
+- Scalable architecture
+
+</td>
 </tr>
 </table>
 
 ---
 
-## ⚙️ طريقة التثبيت والتشغيل
+## 🧠 TECH STACK
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=python,git,github,linux" />
+<br/><br/>
+<img src="https://skillicons.dev/icons?i=sqlite" />
+
+</div>
+
+**Core Libraries:**
+- Python (3.10+)
+- Aiogram (Telegram Bot Framework)
+- APScheduler (Task Scheduling)
+- SQLite (Persistent Storage)
+- Asyncio (Concurrent Execution)
+- Git / GitHub (Version Control)
+- Linux (Deployment Environment)
+
+---
+
+## ⚙️ INSTALLATION
 
 ```bash
-# 1. استنساخ المشروع
+# Clone repository
 git clone https://github.com/RamiAIlab/Noorify_Bot.git
 
-# 2. الدخول إلى المجلد
+# Enter project directory
 cd Noorify_Bot
 
-# 3. إنشاء بيئة افتراضية
+# Create virtual environment
 python -m venv venv
 
-# 4. تفعيل البيئة
-# Windows:
-venv\Scripts\activate
-# Linux / Mac:
+# Activate environment
+# Linux / Mac
 source venv/bin/activate
 
-# 5. تثبيت المتطلبات
+# Install dependencies
 pip install -r requirements.txt
 
-# 6. تشغيل البوت
-python main.py
+# Run bot
+python bot.py
 ````
 
 ---
 
-## 🔐 إعداد المتغيرات البيئية
+## 🔐 CONFIGURATION
 
-أنشئ ملف باسم `.env` داخل المشروع وأضف:
+Create a `.env` file in the root directory:
 
 ```env
-BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
-DATABASE_URL=sqlite:///bot.db
+TOKEN=YOUR_BOT_TOKEN
+DATABASE_URL=sqlite:///noorify.db
 ADMIN_ID=YOUR_TELEGRAM_ID
+```
+
+> Future-ready architecture allows migration to PostgreSQL or Redis without core redesign.
+
+---
+
+## 💬 WELCOME MESSAGE (BOT UX)
+
+```text
+🌙 Welcome to NoorifyBot
+
+Your daily source of remembrance and reflection.
+
+🕌 Islamic reminders will now reach you automatically.
+📿 Stay consistent. Stay connected.
+
+“Verily, in the remembrance of Allah do hearts find rest.”
 ```
 
 ---
 
-## 🔗 روابط المشروع
+## 🔗 LINKS DASHBOARD
 
 <table>
 <tr>
-<td align="center" width="25%">
-  <a href="https://t.me/Noorify_bot">
-    <img src="https://img.shields.io/badge/⚡%20Noorify%20Bot-استخدام%20مباشر-0088cc?style=for-the-badge&logo=telegram&logoColor=white"/>
-  </a><br><br>
-  <b>استخدم البوت</b><br>
-  <sub>🚀 تشغيل فوري</sub>
+
+<td align="center">
+<a href="https://t.me/Noorify_bot">
+<img src="https://img.shields.io/badge/Telegram-Bot-26A5E4?style=for-the-badge&logo=telegram"/>
+</a>
+<br/>Bot Access
 </td>
 
-<td align="center" width="25%">
-  <a href="https://t.me/RamiAILab">
-    <img src="https://img.shields.io/badge/📢%20القناة-تحديثات-00E5FF?style=for-the-badge&logo=telegram&logoColor=white"/>
-  </a><br><br>
-  <b>القناة</b><br>
-  <sub>📡 تحديثات المشروع</sub>
+<td align="center">
+<a href="https://t.me/your_channel">
+<img src="https://img.shields.io/badge/Telegram-Channel-00C2FF?style=for-the-badge&logo=telegram"/>
+</a>
+<br/>Updates
 </td>
 
-<td align="center" width="25%">
-  <a href="https://github.com/RamiAIlab/Noorify_Bot">
-    <img src="https://img.shields.io/badge/📦%20GitHub-المصدر-181717?style=for-the-badge&logo=github&logoColor=white"/>
-  </a><br><br>
-  <b>المستودع</b><br>
-  <sub>💻 الكود</sub>
+<td align="center">
+<a href="https://t.me/your_group">
+<img src="https://img.shields.io/badge/Telegram-Group-0088cc?style=for-the-badge&logo=telegram"/>
+</a>
+<br/>Community
 </td>
 
-<td align="center" width="25%">
-  <a href="https://linktr.ee/ramibitar.dev">
-    <img src="https://img.shields.io/badge/🔗%20روابط-شخصية-orange?style=for-the-badge"/>
-  </a><br><br>
-  <b>روابطي</b><br>
-  <sub>🌐 كل الحسابات</sub>
+<td align="center">
+<a href="https://github.com/RamiAIlab/Noorify_Bot">
+<img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github"/>
+</a>
+<br/>Source Code
 </td>
+
+</tr>
+
+<tr>
+
+<td align="center">
+<a href="https://github.com/RamiAIlab">
+<img src="https://img.shields.io/badge/Developer-GitHub-black?style=for-the-badge&logo=github"/>
+</a>
+<br/>Profile
+</td>
+
+<td align="center">
+<a href="https://t.me/RamiAILab">
+<img src="https://img.shields.io/badge/Developer-Telegram-26A5E4?style=for-the-badge&logo=telegram"/>
+</a>
+<br/>Contact
+</td>
+
+<td align="center">
+<a href="https://linktr.ee/ramibeitar">
+<img src="https://img.shields.io/badge/Portfolio-Linktree-orange?style=for-the-badge"/>
+</a>
+<br/>All Links
+</td>
+
+<td align="center">
+<img src="https://skillicons.dev/icons?i=internetexplorer" height="40"/>
+<br/>Web Hub
+</td>
+
 </tr>
 </table>
 
 ---
 
-## 👨‍💻 المطور
+## 👨‍💻 DEVELOPER
 
-| الدور      | الاسم      | الروابط                                                                     |
-| ---------- | ---------- | --------------------------------------------------------------------------- |
-| مطور البوت | رامي بيطار | [GitHub](https://github.com/RamiAIlab) • [Telegram](https://t.me/RamiAILab) |
+| Role                 | Name        | Links                         |
+| -------------------- | ----------- | ----------------------------- |
+| Creator & Maintainer | Rami Beitar | GitHub • Telegram • Portfolio |
+
+---
+
+## 🎯 PROJECT VISION
+
+A scalable automation system designed to integrate spiritual reminders into daily digital life, ensuring consistent engagement with Islamic values through minimal, elegant technology.
 
 ---
 
-## 🌿 هدف المشروع
-
-هذا المشروع يهدف إلى جعل الذكر اليومي جزءاً تلقائياً من حياة المستخدم، عبر تقنية بسيطة لكنها مؤثرة، تجمع بين البرمجة والإيمان في تجربة رقمية هادفة.
-
----
+## 🌌 FOOTER
 
 <div align="center">
 
-![Footer](https://capsule-render.vercel.app/api?type=waving\&color=0:3f0f8a,50:1f0647,100:09011a\&height=180\&section=footer)
+![FOOTER](https://capsule-render.vercel.app/api?type=waving\&color=0:2b0f66,50:1a0b3d,100:0b001a\&height=180\&section=footer)
+
+### Built with purpose. Powered by simplicity.
 
 </div>
 ```
