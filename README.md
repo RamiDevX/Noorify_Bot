@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,40:0a3d62,100:0088cc&height=230&section=header&text=NOORIFY%20BOT&fontSize=78&fontColor=ffffff&fontAlignY=38&fontAlign=50&desc=نشر%20تذكيرات%20الإيمان%20اليومية%20عبر%20الأتمتة&descSize=19&descAlignY=60&descColor=a8cfe8&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,40:0a3d62,100:0088cc&height=230&section=header&text=NOORIFY%20BOT&fontSize=78&fontColor=ffffff&fontAlignY=38&fontAlign=50&desc=نشر%20تذكيرات%20يومية%20عبر%20الأتمتة&descSize=19&descAlignY=60&descColor=a8cfe8&animation=fadeIn" width="100%"/>
 </p>
 
 <p align="center">
@@ -26,9 +26,9 @@
 
 <div dir="rtl">
 
-**NoorifyBot** بوت تيليغرام مفتوح المصدر، صُمِّم لغرض واحد — أن يُدخل لحظات من التأمل الروحي وسط الروتين الرقمي اليومي.
+**NoorifyBot**
 
-يُرسل تذكيرات إسلامية مختارة، أدعية أصيلة، وآيات قرآنية كريمة بشكل مجدوَل وتلقائي — إلى المحادثات الخاصة، المجموعات، والقنوات دون أي تعقيد.
+يُرسل تذكيرات إسلامية مختارة، أدعية، وآيات قرآنية مجدوَل وتلقائي — إلى المحادثات الخاصة، المجموعات، والقنوات دون أي تعقيد.
 
 > في عالم مثقل بالإشعارات الفارغة، NoorifyBot هو الإشعار الذي يستحق أن تفتحه.
 
@@ -142,23 +142,6 @@ TOKEN = "YOUR_BOT_TOKEN_HERE"
 
 ---
 
-## 💬 رسالة الترحيب
-
-```
-🌙  أهلاً بك في Noorify Bot
-
-أنا هنا لأُحضر لك لحظة هادئة من الإيمان
-كل يوم — تلقائياً، دون انقطاع.
-
-اضغط ▶️ ابدأ للاشتراك في التذكيرات اليومية.
-
-﴿ وَذَكِّرْ فَإِنَّ الذِّكْرَىٰ تَنفَعُ الْمُؤْمِنِينَ ﴾
-                                  — سورة الذاريات، آية 55
-```
-
-<br/>
-
----
 
 ## 🔗 الروابط الرسمية
 
