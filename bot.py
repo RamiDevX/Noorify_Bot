@@ -1,25 +1,13 @@
-# ============================================
-# NoorifyBot - Islamic Reminder Telegram Bot
-# Developer: Rami
-# Library: aiogram 3
-# ============================================
-
-# تثبيت المكتبات:
-# pip install aiogram apscheduler aiosqlite
-
-# ============================================
-# FILE: bot.py
-# ============================================
-
+import os
 import asyncio
 import random
 import aiosqlite
 from datetime import datetime
+from dotenv import load_dotenv
 
 from aiogram import Bot, Dispatcher, F
 from aiogram.enums import ParseMode
 from aiogram.client.default import DefaultBotProperties
-
 from aiogram.filters import CommandStart
 from aiogram.types import (
     Message,
@@ -30,19 +18,17 @@ from aiogram.types import (
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
-# ============================================
-# CONFIG
-# ============================================
+# تحميل المتغيرات البيئية من ملف .env إذا كان موجوداً محلياً
+load_dotenv()
 
-BOT_USERNAME = "Noorify_Bot"
-DEVELOPER = "@vx_rq"
-
-# ============================================
-# DATABASE
-# ============================================
+# استدعاء التوكن من النظام (محلياً أو من خوادم Railway)
+TOKEN = os.getenv("BOT_TOKEN")
+if not TOKEN:
+    raise ValueError("CRITICAL ERROR: BOT_TOKEN environmental variable is missing!")
 
 DB_PATH = "noorify.db"
-
+BOT_USERNAME = "Noorify_Bot"
+DEVELOPER = "@vx_rq"
 
 async def init_db():
     async with aiosqlite.connect(DB_PATH) as db:
