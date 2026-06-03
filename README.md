@@ -19,7 +19,7 @@
 
 > *"في عالم مثقل بالإشعارات الفارغة — هذا هو الإشعار الوحيد الذي يستحق أن تفتحه."*
 
-بوت تيليغرام ذكي يُرسل تذكيرات إسلامية مختارة بعناية: أدعية، آيات قرآنية، وأحاديث شريفة — مجدولةً تلقائياً إلى محادثاتك الخاصة، المجموعات، والقنوات.
+**NoorifyBot** بوت تيليغرام ذكي يُرسل تذكيرات إسلامية مختارة بعناية: أدعية، آيات قرآنية، وأحاديث شريفة — مجدولةً تلقائياً إلى محادثاتك الخاصة، المجموعات، والقنوات.
 
 مبني بـ Python غير متزامن، مُجدوِل خفيف الوزن، وبصمة برمجية صغيرة — سهل الاستضافة الذاتية وقابل للتوسع.
 
@@ -57,7 +57,8 @@ pip install -r requirements.txt
 python bot.py
 ```
 
-> ✓ مختبر على  Windows
+> ✓ مختبر على Linux، Windows، وmacOS
+
 ---
 
 ## الإعدادات
@@ -97,29 +98,64 @@ Noorify_Bot/
 
 ---
 
-## الروابط
+## الروابط والتواصل
 
-| | الرابط |
-|-|--------|
-| 🤖 البوت | [t.me/Noorify_bot](https://t.me/Noorify_bot) |
-| 📢 القناة | [t.me/RamiAILab](https://t.me/RamiAILab) |
-| 💻 GitHub | [RamiAIlab/Noorify_Bot](https://github.com/RamiAIlab/Noorify_Bot) |
-| 🌐 روابط المطور | [linktr.ee/ramibitar.dev](https://linktr.ee/ramibitar.dev) |
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://t.me/Noorify_bot">
+        <img src="https://img.shields.io/badge/%20%20%20%20%20%20%20%20البوت%20%20%20%20%20%20%20%20-@Noorify__bot-0088cc?style=for-the-badge&logo=telegram&logoColor=white" alt="Bot"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://t.me/RamiAILab">
+        <img src="https://img.shields.io/badge/%20%20%20%20%20%20%20القناة%20%20%20%20%20%20%20-@RamiAILab-0077b5?style=for-the-badge&logo=telegram&logoColor=white" alt="Channel"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/RamiAIlab/Noorify_Bot">
+        <img src="https://img.shields.io/badge/%20%20%20%20%20GitHub%20%20%20%20%20-RamiAIlab%2FNoorify__Bot-161b22?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://linktr.ee/ramibitar.dev">
+        <img src="https://img.shields.io/badge/%20%20%20%20روابطي%20%20%20%20-ramibitar.dev-006494?style=for-the-badge&logo=linktree&logoColor=white" alt="Linktree"/>
+      </a>
+    </td>
+  </tr>
+</table>
+
+</div>
 
 ---
 
 ## المطور
 
+<div align="center">
+
+<img src="https://github.com/RamiAIlab.png" width="80" style="border-radius:50%"/>
+
 **رامي بيطار**
-[![GitHub](https://img.shields.io/badge/GitHub-RamiAIlab-181717?style=flat-square&logo=github)](https://github.com/RamiAIlab)
-[![Telegram](https://img.shields.io/badge/Telegram-vx__rq-0088cc?style=flat-square&logo=telegram)](https://t.me/vx_rq)
+
+[![GitHub](https://img.shields.io/badge/GitHub-RamiAIlab-161b22?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RamiAIlab)&nbsp;
+[![Telegram](https://img.shields.io/badge/Telegram-@vx__rq-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/vx_rq)
+
+</div>
 
 ---
 
 ## الدعم
 
-- 🐛 **مشكلة؟** [أنشئ Issue جديدة](https://github.com/RamiAIlab/Noorify_Bot/issues/new)
-- 💬 **تواصل:** [@vx_rq](https://t.me/vx_rq)
+<div align="center">
+
+[![Issues](https://img.shields.io/badge/🐛%20%20إبلاغ%20عن%20مشكلة-GitHub%20Issues-161b22?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RamiAIlab/Noorify_Bot/issues/new)&nbsp;
+[![Contact](https://img.shields.io/badge/💬%20%20تواصل%20مباشر-@vx__rq-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/vx_rq)
+
+</div>
 
 ---
 
