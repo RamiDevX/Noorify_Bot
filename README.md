@@ -57,8 +57,7 @@ pip install -r requirements.txt
 python bot.py
 ```
 
-> ✓ مختبر على Linux، Windows، وmacOS
-
+> ✓ مختبر على  Windows
 ---
 
 ## الإعدادات
