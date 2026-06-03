@@ -1,147 +1,179 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,40:0a3d62,100:0088cc&height=230&section=header&text=NOORIFY%20BOT&fontSize=78&fontColor=ffffff&fontAlignY=38&fontAlign=50&desc=نشر%20تذكيرات%20يومية%20عبر%20الأتمتة&descSize=19&descAlignY=60&descColor=a8cfe8&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,40:0a3d62,100:0088cc&height=280&section=header&text=🌟%20NOORIFY%20BOT&fontSize=85&fontColor=00D9FF&fontAlignY=40&fontAlign=50&animation=fadeIn" width="100%"/>
 </p>
 
-<p align="center">
-  <a href="https://t.me/Noorify_bot">
-    <img src="https://img.shields.io/badge/بوت%20تيليغرام-نشط-0088cc?style=for-the-badge&logo=telegram&logoColor=white"/>
-  </a>
-  &nbsp;
-  <a href="https://github.com/RamiAIlab/Noorify_Bot">
-    <img src="https://img.shields.io/github/stars/RamiAIlab/Noorify_Bot?style=for-the-badge&logo=github&color=181717&logoColor=white&label=نجوم"/>
-  </a>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/الرخصة-MIT-22c55e?style=for-the-badge"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/الحالة-نشط-00E5FF?style=for-the-badge&logo=statuspage&logoColor=white"/>
-</p>
+<div align="center">
 
-<br/>
+### ✨ تطبيق تذكيرات إسلامية ذكي وأنيق
 
----
-
-## 📖 نبذة عن المشروع
-
-<div dir="rtl">
-
-**NoorifyBot**
-
-يُرسل تذكيرات إسلامية مختارة، أدعية، وآيات قرآنية مجدوَل وتلقائي — إلى المحادثات الخاصة، المجموعات، والقنوات دون أي تعقيد.
-
-> في عالم مثقل بالإشعارات الفارغة، NoorifyBot هو الإشعار الذي يستحق أن تفتحه.
-
-مبني بـ Python غير متزامن، مُجدوِل خفيف الوزن، وبصمة برمجية صغيرة — سهل الاستضافة الذاتية، قابل للتوسع، وهادف في كل رسالة يُرسلها.
+**بوت تيليغرام يُحول إشعاراتك إلى تجربة روحية متميزة**
 
 </div>
 
 <br/>
 
+<div align="center">
+
+[![Telegram Bot](https://img.shields.io/badge/🤖%20بوت%20تيليغرام-نشط-00D9FF?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0a3d62)](https://t.me/Noorify_bot)
+[![GitHub Stars](https://img.shields.io/github/stars/RamiAIlab/Noorify_Bot?style=for-the-badge&logo=github&label=⭐%20نجوم&labelColor=0a3d62&color=00D9FF)](https://github.com/RamiAIlab/Noorify_Bot)
+[![Python Version](https://img.shields.io/badge/🐍%20Python-3.11+-3776AB?style=for-the-badge&labelColor=0a3d62)](https://www.python.org)
+[![License](https://img.shields.io/badge/📜%20رخصة-MIT-00D9FF?style=for-the-badge&labelColor=0a3d62)](LICENSE)
+[![Status](https://img.shields.io/badge/✅%20الحالة-نشط%20وجاهز-00D9FF?style=for-the-badge&labelColor=0a3d62)](https://github.com/RamiAIlab/Noorify_Bot)
+
+</div>
+
 ---
 
-## ✨ المميزات
+## 📋 نبذة عن المشروع
+
+<div align="center" dir="rtl">
+
+> **في عالم مثقل بالإشعارات الفارغة، NoorifyBot هو الإشعار الوحيد الذي يستحق أن تفتحه** 🌙
+
+**NoorifyBot** بوت ذكي يرسل تذكيرات إسلامية مختارة بعناية، أدعية، وآيات قرآنية مجدولة وتلقائية إلى محادثاتك الخاصة والمجموعات والقنوات.
+
+مبني بـ **Python غير متزامن**، مُجدوِل خفيف الوزن، وبصمة برمجية صغيرة — سهل الاستضافة الذاتية، قابل للتوسع، وهادف.
+
+</div>
+
+---
+
+## ✨ المميزات الرئيسية
 
 <table width="100%" dir="rtl">
   <tr>
     <td width="50%" valign="top">
 
-**🔔 &nbsp; تذكيرات إسلامية عشوائية**
-مجموعة مُختارة من الأدعية والآيات القرآنية والأحاديث — تُقدَّم بشكل عشوائي لضمان تنوع روحي حقيقي في كل رسالة.
+### 🔔 تذكيرات عشوائية ذكية
+مجموعة مُختارة من الأدعية والآيات القرآنية والأحاديث — تُقدَّم بشكل عشوائي لضمان تنوع روحي حقيقي في كل رسالة
 
-**⏱️ &nbsp; إشعارات مجدولة**
-مدعوم بـ APScheduler — اضبط وقت الإرسال وتكراره بدقة متناهية. اضبطه مرة واحدة وانسَهُ.
+### ⏱️ إشعارات مجدولة دقيقة
+مدعوم بـ **APScheduler** — اضبط وقت الإرسال وتكراره بدقة متناهية. اضبطه مرة واحدة وانسَهُ
 
-**🔁 &nbsp; نظام ضد التكرار**
-خوارزمية ذكية تمنع تكرار المحتوى حتى يكتمل استعراض المجموعة كاملة.
+### 🔁 نظام ضد التكرار الذكي
+خوارزمية متقدمة تمنع تكرار المحتوى حتى يكتمل استعراض المجموعة كاملة
 
-  </td>
-  <td width="50%" valign="top">
+    </td>
+    <td width="50%" valign="top">
 
-**💬 &nbsp; دعم متعدد المحادثات**
-يعمل بسلاسة في الدردشات الخاصة، المجموعات، والقنوات — جلسة مستقلة لكل محادثة.
+### 💬 دعم متعدد المحادثات
+يعمل بسلاسة في الدردشات الخاصة، المجموعات، والقنوات — جلسة مستقلة لكل محادثة
 
-**🎛️ &nbsp; واجهة أزرار تفاعلية**
-لوحة مفاتيح Inline نظيفة وبديهية — لا أوامر يصعب حفظها.
+### 🎛️ واجهة أزرار تفاعلية
+لوحة مفاتيح **Inline** نظيفة وبديهية — لا أوامر معقدة يصعب حفظها
 
-**▶️ &nbsp; تحكم كامل بالتشغيل**
-المستخدم يتحكم بالكامل عبر `/start` و `/stop` — اشترك أو ألغِ الاشتراك في أي وقت.
+### ▶️ تحكم كامل بالتشغيل
+أنت تتحكم بالكامل عبر `/start` و `/stop` — اشترك أو ألغِ الاشتراك في أي وقت
 
-  </td>
+    </td>
   </tr>
 </table>
 
-<br/>
+---
+
+## 🛠️ التقنيات المستخدمة
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=python,sqlite,git,github,linux&theme=dark" height="55" alt="Tech Stack"/>
+
+| التقنية | الإصدار | الوصف |
+|:---:|:---:|:---|
+| **Aiogram** | `3.x` | إطار عمل تيليغرام غير متزامن |
+| **APScheduler** | `3.x` | جدولة المهام الذكية والدقيقة |
+| **Asyncio** | مدمج | معالجة غير متزامنة محسّنة |
+| **SQLite** | قاعدة بيانات | تخزين البيانات الآمن والخفيف |
+
+</div>
 
 ---
 
-## 🧠 التقنيات المستخدمة
+## 🚀 التثبيت والتشغيل
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=python,sqlite,git,github,linux&theme=dark" height="50"/>
-</p>
+### المتطلبات المسبقة
+- **Python 3.11+** ✅
+- **pip** (مدير الحزم) ✅
+- **توكن بوت تيليغرام** من [@BotFather](https://t.me/BotFather)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Aiogram-3.x-0088cc?style=flat-square&logo=telegram&logoColor=white"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/APScheduler-3.x-ff6b35?style=flat-square"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Asyncio-مدمج-3776AB?style=flat-square&logo=python&logoColor=white"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/SQLite-قاعدة%20البيانات-003B57?style=flat-square&logo=sqlite&logoColor=white"/>
-</p>
-
-<br/>
-
----
-
-## ⚙️ التثبيت والتشغيل
+### خطوات التثبيت
 
 ```bash
-# ── الخطوة 1 · استنساخ المستودع ───────────────────────────────
+# ┌─────────────────────────────────────────┐
+# │ 1️⃣  استنساخ المستودع                  │
+# └─────────────────────────────────────────┘
 git clone https://github.com/RamiAIlab/Noorify_Bot.git
 
-# ── الخطوة 2 · الدخول إلى مجلد المشروع ───────────────────────
+# ┌─────────────────────────────────────────┐
+# │ 2️⃣  الدخول إلى مجلد المشروع           │
+# └─────────────────────────────────────────┘
 cd Noorify_Bot
 
-# ── الخطوة 3 · تثبيت المتطلبات ────────────────────────────────
+# ┌─────────────────────────────────────────┐
+# │ 3️⃣  تثبيت المتطلبات                   │
+# └─────────────────────────────────────────┘
 pip install -r requirements.txt
 
-# ── الخطوة 4 · تشغيل البوت ────────────────────────────────────
+# ┌─────────────────────────────────────────┐
+# │ 4️⃣  تشغيل البوت                       │
+# └─────────────────────────────────────────┘
 python bot.py
 ```
 
-> **المتطلبات:** Python 3.11+ &nbsp;·&nbsp; تم الاختبار على Linux و Windows
-
-<br/>
+> ✅ تم الاختبار على **Linux** و **Windows** و **macOS**
 
 ---
 
-## 🔐 الإعدادات والمتغيرات
+## ⚙️ الإعدادات والمتغيرات
 
-أنشئ ملف `.env` في جذر المشروع وأضف ما يلي:
+أنشئ ملف `.env` في جذر المشروع وأضف المتغيرات التالية:
 
 ```env
-# ─────────────────────────────────────────────
-#  الإعدادات الأساسية
-# ─────────────────────────────────────────────
+# ╔═══════════════════════════════════════════════════════╗
+# ║        🔐 الإعدادات الأساسية والضرورية             ║
+# ╚═══════════════════════════════════════════════════════╝
+
+# توكن البوت من @BotFather
 TOKEN = "YOUR_BOT_TOKEN_HERE"
 
-# ─────────────────────────────────────────────
-#  اختياري · قابلية التوسع مستقبلاً
-# ─────────────────────────────────────────────
+# ╔═══════════════════════════════════════════════════════╗
+# ║        📌 الإعدادات الاختيارية (متقدمة)           ║
+# ╚═══════════════════════════════════════════════════════╝
+
+# عنوان قاعدة البيانات
 # DATABASE_URL = "sqlite:///noorify.db"
-# ADMIN_ID     = 123456789
-# TIMEZONE     = "Asia/Riyadh"
+
+# معرّف المسؤول للأوامر الحساسة
+# ADMIN_ID = 123456789
+
+# المنطقة الزمنية (Asia/Riyadh, Europe/London, إلخ)
+# TIMEZONE = "Asia/Riyadh"
+
+# الحد الأدنى للفترة الزمنية بالدقائق
 # INTERVAL_MIN = 60
 ```
 
-> احصل على التوكن من [@BotFather](https://t.me/BotFather) على تيليغرام.
-
-<br/>
+**كيفية الحصول على التوكن؟**
+- توجه إلى [@BotFather](https://t.me/BotFather) على تيليغرام
+- اكتب `/start` ثم اتبع الخطوات
+- اختر `/newbot` وأكمل العملية
+- انسخ التوكن والصقه في ملف `.env`
 
 ---
 
+## 📁 هيكل المشروع
+
+```
+Noorify_Bot/
+├── 📄 bot.py                 # نقطة البداية الرئيسية
+├── 📄 requirements.txt        # المتطلبات والمكتبات
+├── 📄 .env.example           # قالب الإعدادات
+├── 📄 Procfile               # إعدادات النشر على Railway
+├── 📋 README.md              # هذا الملف
+├── 📋 LICENSE                # رخصة MIT
+└── 📁 handlers/              # معالجات الأوامر والرسائل
+```
+
+---
 
 ## 🔗 الروابط الرسمية
 
@@ -149,96 +181,118 @@ TOKEN = "YOUR_BOT_TOKEN_HERE"
   <tr>
     <td align="center" width="25%">
       <a href="https://t.me/Noorify_bot">
-        <img src="https://img.shields.io/badge/⚡%20Noorify%20Bot-استخدام%20مباشر-0088cc?style=for-the-badge&logo=telegram&logoColor=white"/>
+        <img src="https://img.shields.io/badge/⚡%20استخدم%20البوت-مباشر%20الآن-00D9FF?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0a3d62" width="100%"/>
       </a><br/><br/>
-      <img src="https://skillicons.dev/icons?i=telegram" height="45"/>
-      <br/><b>استخدم البوت</b><br/>
-      <sub>🚀 تشغيل فوري</sub>
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/telegram/telegram-original.svg" height="50" alt="Telegram"/><br/>
+      <b>🤖 البوت</b><br/>
+      <sub>اضغط للاستخدام الفوري</sub>
     </td>
     <td align="center" width="25%">
       <a href="https://t.me/RamiAILab">
-        <img src="https://img.shields.io/badge/📢%20القناة-تحديثات-00E5FF?style=for-the-badge&logo=telegram&logoColor=white"/>
+        <img src="https://img.shields.io/badge/📢%20القناة-تحديثات%20مستمرة-00D9FF?style=for-the-badge&logo=telegram&logoColor=white&labelColor=0a3d62" width="100%"/>
       </a><br/><br/>
-      <img src="https://skillicons.dev/icons?i=telegram" height="45"/>
-      <br/><b>القناة</b><br/>
-      <sub>📡 قناتي التقنيه</sub>
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/telegram/telegram-original.svg" height="50" alt="Telegram Channel"/><br/>
+      <b>📡 القناة</b><br/>
+      <sub>متابعة التحديثات والأخبار</sub>
     </td>
     <td align="center" width="25%">
       <a href="https://github.com/RamiAIlab/Noorify_Bot">
-        <img src="https://img.shields.io/badge/📦%20GitHub-المصدر-181717?style=for-the-badge&logo=github&logoColor=white"/>
+        <img src="https://img.shields.io/badge/📦%20المستودع-الكود%20المصدري-00D9FF?style=for-the-badge&logo=github&logoColor=white&labelColor=0a3d62" width="100%"/>
       </a><br/><br/>
-      <img src="https://skillicons.dev/icons?i=github" height="45"/>
-      <br/><b>المستودع</b><br/>
-      <sub>💻 الكود المصدري</sub>
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" height="50" alt="GitHub"/><br/>
+      <b>💻 GitHub</b><br/>
+      <sub>الوصول للكود المصدري</sub>
     </td>
     <td align="center" width="25%">
       <a href="https://linktr.ee/ramibitar.dev">
-        <img src="https://img.shields.io/badge/🔗%20Linktree-روابط%20شخصية-orange?style=for-the-badge"/>
+        <img src="https://img.shields.io/badge/🔗%20روابطي-شخصية-00D9FF?style=for-the-badge&labelColor=0a3d62" width="100%"/>
       </a><br/><br/>
-      <img src="https://skillicons.dev/icons?i=internetexplorer" height="45"/>
-      <br/><b>روابطي</b><br/>
-      <sub>🌐 كل الحسابات</sub>
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/chrome/chrome-original.svg" height="50" alt="Links"/><br/>
+      <b>🌐 الروابط</b><br/>
+      <sub>كل الحسابات والمشاريع</sub>
     </td>
   </tr>
 </table>
 
-<br/>
-
 ---
 
-## 👨‍💻 المطور
+## 👨‍💻 المطور والفريق
 
-<table align="center" width="80%">
-  <thead>
-    <tr>
-      <th align="center">الدور</th>
-      <th align="center">الاسم</th>
-      <th align="center">الروابط</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="center">🧑‍💻 &nbsp; المطور الرئيسي</td>
-      <td align="center"><b>رامي بيطار</b></td>
-      <td align="center">
-        <a href="https://github.com/RamiAIlab">
-          <img src="https://img.shields.io/badge/GitHub-RamiAIlab-181717?style=flat-square&logo=github&logoColor=white"/>
-        </a>
-        &nbsp;
-        <a href="https://t.me/vx_rq">
-          <img src="https://img.shields.io/badge/Telegram-vx__rq-0088cc?style=flat-square&logo=telegram&logoColor=white"/>
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div align="center">
 
-<br/>
+| الدور | الاسم | الروابط |
+|:---:|:---:|:---:|
+| 🧑‍💻 **المطور الرئيسي** | **رامي بيطار** | [![GitHub](https://img.shields.io/badge/GitHub-RamiAIlab-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/RamiAIlab) [![Telegram](https://img.shields.io/badge/Telegram-vx__rq-0088cc?style=flat-square&logo=telegram&logoColor=white)](https://t.me/vx_rq) |
+
+</div>
 
 ---
 
 ## 🎯 رؤية المشروع
 
 <p align="center" dir="rtl">
-  <i>
+  <b>
     وسط تدفق لا ينتهي من الإشعارات الرقمية الفارغة،<br/>
-    يوجد NoorifyBot ليُقدِّم <b>الإشعار الوحيد الذي يستحق أن تفتحه</b> —<br/>
-    كلمة تُعيد وصلك بما يهم حقاً.
-  </i>
+    يوجد <b>NoorifyBot</b> ليُقدِّم <b style="color: #00D9FF">الإشعار الوحيد الذي يستحق أن تفتحه</b> —<br/>
+    كلمة تُعيد وصلك بما يهم حقاً في حياتك.
+  </b>
 </p>
 
 <p align="center">
-  أتمتة في خدمة المعنى. تكنولوجيا كوعاء للذكر والتذكير.
+  <i>"أتمتة في خدمة المعنى. تكنولوجيا كوعاء للذكر والتذكير."</i>
 </p>
 
-<br/>
+---
+
+## 📊 الإحصائيات والمعلومات
+
+<div align="center">
+
+| المعلومة | القيمة |
+|:---:|:---|
+| 🐍 لغة البرمجة | Python 3.11+ |
+| 📦 الحجم | خفيف الوزن وفعّال |
+| ⚡ الأداء | غير متزامن وسريع |
+| 📱 التوافق | جميع الأنظمة (Linux, Windows, macOS) |
+| 🔒 الأمان | توكن آمن وبيانات محمية |
+| 📜 الرخصة | MIT (مفتوح المصدر) |
+
+</div>
+
+---
+
+## 📞 الدعم والمساعدة
+
+هل واجهت مشكلة أو لديك اقتراح؟
+
+- 📧 **تواصل عبر GitHub Issues**: [أنشئ قضية جديدة](https://github.com/RamiAIlab/Noorify_Bot/issues/new)
+- 💬 **راسلني على Telegram**: [@vx_rq](https://t.me/vx_rq)
+- 📢 **تابع القناة للتحديثات**: [@RamiAILab](https://t.me/RamiAILab)
+
+---
+
+## 📜 الترخيص
+
+هذا المشروع مرخص تحت **رخصة MIT** — يمكنك استخدامه بحرية في مشاريعك الشخصية والتجارية.
+
+اطّلع على ملف [LICENSE](LICENSE) للمزيد من التفاصيل.
 
 ---
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0088cc,50:0a3d62,100:0D1117&height=150&section=footer&text=صُنع%20بنية.%20يعمل%20ببساطة.&fontSize=20&fontColor=a8cfe8&fontAlignY=55&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0088cc,50:0a3d62,100:0D1117&height=180&section=footer&text=✨%20صُنع%20بنية%20وإخلاص&fontSize=24&fontColor=00D9FF&animation=fadeIn" width="100%"/>
 </p>
 
 <p align="center">
-  <sub>NoorifyBot © 2026 · مفتوح المصدر · صُنع بنية وإخلاص</sub>
+  <sub>
+    <b>NoorifyBot © 2026</b><br/>
+    مفتوح المصدر • صُنع بنية وإخلاص • في خدمة الذكر والتذكير<br/>
+    <b style="color: #0088cc">لا إله إلا الله وحده لا شريك له</b>
+  </sub>
 </p>
+
+<div align="center">
+
+**⭐ إذا أعجبك المشروع، لا تنسَ إضافة نجمة! ⭐**
+
+</div>
