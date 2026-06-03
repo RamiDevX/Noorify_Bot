@@ -96,68 +96,49 @@ Noorify_Bot/
 └── handlers/             # معالجات الأوامر
 ```
 
----
-
-## الروابط والتواصل
-
+## المطور والتواصل
+ 
 <div align="center">
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://t.me/Noorify_bot">
-        <img src="https://img.shields.io/badge/%20%20%20%20%20%20%20%20البوت%20%20%20%20%20%20%20%20-@Noorify__bot-0088cc?style=for-the-badge&logo=telegram&logoColor=white" alt="Bot"/>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://t.me/RamiAILab">
-        <img src="https://img.shields.io/badge/%20%20%20%20%20%20%20القناة%20%20%20%20%20%20%20-@RamiAILab-0077b5?style=for-the-badge&logo=telegram&logoColor=white" alt="Channel"/>
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/RamiAIlab/Noorify_Bot">
-        <img src="https://img.shields.io/badge/%20%20%20%20%20GitHub%20%20%20%20%20-RamiAIlab%2FNoorify__Bot-161b22?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://linktr.ee/ramibitar.dev">
-        <img src="https://img.shields.io/badge/%20%20%20%20روابطي%20%20%20%20-ramibitar.dev-006494?style=for-the-badge&logo=linktree&logoColor=white" alt="Linktree"/>
-      </a>
-    </td>
-  </tr>
-</table>
-
-</div>
-
----
-
-## المطور
-
-<div align="center">
-
-<img src="https://github.com/RamiAIlab.png" width="80" style="border-radius:50%"/>
-
+<img src="https://github.com/RamiAIlab.png" width="88" style="border-radius:50%; border:2px solid #B5D4F4;"/>
 **رامي بيطار**
-
-[![GitHub](https://img.shields.io/badge/GitHub-RamiAIlab-161b22?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RamiAIlab)&nbsp;
-[![Telegram](https://img.shields.io/badge/Telegram-@vx__rq-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/vx_rq)
-
+ 
+<sub>مطور NoorifyBot &nbsp;·&nbsp; Python &nbsp;·&nbsp; AI</sub>
+ 
+<br/>
+[![GitHub](https://img.shields.io/badge/RamiAIlab-161b22?style=flat-square&logo=github&logoColor=white)](https://github.com/RamiAIlab)&nbsp;
+[![Telegram](https://img.shields.io/badge/%40vx__rq-0088cc?style=flat-square&logo=telegram&logoColor=white)](https://t.me/vx_rq)&nbsp;
+[![Linktree](https://img.shields.io/badge/ramibitar.dev-43E55E?style=flat-square&logo=linktree&logoColor=white)](https://linktr.ee/ramibitar.dev)
+ 
 </div>
-
 ---
-
-## الدعم
-
+ 
+## الروابط والتواصل
+ 
 <div align="center">
-
-[![Issues](https://img.shields.io/badge/🐛%20%20إبلاغ%20عن%20مشكلة-GitHub%20Issues-161b22?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RamiAIlab/Noorify_Bot/issues/new)&nbsp;
-[![Contact](https://img.shields.io/badge/💬%20%20تواصل%20مباشر-@vx__rq-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/vx_rq)
-
+<sub>روابط المشروع</sub>
+ 
+<br/><br/>
+ 
+[![Bot](https://img.shields.io/badge/البوت-@Noorify__bot-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Noorify_bot)&nbsp;
+[![Channel](https://img.shields.io/badge/القناة-@RamiAILab-0077b5?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/RamiAILab)
+ 
+<br/>
+[![GitHub](https://img.shields.io/badge/GitHub-RamiAIlab%2FNoorify__Bot-161b22?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RamiAIlab/Noorify_Bot)&nbsp;
+[![Linktree](https://img.shields.io/badge/Linktree-ramibitar.dev-43E55E?style=for-the-badge&logo=linktree&logoColor=white)](https://linktr.ee/ramibitar.dev)
+ 
 </div>
-
 ---
+ 
+## الدعم
+ 
+<div align="center">
+[![Issues](https://img.shields.io/badge/إبلاغ%20عن%20مشكلة-GitHub%20Issues-161b22?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RamiAIlab/Noorify_Bot/issues/new)&nbsp;
+[![Contact](https://img.shields.io/badge/تواصل%20مباشر-@vx__rq-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/vx_rq)
+ 
+</div>
+---
+
+
 
 ## الترخيص
 
