@@ -162,8 +162,8 @@ Noorify_Bot/
       </a>
     </td>
     <td align="center">
-      <a href="https://t.me/vx_rq">
-        <img src="https://img.shields.io/badge/💬%20تواصل%20مباشر-@vx__rq-25A8DD?style=for-the-badge&logo=telegram&logoColor=white" alt="Contact" width="200"/>
+      <a href="https://t.me/ramibitar">
+        <img src="https://img.shields.io/badge/💬%20تواصل%20مباشر-@ramibitar-25A8DD?style=for-the-badge&logo=telegram&logoColor=white" alt="Contact" width="200"/>
       </a>
     </td>
   </tr>
@@ -179,19 +179,11 @@ Noorify_Bot/
 
 <img src="https://github.com/RamiDevX.png" width="100" style="border-radius:50%;border:3px solid #006494"/>
 
-### ✨ رامي بيطار ✨
-
 <a href="https://github.com/RamiDevX">
   <img src="https://img.shields.io/badge/GitHub-RamiDevX-161b22?style=for-the-badge&logo=github&logoColor=white"/>
-</a>
-&nbsp;
-<a href="https://t.me/vx_rq">
-  <img src="https://img.shields.io/badge/Telegram-@vx__rq-0088cc?style=for-the-badge&logo=telegram&logoColor=white"/>
-</a>
 
 </div>
 
----
 
 ## 📜 الترخيص
 
@@ -204,7 +196,7 @@ Noorify_Bot/
 </p>
 
 <p align="center">
-  <sub>✨ صُنع بنية وإخلاص ✨</sub>
+  <sub> صُنع بنية وإخلاص </sub>
 </p>
 
 <p align="center">
