@@ -211,8 +211,8 @@ Noorify_Bot/
   <img src="https://img.shields.io/badge/GitHub-RamiDevX-161b22?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
 &nbsp;
-<a href="https://t.me/vx_rq">
-  <img src="https://img.shields.io/badge/Telegram-@vx__rq-0088cc?style=for-the-badge&logo=telegram&logoColor=white"/>
+<a href="https://t.me/ramibitar">
+  <img src="https://img.shields.io/badge/Telegram-@ramibitar-0088cc?style=for-the-badge&logo=telegram&logoColor=white"/>
 </a>
 
 </div>
@@ -230,7 +230,7 @@ Noorify_Bot/
 </p>
 
 <p align="center">
-  <sub>✨ صُنع بنية وإخلاص ✨</sub>
+  <sub> صُنع بنية وإخلاص </sub>
 </p>
 
 <p align="center">
