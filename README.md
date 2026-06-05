@@ -171,14 +171,10 @@ Noorify_Bot/
 
 </div>
 
----
 
 ## 👨‍💻 المطور
 
 <div align="center">
-
-<img src="https://github.com/RamiDevX.png" width="100" style="border-radius:50%;border:3px solid #006494"/>
-
 <a href="https://github.com/RamiDevX">
   <img src="https://img.shields.io/badge/GitHub-RamiDevX-161b22?style=for-the-badge&logo=github&logoColor=white"/>
 
