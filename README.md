@@ -19,7 +19,7 @@
 
 > *"في عالم مثقل بالإشعارات الفارغة — هذا هو الإشعار الوحيد الذي يستحق أن تفتحه."*
 
- نورفاي هو بوت تيليغرام ذكي يرسل لك تذكيرات إسلامية جميلة كل يوم:
+**نورفاي** هو بوت تيليغرام ذكي يرسل لك تذكيرات إسلامية جميلة كل يوم:
 - 📖 آيات قرآنية كريمة
 - 🤲 أدعية مختارة بعناية
 - 💭 أحاديث شريفة نبوية
@@ -42,21 +42,52 @@
 
 ## 🛠️ التقنيات المستخدمة
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                   🚀 التقنيات الحديثة                   │
-├─────────────────────────────────────────────────────────┤
-│                                                         │
-│  🤖 Aiogram 3.x          →  إطار عمل بوتات التيليغرام  │
-│                                                         │
-│  ⏰ APScheduler 3.x       →  جدولة المهام والتذكيرات    │
-│                                                         │
-│  ⚡ Asyncio              →  معالجة سريعة وفعالة         │
-│                                                         │
-│  🗄️  SQLite             →  حفظ البيانات بأمان           │
-│                                                         │
-└─────────────────────────────────────────────────────────┘
-```
+<div align="center">
+
+<table style="border: none; background: transparent;">
+  <tr>
+    <td align="center" style="border: none; padding: 20px;">
+      <a href="https://docs.aiogram.dev/">
+        <img src="https://img.shields.io/badge/🤖%20AIOGRAM%203.x-0088cc?style=for-the-badge&labelColor=051923" alt="Aiogram"/>
+        <br/>
+        <sub>إطار عمل قوي</sub>
+        <br/>
+        <sub>بوتات التيليغرام</sub>
+      </a>
+    </td>
+    <td align="center" style="border: none; padding: 20px;">
+      <a href="https://apscheduler.readthedocs.io/">
+        <img src="https://img.shields.io/badge/⏰%20APSCHEDULER%203.x-FF6B35?style=for-the-badge&labelColor=051923" alt="APScheduler"/>
+        <br/>
+        <sub>جدولة ذكية</sub>
+        <br/>
+        <sub>للمهام والتذكيرات</sub>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="border: none; padding: 20px;">
+      <a href="https://docs.python.org/3/library/asyncio.html">
+        <img src="https://img.shields.io/badge/⚡%20ASYNCIO-3776AB?style=for-the-badge&labelColor=051923" alt="Asyncio"/>
+        <br/>
+        <sub>معالجة غير</sub>
+        <br/>
+        <sub>متزامنة سريعة</sub>
+      </a>
+    </td>
+    <td align="center" style="border: none; padding: 20px;">
+      <a href="https://www.sqlite.org/">
+        <img src="https://img.shields.io/badge/🗄️%20SQLITE-003B57?style=for-the-badge&labelColor=051923" alt="SQLite"/>
+        <br/>
+        <sub>قاعدة بيانات</sub>
+        <br/>
+        <sub>آمنة وخفيفة</sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+</div>
 
 ---
 
@@ -115,6 +146,10 @@ Noorify_Bot/
 └── handlers/             # معالجات أوامر البوت
 ```
 
+---
+
+## 🔗 الروابط والتواصل
+
 <div align="center">
 
 ### 🌐 تابعني على منصات مختلفة
@@ -167,15 +202,22 @@ Noorify_Bot/
 
 </div>
 
+---
 
 ## 👨‍💻 المطور
 
 <div align="center">
 <a href="https://github.com/RamiDevX">
   <img src="https://img.shields.io/badge/GitHub-RamiDevX-161b22?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+&nbsp;
+<a href="https://t.me/vx_rq">
+  <img src="https://img.shields.io/badge/Telegram-@vx__rq-0088cc?style=for-the-badge&logo=telegram&logoColor=white"/>
+</a>
 
 </div>
 
+---
 
 ## 📜 الترخيص
 
@@ -188,7 +230,7 @@ Noorify_Bot/
 </p>
 
 <p align="center">
-  <sub> صُنع بنية وإخلاص </sub>
+  <sub>✨ صُنع بنية وإخلاص ✨</sub>
 </p>
 
 <p align="center">
