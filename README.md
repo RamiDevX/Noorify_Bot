@@ -121,7 +121,7 @@ Noorify_Bot/
 
 <div align="center">
 
-### 🌐 تابعنا على منصات مختلفة
+### 🌐 تابعني على منصات مختلفة
 
 <table>
   <tr>
@@ -132,7 +132,7 @@ Noorify_Bot/
     </td>
     <td align="center">
       <a href="https://t.me/ramibitar">
-        <img src="https://img.shields.io/badge/💬%20قناة-@ramibitar-0077b5?style=for-the-badge&logo=telegram&logoColor=white" alt="Channel" width="200"/>
+        <img src="https://img.shields.io/badge/💬%20علي تلغرام-@ramibitar-0077b5?style=for-the-badge&logo=telegram&logoColor=white" alt="personel" width="200"/>
       </a>
     </td>
   </tr>
