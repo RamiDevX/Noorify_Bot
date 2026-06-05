@@ -28,7 +28,7 @@ if not TOKEN:
 
 DB_PATH = "noorify.db"
 BOT_USERNAME = "Noorify_Bot"
-DEVELOPER = "@vx_rq"
+DEVELOPER = "@ramibitar"
 
 async def init_db():
     async with aiosqlite.connect(DB_PATH) as db:
