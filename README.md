@@ -115,9 +115,7 @@ Noorify_Bot/
 └── handlers/             # معالجات أوامر البوت
 ```
 
----
-
-## 🔗 الروابط والتواصل
+ل
 
 <div align="center">
 
@@ -144,7 +142,7 @@ Noorify_Bot/
     </td>
     <td align="center">
       <a href="https://linktr.ee/ramibitar">
-        <img src="https://img.shields.io/badge/🔗%20روابطي-ramibitar.dev-006494?style=for-the-badge&logo=linktree&logoColor=white" alt="Linktree" width="200"/>
+        <img src="https://img.shields.io/badge/🔗%20روابطي-ramibitar-006494?style=for-the-badge&logo=linktree&logoColor=white" alt="Linktree" width="200"/>
       </a>
     </td>
   </tr>
