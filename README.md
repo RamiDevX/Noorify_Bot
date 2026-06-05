@@ -42,12 +42,21 @@
 
 ## 🛠️ التقنيات المستخدمة
 
-| التقنية | الإصدار | الفائدة |
-|---------|---------|---------|
-| **Aiogram** | 3.x | إطار عمل قوي لبوتات التيليغرام |
-| **APScheduler** | 3.x | جدولة المهام والتذكيرات |
-| **Asyncio** | مدمج | معالجة سريعة وفعالة |
-| **SQLite** | — | حفظ البيانات بأمان |
+```
+┌─────────────────────────────────────────────────────────┐
+│                   🚀 التقنيات الحديثة                   │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  🤖 Aiogram 3.x          →  إطار عمل بوتات التيليغرام  │
+│                                                         │
+│  ⏰ APScheduler 3.x       →  جدولة المهام والتذكيرات    │
+│                                                         │
+│  ⚡ Asyncio              →  معالجة سريعة وفعالة         │
+│                                                         │
+│  🗄️  SQLite             →  حفظ البيانات بأمان           │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -108,16 +117,57 @@ Noorify_Bot/
 
 ---
 
-## 🔗 الروابط المهمة
+## 🔗 الروابط والتواصل
 
 <div align="center">
 
-| الرابط | النوع |
-|--------|-------|
-| [@Noorify_bot](https://t.me/Noorify_bot) | 🤖 البوت |
-| [@ramibitar](https://t.me/ramibitar) | 💬 التيليغرام |
-| [GitHub](https://github.com/RamiDevX/Noorify_Bot) | 🐙 المستودع |
-| [روابطي](https://linktr.ee/ramibitar) | 🔗 جميع الروابط |
+### 🌐 تابعنا على منصات مختلفة
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://t.me/Noorify_bot">
+        <img src="https://img.shields.io/badge/🤖%20البوت-@Noorify__bot-0088cc?style=for-the-badge&logo=telegram&logoColor=white" alt="Bot" width="200"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://t.me/ramibitar">
+        <img src="https://img.shields.io/badge/💬%20قناة-@ramibitar-0077b5?style=for-the-badge&logo=telegram&logoColor=white" alt="Channel" width="200"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/RamiDevX/Noorify_Bot">
+        <img src="https://img.shields.io/badge/🐙%20GitHub-RamiDevX%2FNoorify__Bot-161b22?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" width="200"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://linktr.ee/ramibitar">
+        <img src="https://img.shields.io/badge/🔗%20روابطي-ramibitar.dev-006494?style=for-the-badge&logo=linktree&logoColor=white" alt="Linktree" width="200"/>
+      </a>
+    </td>
+  </tr>
+</table>
+
+---
+
+### 💡 المساعدة والدعم
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/RamiDevX/Noorify_Bot/issues">
+        <img src="https://img.shields.io/badge/🐛%20إبلاغ%20عن%20مشكلة-GitHub%20Issues-FF4444?style=for-the-badge&logo=github&logoColor=white" alt="Issues" width="200"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://t.me/vx_rq">
+        <img src="https://img.shields.io/badge/💬%20تواصل%20مباشر-@vx__rq-25A8DD?style=for-the-badge&logo=telegram&logoColor=white" alt="Contact" width="200"/>
+      </a>
+    </td>
+  </tr>
+</table>
 
 </div>
 
@@ -127,22 +177,20 @@ Noorify_Bot/
 
 <div align="center">
 
-<img src="https://github.com/RamiDevX.png" width="80" style="border-radius:50%"/>
+<img src="https://github.com/RamiDevX.png" width="100" style="border-radius:50%;border:3px solid #006494"/>
 
-**رامي بيطار**
+### ✨ رامي بيطار ✨
 
-[GitHub](https://github.com/RamiDevX) · [Telegram](https://t.me/ramibitar)
+<a href="https://github.com/RamiDevX">
+  <img src="https://img.shields.io/badge/GitHub-RamiDevX-161b22?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+&nbsp;
+<a href="https://t.me/vx_rq">
+  <img src="https://img.shields.io/badge/Telegram-@vx__rq-0088cc?style=for-the-badge&logo=telegram&logoColor=white"/>
+</a>
 
 </div>
 
----
-
-## 💡 المساعدة والدعم
-
-هل واجهت مشكلة؟
-
-- 🐛 **إبلاغ عن خطأ**: [أنشئ Issue](https://github.com/RamiDevX/Noorify_Bot/issues)
-[ramibitar](https://t.me/ramibitar)---
 ---
 
 ## 📜 الترخيص
