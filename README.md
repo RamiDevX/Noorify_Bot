@@ -110,7 +110,7 @@ Noorify_Bot/
       </a>
     </td>
     <td align="center">
-      <a href="https://t.me/RamiAILab">
+      <a href="https://t.me/ramibitar">
         <img src="https://img.shields.io/badge/%20%20%20%20%20%20%20القناة%20%20%20%20%20%20%20-@RamiAILab-0077b5?style=for-the-badge&logo=telegram&logoColor=white" alt="Channel"/>
       </a>
     </td>
