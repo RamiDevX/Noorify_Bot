@@ -131,7 +131,7 @@ Noorify_Bot/
 
 **رامي بيطار**
 
-[GitHub](https://github.com/RamiDevX) · [Telegram](https://t.me/vx_rq)
+[GitHub](https://github.com/RamiDevX) · [Telegram](https://t.me/ramibitar)
 
 </div>
 
@@ -142,8 +142,7 @@ Noorify_Bot/
 هل واجهت مشكلة؟
 
 - 🐛 **إبلاغ عن خطأ**: [أنشئ Issue](https://github.com/RamiDevX/Noorify_Bot/issues)
-- 💬 **تواصل مباشر**: [@vx_rq](https://t.me/vx_rq)
-
+[ramibitar](https://t.me/ramibitar)---
 ---
 
 ## 📜 الترخيص
