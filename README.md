@@ -111,7 +111,7 @@ Noorify_Bot/
     </td>
     <td align="center">
       <a href="https://t.me/ramibitar">
-        <img src="https://img.shields.io/badge/%20%20%20%20%20%20%20تلغرام%20%20%20%20%20%20%20-@RamiAILab-0077b5?style=for-the-badge&logo=telegram&logoColor=white" alt="Channel"/>
+        <img src="https://img.shields.io/badge/%20%20%20%20%20%20%20تلغرام%20%20%20%20%20%20%20-0077b5?style=for-the-badge&logo=telegram&logoColor=white" alt="Channel"/>
       </a>
     </td>
   </tr>
@@ -122,7 +122,7 @@ Noorify_Bot/
       </a>
     </td>
     <td align="center">
-      <a href="https://linktr.ee/ramibitar.dev">
+      <a href="https://linktr.ee/ramibitar">
         <img src="https://img.shields.io/badge/%20%20%20%20روابطي%20%20%20%20-ramibitar.dev-006494?style=for-the-badge&logo=linktree&logoColor=white" alt="Linktree"/>
       </a>
     </td>
@@ -153,7 +153,7 @@ Noorify_Bot/
 <div align="center">
 
 [![Issues](https://img.shields.io/badge/🐛%20%20إبلاغ%20عن%20مشكلة-GitHub%20Issues-161b22?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RamiAIlab/Noorify_Bot/issues/new)&nbsp;
-[![Contact](https://img.shields.io/badge/💬%20%20تواصل%20مباشر-@vx__rq-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/vx_rq)
+[![Contact](https://img.shields.io/badge/💬%20%20تواصل%20مباشر-@vx__rq-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ramıibitar)
 
 </div>
 
