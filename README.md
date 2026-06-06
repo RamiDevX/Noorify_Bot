@@ -1,14 +1,49 @@
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:051923,50:003554,100:006494&height=220&section=header&text=NoorifyBot&fontSize=72&fontColor=61B3D4&fontAlignY=42&fontAlign=50" alt="Header"/>
-</p>
-
 <div align="center">
 
-[![Telegram Bot](https://img.shields.io/badge/Telegram-Bot-0088cc?style=flat-square&logo=telegram&logoColor=white)](https://t.me/Noorify_bot)
-[![Python 3.11+](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org)
-[![MIT License](https://img.shields.io/badge/License-MIT-006494?style=flat-square)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/RamiDevX/Noorify_Bot?style=flat-square&logo=github&color=006494)](https://github.com/RamiDevX/Noorify_Bot)
-[![Repository Size](https://img.shields.io/github/repo-size/RamiDevX/Noorify_Bot?style=flat-square&logo=github&color=006494)](https://github.com/RamiDevX/Noorify_Bot)
+<!-- ═══════════════════════════════════════ HEADER ═══════════════════════════════════════ -->
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0C1B33,25:003554,55:006494,80:0087c1,100:00B4D8&height=300&section=header&text=🌙%20NoorifyBot&fontSize=90&fontColor=ffffff&fontAlignY=40&fontAlign=50&desc=Islamic%20Daily%20Reminder%20Bot&descSize=22&descAlignY=62&descColor=ADE8F4&animation=fadeIn" alt="NoorifyBot Banner"/>
+
+<br/>
+
+<!-- Typing Animation -->
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&duration=3000&pause=900&color=00B4D8&center=true&vCenter=true&width=560&lines=%F0%9F%8C%99+Daily+Islamic+Reminders;%F0%9F%93%96+Random+Quran+Verses;%F0%9F%A4%B2+Duas+%26+Adhkar;%F0%9F%93%BF+Hadiths+of+the+Day;%E2%9C%A8+Smart+Auto-Scheduling+System" alt="Typing SVG"/>
+
+<br/><br/>
+
+<!-- ═══ BADGES ROW 1 ═══ -->
+<a href="https://t.me/Noorify_bot">
+  <img src="https://img.shields.io/badge/Telegram%20Bot-@Noorify__bot-0088cc?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Bot"/>
+</a>
+&nbsp;
+<a href="https://www.python.org">
+  <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+</a>
+&nbsp;
+<a href="LICENSE">
+  <img src="https://img.shields.io/badge/License-MIT-00C896?style=for-the-badge&logo=opensourceinitiative&logoColor=white" alt="License"/>
+</a>
+&nbsp;
+<img src="https://img.shields.io/badge/Status-🟢%20Active-0d1117?style=for-the-badge" alt="Active"/>
+
+<br/><br/>
+
+<!-- ═══ BADGES ROW 2 ═══ -->
+<a href="https://github.com/RamiDevX/Noorify_Bot/stargazers">
+  <img src="https://img.shields.io/github/stars/RamiDevX/Noorify_Bot?style=for-the-badge&logo=github&color=FFD700&labelColor=0d1117" alt="Stars"/>
+</a>
+&nbsp;
+<a href="https://github.com/RamiDevX/Noorify_Bot/network/members">
+  <img src="https://img.shields.io/github/forks/RamiDevX/Noorify_Bot?style=for-the-badge&logo=git&color=006494&labelColor=0d1117" alt="Forks"/>
+</a>
+&nbsp;
+<a href="https://github.com/RamiDevX/Noorify_Bot/issues">
+  <img src="https://img.shields.io/github/issues/RamiDevX/Noorify_Bot?style=for-the-badge&logo=github&color=d73a49&labelColor=0d1117" alt="Issues"/>
+</a>
+&nbsp;
+<a href="#">
+  <img src="https://img.shields.io/github/repo-size/RamiDevX/Noorify_Bot?style=for-the-badge&logo=github&color=563d7c&labelColor=0d1117" alt="Repo Size"/>
+</a>
 
 </div>
 
@@ -16,27 +51,65 @@
 
 <div dir="rtl">
 
-## 📌 نبذة عن المشروع
+## 🌙 نبذة عن المشروع
 
-> *"في عالم مثقل بالإشعارات الفارغة — هذا هو الإشعار الوحيد الذي يستحق أن تفتحه."*
+<br/>
 
-**نورفاي** بوت ذكي يرسل لك تذكيرات إسلامية جميلة يومياً، يحول هاتفك والمجموعات من التشتت إلى واحات عامرة بالذكر والأذكار التفاعلية.
+> ✨ *"في عالم مثقل بالإشعارات الفارغة — هذا هو الإشعار الوحيد الذي يستحق أن تفتحه."*
 
-### 🎯 الرسالة
-نشر الذكر والأدعية والآيات القرآنية بطريقة منظمة وتفاعلية لكل مستخدم.
+<br/>
+
+**نورفاي** بوت تيليغرام ذكي يُرسل لك تذكيرات إسلامية يومياً، يحوّل هاتفك والمجموعات من فضاء التشتت إلى واحات عامرة بالذكر والأذكار التفاعلية.
+
+🎯 **رسالتنا:** نشر الذكر والأدعية والآيات القرآنية بطريقة منظمة وتفاعلية تلائم كل مستخدم.
 
 ---
 
 ## ✨ المميزات الرئيسية
 
-| 🎯 الميزة | 📝 الوصف |
-|:---:|:---|
-| 🔔 **تذكيرات عشوائية** | آيات وأدعية وأحاديث غير متكررة كل يوم |
-| ⏱️ **جدولة ذكية** | تعمل تلقائياً في أوقات محددة |
-| 💬 **دعم شامل** | دردشات خاصة، مجموعات، وقنوات |
-| 🎛️ **واجهة سهلة** | أزرار بسيطة وواضحة للتحكم |
-| ⚙️ **تحكم كامل** | ابدأ، توقف، أو غيّر الإعدادات في أي وقت |
-| 📊 **قاعدة بيانات** | تخزين آمن وخفيف للبيانات |
+<div align="center">
+
+| الأيقونة | الميزة | الوصف |
+|:---:|:---:|:---|
+| 🔔 | **تذكيرات عشوائية** | آيات وأدعية وأحاديث غير متكررة كل يوم |
+| ⏱️ | **جدولة ذكية** | تعمل تلقائياً في أوقات محددة بدقة عالية |
+| 💬 | **دعم شامل** | دردشات خاصة، مجموعات، وقنوات |
+| 🎛️ | **واجهة سهلة** | أزرار بسيطة وواضحة للتحكم الكامل |
+| ⚙️ | **تحكم كامل** | ابدأ، أوقف، أو غيّر الإعدادات في أي وقت |
+| 📊 | **قاعدة بيانات** | تخزين آمن وخفيف لبيانات المستخدمين |
+| 🔄 | **بدون تكرار** | خوارزمية ذكية تمنع تكرار نفس المحتوى |
+| 🌐 | **دعم المجموعات** | يعمل في المجموعات والقنوات بكفاءة |
+
+</div>
+
+---
+
+## ⚙️ كيف يعمل البوت؟
+
+</div>
+
+```mermaid
+flowchart TD
+    A([🙋 User sends /start]) --> B[💾 Register in Database]
+    B --> C[⏰ Activate Smart Scheduler]
+    C --> D{🎲 Pick Random Content}
+    D -->|📖 Quran| E[Quranic Verse]
+    D -->|🤲 Dua| F[Dua / Dhikr]
+    D -->|📿 Hadith| G[Prophetic Hadith]
+    E & F & G --> H([📨 Send to User / Group])
+    H --> I{🔁 Still Active?}
+    I -->|✅ Yes| C
+    I -->|/stop ❌| J([🔴 Reminders Paused])
+    J -->|/resume ▶️| C
+
+    style A fill:#006494,stroke:#00B4D8,color:#fff,rx:20
+    style H fill:#006494,stroke:#00B4D8,color:#fff,rx:20
+    style J fill:#6B0000,stroke:#d73a49,color:#fff,rx:20
+    style D fill:#003554,stroke:#006494,color:#fff
+    style I fill:#003554,stroke:#006494,color:#fff
+```
+
+<div dir="rtl">
 
 ---
 
@@ -44,12 +117,25 @@
 
 <div align="center">
 
-| التقنية | الوصف | الإصدار |
+[![Aiogram](https://img.shields.io/badge/Aiogram-3.x-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://docs.aiogram.dev/)
+&nbsp;
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+&nbsp;
+[![APScheduler](https://img.shields.io/badge/APScheduler-3.x-FF6B6B?style=for-the-badge&logo=clockify&logoColor=white)](https://apscheduler.readthedocs.io/)
+&nbsp;
+[![AsyncIO](https://img.shields.io/badge/AsyncIO-Built--in-FFD700?style=for-the-badge&logo=python&logoColor=black)](https://docs.python.org/3/library/asyncio.html)
+&nbsp;
+[![SQLite](https://img.shields.io/badge/SQLite-3.x-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org)
+
+<br/>
+
+| 🔧 التقنية | 📋 الوصف | 📌 الإصدار |
 |:---:|:---|:---:|
-| 🤖 **Aiogram** | إطار عمل بوتات التيليغرام | 3.x |
-| ⏰ **APScheduler** | جدولة المهام والتذكيرات | 3.x |
-| ⚡ **AsyncIO** | معالجة غير متزامنة | Built-in |
-| 🗄️ **SQLite** | قاعدة البيانات | 3.x |
+| 🤖 **Aiogram** | إطار عمل بوتات التيليغرام الأسرع والأقوى | `3.x` |
+| ⏰ **APScheduler** | جدولة المهام والتذكيرات بدقة متناهية | `3.x` |
+| ⚡ **AsyncIO** | معالجة غير متزامنة عالية الأداء | `Built-in` |
+| 🗄️ **SQLite** | قاعدة بيانات خفيفة وموثوقة وسريعة | `3.x` |
+| 🐍 **Python** | لغة البرمجة الأساسية للمشروع | `3.11+` |
 
 </div>
 
@@ -57,100 +143,155 @@
 
 ## 🚀 البدء السريع
 
-### المتطلبات الأساسية
-- Python 3.11 أو أحدث
-- pip (مدير المكتبات)
-- رمز (Token) من BotFather على Telegram
+### 📋 المتطلبات الأساسية
 
-### 1️⃣ التثبيت والإعداد
+<div align="center">
+
+| المتطلب | الرابط | الحالة |
+|:---:|:---:|:---:|
+| 🐍 Python 3.11+ | [تحميل](https://python.org) | ⚠️ مطلوب |
+| 📦 pip | [تحميل](https://pip.pypa.io/) | ⚠️ مطلوب |
+| 🤖 Token من BotFather | [@BotFather](https://t.me/BotFather) | ⚠️ مطلوب |
+
+</div>
+
+<br/>
+
+### 1️⃣ &nbsp;الاستنساخ والتثبيت
 
 ```bash
-# استنساخ المشروع
+# 📥 استنساخ المشروع من GitHub
 git clone https://github.com/RamiDevX/Noorify_Bot.git
 cd Noorify_Bot
 
-# إنشاء بيئة افتراضية (اختياري لكن موصى به)
+# 🐍 إنشاء بيئة افتراضية (موصى به بشدة)
 python -m venv venv
-source venv/bin/activate  # على Windows: venv\Scripts\activate
 
-# تثبيت المكتبات المطلوبة
+# تفعيل البيئة — اختر حسب نظامك:
+source venv/bin/activate        # 🐧 Linux / macOS
+venv\Scripts\activate           # 🪟 Windows
+
+# 📦 تثبيت جميع المكتبات المطلوبة
 pip install -r requirements.txt
 ```
 
-### 2️⃣ إعداد متغيرات البيئة
-
-أنشئ ملف `.env` في جذر المشروع:
+### 2️⃣ &nbsp;إعداد ملف البيئة `.env`
 
 ```env
-# ⚠️ مطلوب - استخدم توكن بوتك من BotFather
+# ⚠️  مطلوب — توكن البوت من @BotFather
 TOKEN="YOUR_BOT_TOKEN_HERE"
 
-# 📍 اختياري - الإعدادات الإضافية
+# 🗄️  رابط قاعدة البيانات
 DATABASE_URL="sqlite:///noorify.db"
+
+# 👤  معرف حساب المشرف (اختياري)
 ADMIN_ID=123456789
+
+# 🌍  المنطقة الزمنية
 TIMEZONE="Asia/Riyadh"
+
+# ⏱️  الفاصل الزمني بين التذكيرات (بالدقائق)
 INTERVAL_MIN=60
 ```
 
-### 3️⃣ كيفية الحصول على التوكن
+### 3️⃣ &nbsp;الحصول على توكن البوت
 
-1. افتح **[@BotFather](https://t.me/BotFather)** على Telegram
-2. أرسل الأمر `/newbot`
-3. اتبع التعليمات (اختر اسم وusername للبوت)
-4. ستحصل على **TOKEN** - انسخه في ملف `.env`
+<div align="center">
 
-### 4️⃣ تشغيل البوت
+```
+┌──────────────────────────────────────────────────┐
+│                                                  │
+│   1️⃣   افتح  @BotFather  على تيليغرام             │
+│                       ⬇️                         │
+│   2️⃣   أرسل الأمر  /newbot                        │
+│                       ⬇️                         │
+│   3️⃣   اختر اسماً و username للبوت                │
+│                       ⬇️                         │
+│   4️⃣   انسخ التوكن المُرسَل إلى ملف  .env  ✅    │
+│                                                  │
+└──────────────────────────────────────────────────┘
+```
+
+</div>
+
+### 4️⃣ &nbsp;تشغيل البوت 🚀
 
 ```bash
 python bot.py
 ```
 
-> ✅ متوافق مع: **Linux** | **Windows** | **macOS**
+<div align="center">
+
+| 🐧 Linux | 🪟 Windows | 🍎 macOS |
+|:---:|:---:|:---:|
+| ✅ مدعوم | ✅ مدعوم | ✅ مدعوم |
+
+</div>
 
 ---
 
 ## 📁 هيكل المشروع
 
 ```
-Noorify_Bot/
-├── 📄 bot.py                    # نقطة البداية الرئيسية
-├── 📄 requirements.txt           # المكتبات المطلوبة
-├── 📄 .env.example              # قالب للإعدادات
-├── 📄 Procfile                  # إعدادات النشر (Railway/Heroku)
-├── 📄 README.md                 # التوثيق
-├── 📄 LICENSE                   # رخصة المشروع (MIT)
+🌙 Noorify_Bot/
 │
-├── 📁 handlers/                 # معالجات الأوامر والرسائل
+├── 📄 bot.py                    ← 🚀 نقطة البداية الرئيسية
+├── 📋 requirements.txt          ← 📦 المكتبات المطلوبة
+├── 🔑 .env.example              ← ⚙️  قالب إعدادات البيئة
+├── 📄 Procfile                  ← 🚢 إعدادات النشر (Railway / Heroku)
+├── 📖 README.md                 ← 📚 التوثيق الكامل
+└── ⚖️  LICENSE                  ← 📜 رخصة MIT
+│
+├── 📁 handlers/                 ← 🎮 معالجات الأوامر والرسائل
 │   ├── __init__.py
-│   ├── commands.py              # أوامر البوت الأساسية
-│   └── callbacks.py             # معالجات الأزرار
+│   ├── commands.py              ← ⌨️  أوامر البوت الأساسية
+│   └── callbacks.py             ← 🔘 معالجات الأزرار التفاعلية
 │
-├── 📁 database/                 # إدارة قاعدة البيانات
-│   └── db_handler.py
+├── 📁 database/                 ← 💾 إدارة قاعدة البيانات
+│   └── db_handler.py            ← 🗄️  منطق التخزين والاسترجاع
 │
-├── 📁 data/                     # بيانات الآيات والأدعية والأحاديث
-│   ├── quran.json
-│   ├── duas.json
-│   └── hadiths.json
+├── 📁 data/                     ← 📚 بيانات المحتوى الإسلامي
+│   ├── quran.json               ← 📖 الآيات القرآنية الكريمة
+│   ├── duas.json                ← 🤲 الأدعية والأذكار
+│   └── hadiths.json             ← 📿 الأحاديث النبوية الشريفة
 │
-└── 📁 utils/                    # دوال مساعدة
-    ├── scheduler.py             # جدولة المهام
-    └── config.py                # الإعدادات
-
+└── 📁 utils/                    ← 🔧 الأدوات المساعدة
+    ├── scheduler.py             ← ⏰ نظام جدولة التذكيرات
+    └── config.py                ← ⚙️  الإعدادات العامة
 ```
 
 ---
 
 ## 📋 أوامر البوت
 
-| الأمر | الوصف | الاستخدام |
-|:---:|:---|:---|
-| `/start` | بدء استخدام البوت | `/start` |
-| `/help` | عرض المساعدة | `/help` |
-| `/stop` | إيقاف التذكيرات | `/stop` |
-| `/resume` | استئناف التذكيرات | `/resume` |
-| `/settings` | إدارة الإعدادات | `/settings` |
-| `/about` | معلومات عن البوت | `/about` |
+<div align="center">
+
+| الأمر | الأيقونة | الوصف |
+|:---:|:---:|:---|
+| `/start` | 🚀 | بدء استخدام البوت وتفعيل التذكيرات |
+| `/help` | ❓ | عرض قائمة المساعدة والأوامر المتاحة |
+| `/stop` | ⏹️ | إيقاف التذكيرات مؤقتاً |
+| `/resume` | ▶️ | استئناف التذكيرات من حيث توقفت |
+| `/settings` | ⚙️ | إدارة وتخصيص إعدادات البوت |
+| `/about` | 💫 | معلومات عن البوت والمطور |
+
+</div>
+
+---
+
+## 🔮 قريباً...
+
+<div align="center">
+
+| الميزة المخططة | الحالة |
+|:---|:---:|
+| 🌍 دعم لغات متعددة | 🔄 قيد التطوير |
+| 🎨 تخصيص محتوى التذكيرات | 📋 مخطط |
+| 📊 إحصائيات تفاعلية للمستخدم | 📋 مخطط |
+| 🔔 تحديد وقت تذكير مخصص | 📋 مخطط |
+| 📱 لوحة تحكم للمشرف | 📋 مخطط |
+
+</div>
 
 ---
 
@@ -158,31 +299,49 @@ Noorify_Bot/
 
 <div align="center">
 
-### 🔗 تابعني على المنصات المختلفة
+<br/>
 
-| 🤖 البوت | 💬 Telegram | 🐙 GitHub | 🔗 Linktree |
-|:---:|:---:|:---:|:---:|
-| [@Noorify_bot](https://t.me/Noorify_bot) | [@ramibitar](https://t.me/ramibitar) | [RamiDevX](https://github.com/RamiDevX) | [ramibitar](https://linktr.ee/ramibitar) |
+[![Bot](https://img.shields.io/badge/🤖%20البوت-@Noorify__bot-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Noorify_bot)
+&nbsp;
+[![Telegram](https://img.shields.io/badge/💬%20تيليغرام-@ramibitar-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ramibitar)
+&nbsp;
+[![GitHub](https://img.shields.io/badge/🐙%20GitHub-RamiDevX-161b22?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RamiDevX)
 
-### 💡 الدعم والمساعدة
+<br/>
 
-| 🐛 إبلاغ عن مشكلة | 💬 تواصل مباشر |
-|:---:|:---:|
-| [فتح Issue](https://github.com/RamiDevX/Noorify_Bot/issues) | [راسلني على Telegram](https://t.me/ramibitar) |
+[![Linktree](https://img.shields.io/badge/🔗%20Linktree-ramibitar-43e55e?style=for-the-badge&logo=linktree&logoColor=white)](https://linktr.ee/ramibitar)
+&nbsp;
+[![LinkedIn](https://img.shields.io/badge/💼%20LinkedIn-Rami%20Bitar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ramibitar)
+
+<br/><br/>
+
+[![Report Bug](https://img.shields.io/badge/🐛%20إبلاغ%20عن%20مشكلة-GitHub%20Issues-d73a49?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RamiDevX/Noorify_Bot/issues)
+&nbsp;
+[![Contact](https://img.shields.io/badge/💬%20تواصل%20مباشر-Telegram-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ramibitar)
 
 </div>
 
 ---
 
-## 📝 المساهمة والتطوير
+## 🤝 المساهمة والتطوير
 
-نرحب بمساهماتك! إذا كان لديك اقتراح أو وجدت مشكلة:
+نرحب بجميع المساهمين! إليك الخطوات:
 
-1. **Fork** المشروع
-2. أنشئ **Branch** للميزة الجديدة (`git checkout -b feature/AmazingFeature`)
-3. **Commit** تغييراتك (`git commit -m 'Add AmazingFeature'`)
-4. **Push** إلى الـ Branch (`git push origin feature/AmazingFeature`)
-5. افتح **Pull Request**
+```bash
+# 1️⃣  Fork المشروع ثم استنسخه محلياً
+git clone https://github.com/YOUR_USERNAME/Noorify_Bot.git
+
+# 2️⃣  أنشئ Branch للميزة الجديدة
+git checkout -b feature/AmazingFeature
+
+# 3️⃣  طوّر واختبر ثم احفظ التغييرات
+git commit -m "✨ feat: Add AmazingFeature"
+
+# 4️⃣  ادفع إلى GitHub
+git push origin feature/AmazingFeature
+
+# 5️⃣  افتح Pull Request 🎉
+```
 
 ---
 
@@ -190,7 +349,13 @@ Noorify_Bot/
 
 <div align="center">
 
-**Rami Bitar** | RamiDevX
+<br/>
+
+<img src="https://github.com/RamiDevX.png" width="130" style="border-radius:50%; border: 3px solid #00B4D8;" alt="RamiDevX"/>
+
+### Rami Bitar — *RamiDevX*
+
+<br/>
 
 [![GitHub](https://img.shields.io/badge/GitHub-RamiDevX-161b22?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RamiDevX)
 &nbsp;
@@ -198,49 +363,76 @@ Noorify_Bot/
 &nbsp;
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Rami%20Bitar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ramibitar)
 
+<br/>
+
+<img src="https://github-readme-stats.vercel.app/api?username=RamiDevX&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00B4D8&icon_color=FFD700&text_color=ADE8F4&border_radius=12" alt="GitHub Stats" height="160"/>
+&nbsp;
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RamiDevX&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00B4D8&text_color=ADE8F4&layout=compact&border_radius=12" alt="Top Languages" height="160"/>
+
+<br/>
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=RamiDevX&theme=tokyonight&hide_border=true&background=0d1117&stroke=00B4D8&ring=FFD700&fire=FF6B6B&currStreakLabel=00B4D8&sideLabels=ADE8F4&dates=ADE8F4" alt="GitHub Streak" height="155"/>
+
 </div>
 
 ---
 
 ## 📜 الترخيص
 
-هذا المشروع مرخص تحت **[MIT License](LICENSE)** — يمكنك استخدامه وتعديله وتوزيعه بحرية! ✨
+<div align="center">
 
-```
-MIT License
+<br/>
 
-Copyright (c) 2025 Rami Bitar
+[![MIT License](https://img.shields.io/badge/📄%20License-MIT-00C896?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files...
-```
+<br/>
+
+هذا المشروع مرخص تحت **MIT License** — يمكنك استخدامه وتعديله وتوزيعه بحرية! ✨
+
+</div>
 
 ---
 
 ## 🎓 مصادر مفيدة
 
-- 📚 [Aiogram Documentation](https://docs.aiogram.dev/)
-- ⏰ [APScheduler Documentation](https://apscheduler.readthedocs.io/)
-- 🤖 [Telegram Bot API](https://core.telegram.org/bots/api)
-- 🐍 [Python AsyncIO](https://docs.python.org/3/library/asyncio.html)
-- 🗄️ [SQLite Documentation](https://www.sqlite.org/docs.html)
+<div align="center">
+
+<br/>
+
+[![Aiogram](https://img.shields.io/badge/📚%20Aiogram-Docs-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://docs.aiogram.dev/)
+&nbsp;
+[![APScheduler](https://img.shields.io/badge/⏰%20APScheduler-Docs-FF6B6B?style=for-the-badge)](https://apscheduler.readthedocs.io/)
+&nbsp;
+[![Telegram API](https://img.shields.io/badge/🤖%20Telegram-Bot%20API-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://core.telegram.org/bots/api)
+
+<br/>
+
+[![AsyncIO](https://img.shields.io/badge/⚡%20Python-AsyncIO-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://docs.python.org/3/library/asyncio.html)
+&nbsp;
+[![SQLite](https://img.shields.io/badge/🗄️%20SQLite-Docs-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org/docs.html)
+
+</div>
+
+</div>
 
 ---
 
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:006494,50:003554,100:051923&height=140&section=footer" alt="Footer"/>
-</p>
+<!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
 
-<p align="center">
-  <sub>صُنع بنية وإخلاص ❤️</sub>
-</p>
+<div align="center">
 
-<p align="center">
-  <sub>🌙 NoorifyBot © 2025 · مفتوح المصدر · في خدمة الذكر والتذكير</sub>
-</p>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00B4D8,25:0087c1,55:006494,80:003554,100:0C1B33&height=170&section=footer&animation=fadeIn" alt="Footer"/>
 
-<p align="center">
-  <sub>⭐ إذا أعجبك المشروع، أضف نجمة ⭐</sub>
-</p>
+<br/>
+
+![Profile Views](https://komarev.com/ghpvc/?username=RamiDevX&color=006494&style=for-the-badge&label=Profile+Views)
+
+<br/>
+
+**صُنع بنيّة وإخلاص ❤️‍🔥**
+
+🌙 **NoorifyBot** © 2025 · مفتوح المصدر · في خدمة الذكر والتذكير
+
+*⭐ إذا أعجبك المشروع، أضف نجمة لتشجيع التطوير ⭐*
 
 </div>
