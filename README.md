@@ -206,7 +206,7 @@ INTERVAL_MIN=60
 
 <br/>
 
-[![Linktree](https://img.shields.io/badge/🔗%20Linktree-ramibitar-43e55e?style=for-the-badge&logo=linktree&logoColor=white)](https://linktr.ee/ramibitar)
+[![Linktree](https://img.shields.io/badge/🔗%20Linktree-ramibitar-43e55e?style=for-the-badge&logo=linktree&logoColor=white)](https://linktr.ee/ramibitarr)
 &nbsp;
 [![LinkedIn](https://img.shields.io/badge/💼%20LinkedIn-Rami%20Bitar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ramibitar)
 
