@@ -1,6 +1,5 @@
 <div align="center">
-
-<div align="center">
+ 
 ![NoorifyBot Banner](https://capsule-render.vercel.app/api?type=waving&color=0:001a33,20:003d66,50:0066cc,75:0088ff,100:00B4D8&height=280&section=header&text=🌙%20NoorifyBot&fontSize=80&fontColor=ffffff&fontAlignY=45&desc=📱%20Islamic%20Daily%20Reminder%20Bot&descSize=22&descAlignY=65&descColor=ffffff&animation=fadeIn)
  
 [![Telegram Bot](https://img.shields.io/badge/Telegram-@Noorify__bot-0088cc?style=flat-square&logo=telegram)](https://t.me/Noorify_bot)
