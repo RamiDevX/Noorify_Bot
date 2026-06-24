@@ -200,7 +200,7 @@ INTERVAL_MIN=60
 
 [![Bot](https://img.shields.io/badge/🤖%20البوت-@Noorify__bot-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Noorify_bot)
 &nbsp;
-[![Telegram](https://img.shields.io/badge/💬%20تيليغرام-@ramibitar-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ramibitar)
+[![Telegram](https://img.shields.io/badge/💬%20تيليغرام-@ramibitar-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/@ramidevx)
 &nbsp;
 [![GitHub](https://img.shields.io/badge/🐙%20GitHub-RamiDevX-161b22?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RamiDevX)
 
@@ -214,7 +214,7 @@ INTERVAL_MIN=60
 
 [![Report Bug](https://img.shields.io/badge/🐛%20إبلاغ%20عن%20مشكلة-GitHub%20Issues-d73a49?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RamiDevX/Noorify_Bot/issues)
 &nbsp;
-[![Contact](https://img.shields.io/badge/💬%20تواصل%20مباشر-Telegram-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ramibitar)
+[![Contact](https://img.shields.io/badge/💬%20تواصل%20مباشر-Telegram-0088cc?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/@ramidevx)
 
 </div>
 
