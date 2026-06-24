@@ -208,7 +208,7 @@ INTERVAL_MIN=60
 
 [![Linktree](https://img.shields.io/badge/🔗%20Linktree-ramibitar-43e55e?style=for-the-badge&logo=linktree&logoColor=white)](https://linktr.ee/ramibitarr)
 &nbsp;
-[![LinkedIn](https://img.shields.io/badge/💼%20LinkedIn-Rami%20Bitar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ramibitar)
+[![LinkedIn](https://img.shields.io/badge/💼%20LinkedIn-Rami%20Bitar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)]([https://linkedin.com/in/ramibitar](https://www.linkedin.com/public-profile/settings/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact_info%3BGuUktEu9Sj%2Bh9anoiYepLQ%3D%3D))
 
 <br/><br/>
 
