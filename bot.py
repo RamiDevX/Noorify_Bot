@@ -33,7 +33,7 @@ if not TOKEN:
 # دعم التخزين الدائم عبر المتغيرات البيئية (حل مشكلة حذف البيانات في Railway)
 DB_PATH = os.getenv("DATABASE_PATH", "noorify.db")
 BOT_USERNAME = "Noorify_Bot"
-DEVELOPER = "@ramibitar"
+DEVELOPER = "@ramidevx"
 
 async def init_db():
     async with aiosqlite.connect(DB_PATH) as db:
